@@ -36,7 +36,7 @@ Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 " Ultisnips
 Plug 'SirVer/ultisnips'
-
+Plug 'rhysd/conflict-marker.vim'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
