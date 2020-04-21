@@ -1,6 +1,6 @@
 # install fisher as plugin manager
 # fisher plugins - bobthefish (theme), z (file history),
-# done (task timer), fish-nvm
+# done (task timer), fast-nvm-fish
 set -g theme_nerd_fonts yes
 
 set -x ANDROID_HOME ~/Library/Android/sdk
@@ -23,11 +23,15 @@ set -x PYTHONPATH $PYTHONPATH:~/anaconda/bin/
 set -x PATH $PATH:~/anaconda/bin
 
 # Functions
-function edit_fish_config
+function config
+  cd ~/.config
+end
+
+function cfish 
   nvim ~/.config/fish/config.fish
 end
 
-function edit_nvim_config
+function cnvim
   nvim ~/.config/nvim/init.vim
 end
 

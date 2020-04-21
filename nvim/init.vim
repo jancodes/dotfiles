@@ -20,8 +20,8 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'ap/vim-css-color'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" vim-ripgrep needs ripgrep installed
-Plug 'jremmen/vim-ripgrep', { 'commit': '0df3ac2c3e51d27637251a5849f892c3a0f0bce0' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -104,12 +104,15 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#fnamecollapse=0
 let g:airline#extensions#tabline#fnametruncate=0
 
-" vim-ripgrep settings
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
+" fzf mappings
+nnoremap <C-p> :Files<Cr>
+nnoremap <C-g> :Rg
 
-let g:rg_highlight = 'true' 
+" fzf notes for editing fzf results
+" alt+a to select all, alt+d to deselect
+" tab to select one at a time
+" press ENTER to transfer to quickfix
+" in quickfix mode, you can select the files and do :%s/oldterm/newterm/g
 
 let mapleader = " "
 
@@ -117,15 +120,15 @@ let mapleader = " "
 let g:auto_save = 1
 
 "ctrl p plugin
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-let g:ctrlp_custom_ignore = {
- \ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
- \ 'file': '\.so$\|\.dat$|\.DS_Store$'
- \ }
+"if executable('rg')
+  "set grepprg=rg\ --color=never
+  "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  "let g:ctrlp_use_caching = 0
+"endif
+"let g:ctrlp_custom_ignore = {
+ "\ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
+ "\ 'file': '\.so$\|\.dat$|\.DS_Store$'
+ "\ }
 " ctrl p notes
 " ctrl z to select multiple files
 " ctrl o to open all selected files
@@ -136,9 +139,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 let g:NERDTreeWinPos = "left"
 nnoremap <leader>kb :NERDTreeToggle<CR> 
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
+let g:NERDTreeQuitOnOpen = 1
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
@@ -250,3 +254,4 @@ set shortmess+=c
 set signcolumn=yes
 " coc configs - not needed
 let g:coc_node_path = "$HOME/.nvm/versions/node/v10.13.0/bin/node"
+
