@@ -1,6 +1,7 @@
 " First line for safety
 " Font: Fira Nerd Complete Medium
 " Get onedark theme for iterm2
+" Escape+ options key in iterm for mac
 
 call plug#begin('~/.vim/plugged')
 
@@ -14,7 +15,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug '907th/vim-auto-save'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
@@ -23,7 +23,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airlne'
 Plug 'vim-airline/vim-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
@@ -50,19 +50,6 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-css',
       \]
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -104,41 +91,15 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#fnamecollapse=0
 let g:airline#extensions#tabline#fnametruncate=0
 
-" fzf mappings
-nnoremap <C-p> :Files<Cr>
-nnoremap <C-g> :Rg
-
-" fzf notes for editing fzf results
-" alt+a to select all, alt+d to deselect
-" tab to select one at a time
-" press ENTER to transfer to quickfix
-" in quickfix mode, you can select the files and do :%s/oldterm/newterm/g
-
 let mapleader = " "
 
 " auto save config
 let g:auto_save = 1
 
-"ctrl p plugin
-"if executable('rg')
-  "set grepprg=rg\ --color=never
-  "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  "let g:ctrlp_use_caching = 0
-"endif
-"let g:ctrlp_custom_ignore = {
- "\ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
- "\ 'file': '\.so$\|\.dat$|\.DS_Store$'
- "\ }
-" ctrl p notes
-" ctrl z to select multiple files
-" ctrl o to open all selected files
-" ctrl t opens in new tab
-
-" opens nerdtree by default and moves cursor to nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 let g:NERDTreeWinPos = "left"
-nnoremap <leader>kb :NERDTreeToggle<CR> 
+nmap <leader>kb :NERDTreeToggle<CR> 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
@@ -165,10 +126,10 @@ autocmd BufEnter * call SyncTree()
 " t opens the file in new tab in nerdtree
 
 " no highlight
-nnoremap <leader>nh :noh<CR>
+nmap <leader>nh :noh<CR>
 
 " close panel hotkey
-nnoremap <leader>wq <C-w>q
+nmap <leader>wq <C-w>q
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -179,6 +140,10 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -186,30 +151,49 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Remap for rename current word
-nmap <leader>gf <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f <Plug>(coc-format-selected)
-nmap <leader>f <Plug>(coc-format-selected)
+xmap <leader>fc <Plug>(coc-format-selected)
+nmap <leader>fc <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
 " navigation remapping leader + h same as ctrl w h
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nmap <leader>h :wincmd h<CR>
+nmap <leader>j :wincmd j<CR>
+nmap <leader>k :wincmd k<CR>
+nmap <leader>l :wincmd l<CR>
 
-nnoremap <leader>b <C-b>
-nnoremap <leader>f  <C-f>
+nmap <leader>ut :UndotreeShow<CR>
 
-nnoremap <leader>ut :UndotreeShow<CR>
+" fzf mappings
+let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
+nmap <C-f> :Files<CR>
 
-" Snippets hotkey
-let g:UltiSnipsExpandTrigger="<C-l>"
+nmap <C-g> :Rg
+
+nmap <C-l> :Lines<CR>
+
+" fzf notes for editing fzf results
+" alt+a to select all, alt+d to deselect
+" tab to select one at a time
+" pressggENTER to transfer to quickfix
+" in quickfix mode, you can select the files and do :%s/oldterm/newterm/g
+
+" Snippets hotkey - not needed to do coc autocomplete
+"let g:UltiSnipsExpandTrigger="<C-l>"
 
 " RainbowParentheses
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-nnoremap <leader>rp :RainbowParentheses!!<CR>
+nmap <leader>rp :RainbowParentheses!!<CR>
 
 " vim settings
 set noerrorbells
@@ -238,8 +222,6 @@ let g:netrw_banner = 0
 " Set the width of the directory explorer
 let g:netrw_winsize = 50
 
-let g:ctrlp_use_caching = 0
-
 " split config
 set splitbelow
 set splitright
@@ -252,6 +234,21 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-" coc configs - not needed
-let g:coc_node_path = "$HOME/.nvm/versions/node/v10.13.0/bin/node"
 
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+let g:coc_node_path = "$HOME/.nvm/versions/node/v10.13.0/bin/node"
