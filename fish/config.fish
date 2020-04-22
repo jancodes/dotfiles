@@ -3,24 +3,15 @@
 # done (task timer), fast-nvm-fish
 set -g theme_nerd_fonts yes
 
-set -x ANDROID_HOME ~/Library/Android/sdk
+set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/Cellar/watchman/4.9.0_3/bin" $fish_user_paths
 
 alias ..="cd .."
 
 set -x NODE_ENV development
-set -x ENVNAME E0
 set -x EDITOR "nvim"
 set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
-
-# Path setup
-
-set -x PATH $PATH $ANDROID_HOME/tools
-set -x PATH $PATH $ANDROID_HOME/platform-tools
-set -x PATH $PATH `yarn global bin`
-
-set -x PYTHONPATH $PYTHONPATH:~/anaconda/bin/
-set -x PATH $PATH:~/anaconda/bin
 
 # Functions
 function config
