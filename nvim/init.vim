@@ -1,4 +1,3 @@
-" First line for safety
 " Font: Fira Nerd Complete Medium
 " Get onedark theme for iterm2
 " Escape+ options key in iterm for mac
@@ -24,7 +23,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vm-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -250,4 +249,4 @@ endfunction
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-let g:coc_node_path = "$HOME/.nvm/versions/node/v10.13.0/bin/node"
+let g:coc_node_path = $HOME . "/.nvm/versions/node/v13.13.0/bin/node"
