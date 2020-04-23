@@ -1,5 +1,6 @@
 {
   "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.enableJavascript": true,
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
