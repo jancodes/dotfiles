@@ -23,7 +23,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vm-airline-themes'
+Plug 'vim-airline/v-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -93,6 +93,7 @@ let mapleader = " "
 
 " auto save config
 let g:auto_save = 1
+let g:auto_save_silent = 1
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
@@ -150,6 +151,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rf <Plug>(coc-refactor)
 
 " Formatting selected code.
 xmap <leader>fc <Plug>(coc-format-selected)
@@ -249,4 +251,4 @@ endfunction
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-let g:coc_node_path = $HOME . "/.nvm/versions/node/v13.13.0/bin/node"
+let g:coc_node_path = "/usr/local/bin/node"
