@@ -35,7 +35,8 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-" jsconfig.json needed for js files to work with tsserver
+" jsconfig.json needed for js files to work with tsserver - use global
+" .gitignore
 " vscode snippet extensions - remove main field in package.json
 let g:coc_global_extensions = [
       \ 'coc-snippets',
