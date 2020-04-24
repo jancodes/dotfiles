@@ -22,14 +22,18 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vi-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/rainbow_parentheses.vim'
-" Ultisnips
+" This is for Coc extensions, but coc has bad proxy support
+Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
+"Plug 'easymotion/vim-easymotion'
+" easymotion doesn't play well with coc
+Plug 'tpope/vim-surround'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
@@ -45,7 +49,6 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-json',
       \ 'coc-css',
-      \ 'https://github.com/dsznajder/vscode-es7-javascript-react-snippets'
       \]
 
 " Use <c-space> to trigger completion.
@@ -91,7 +94,7 @@ let mapleader = " "
 
 " auto save config
 let g:auto_save = 1
-let g:auto_save_silent = 1
+let g:auto_save_events = ["InsertLeave", "CursorHold"]
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
@@ -127,6 +130,15 @@ nmap <leader>nh :noh<CR>
 
 " close panel hotkey
 nmap <leader>wq <C-w>q
+
+" easymotion mappings
+"let g:EasyMotion_do_mapping = 1
+"" Move to line
+"map <Leader>el <Plug>(easymotion-bd-jk)
+"nmap <Leader>el <Plug>(easymotion-overwin-line)
+"" Move to word
+"map  <Leader>ew <Plug>(easymotion-bd-w)
+"nmap <Leader>ew <Plug>(easymotion-overwin-w)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)

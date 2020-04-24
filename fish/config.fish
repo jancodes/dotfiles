@@ -14,6 +14,10 @@ set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
 
 # Functions
+function createJSConfig
+  cp ~/.config/jsconfig.json . 
+end
+
 function config
   cd ~/.config
 end
