@@ -3,7 +3,6 @@
 " Escape+ options key in iterm for mac
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'joshdick/onedark.vim'
 " onedark uses vim-polygot
 Plug 'sheerun/vim-polyglot'
@@ -23,18 +22,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/v-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/rainbow_parentheses.vim'
-" ES2015 code snippets (Optional)
-Plug 'epilande/vim-es2015-snippets'
-" React code snippets
-Plug 'epilande/vim-react-snippets'
 " Ultisnips
-Plug 'SirVer/ultisnips'
 Plug 'rhysd/conflict-marker.vim'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
@@ -42,6 +36,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " jsconfig.json needed for js files to work with tsserver
+" vscode snippet extensions - remove main field in package.json
 let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-pairs',
@@ -49,6 +44,7 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-json',
       \ 'coc-css',
+      \ 'https://github.com/dsznajder/vscode-es7-javascript-react-snippets'
       \]
 
 " Use <c-space> to trigger completion.
@@ -236,18 +232,31 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+"inoremap <silent><expr> <TAB>
+      "\ pumvisible() ? "\<C-n>" :
+      "\ <SID>check_back_space() ? "\<TAB>" :
+      "\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"function! s:check_back_space() abort
+  "let col = col('.') - 1
+  "return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
