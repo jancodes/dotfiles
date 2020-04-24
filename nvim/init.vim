@@ -41,6 +41,7 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+" jsconfig.json needed for js files to work with tsserver
 let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-pairs',
