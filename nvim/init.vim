@@ -22,7 +22,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vi-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
@@ -31,8 +31,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " This is for Coc extensions, but coc has bad proxy support
 Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
-"Plug 'easymotion/vim-easymotion'
-" easymotion doesn't play well with coc
+Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
@@ -93,7 +92,7 @@ let g:airline#extensions#tabline#fnametruncate=0
 let mapleader = " "
 
 " auto save config
-let g:auto_save = 1
+let g:auto_save = 0
 let g:auto_save_events = ["InsertLeave", "CursorHold"]
 
 autocmd StdinReadPre * let s:std_in=1
@@ -166,6 +165,15 @@ nmap <leader>rf <Plug>(coc-refactor)
 " Formatting selected code.
 xmap <leader>fc <Plug>(coc-format-selected)
 nmap <leader>fc <Plug>(coc-format-selected)
+
+" vim sneak
+map s <Plug>Sneak_s
+map S <Plug>Sneak_S
+
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 augroup mygroup
   autocmd!
