@@ -34,7 +34,8 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
-Plug 'roman/golden-ratio'
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
