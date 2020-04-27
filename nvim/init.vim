@@ -1,6 +1,7 @@
 " Font: Fira Nerd Complete Medium
 " Get onedark theme for iterm2
 " Escape+ options key in iterm for mac
+" Change OS key repeat
 
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
@@ -33,6 +34,7 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
+Plug 'roman/golden-ratio'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
@@ -189,6 +191,16 @@ nmap <leader>h :wincmd h<CR>
 nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
+nmap <leader>cw :wincmd w<CR>
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" buffers
+nmap <silent> [b :bprevious<CR>
+nmap <silent> ]b :bnext<CR>
+nmap <silent> [B :bfirst<CR>
+nmap <silent> ]B :blast<CR>
 
 nmap <leader>ut :UndotreeShow<CR>
 
@@ -230,16 +242,8 @@ set incsearch
 set backspace=indent,eol,start
 set number
 set clipboard+=unnamedplus " use system clipboard
+set history=200
 
-"  disable vim macros
-map q <Nop>
-
-" veritical split open files
-let g:netrw_browse_split=2
-" hides dir  banner
-let g:netrw_banner = 0
-" Set the width of the directory explorer
-let g:netrw_winsize = 50
 
 " split config
 set splitbelow
