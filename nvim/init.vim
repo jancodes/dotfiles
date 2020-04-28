@@ -34,7 +34,7 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
-Plug 'camspiers/animate.vim'
+"Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
@@ -125,6 +125,9 @@ endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
 
+" lens.vim config
+let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
+
 " s opens verictal panel in nerdtree
 " t opens the file in new tab in nerdtree
 
@@ -133,15 +136,6 @@ nmap <leader>nh :noh<CR>
 
 " close panel hotkey
 nmap <leader>wq <C-w>q
-
-" easymotion mappings
-"let g:EasyMotion_do_mapping = 1
-"" Move to line
-"map <Leader>el <Plug>(easymotion-bd-jk)
-"nmap <Leader>el <Plug>(easymotion-overwin-line)
-"" Move to word
-"map  <Leader>ew <Plug>(easymotion-bd-w)
-"nmap <Leader>ew <Plug>(easymotion-overwin-w)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
