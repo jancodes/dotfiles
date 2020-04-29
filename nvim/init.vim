@@ -203,18 +203,15 @@ nmap <leader>ut :UndotreeShow<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
 nmap <C-f> :Files<CR>
 
-nmap <C-g> :Rg
+nmap <C-g> :Rg 
 
 nmap <C-l> :Lines<CR>
 
 " fzf notes for editing fzf results
 " alt+a to select all, alt+d to deselect
 " tab to select one at a time
-" pressggENTER to transfer to quickfix
-" in quickfix mode, you can select the files and do :%s/oldterm/newterm/g
-
-" Snippets hotkey - not needed to do coc autocomplete
-"let g:UltiSnipsExpandTrigger="<C-l>"
+" ENTER to transfer to quickfix
+" in quickfix mode, you can select the files and do :s/oldterm/newterm/g
 
 " RainbowParentheses
 let g:rainbow#max_level = 16
