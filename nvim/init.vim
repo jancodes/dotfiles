@@ -34,8 +34,8 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
-"Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
+Plug 'tpope/vim-obsession'
 ": THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
@@ -217,6 +217,12 @@ nmap <C-l> :Lines<CR>
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 nmap <leader>rp :RainbowParentheses!!<CR>
+
+" neovim terminal
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <C-v><Esc> <Esc>
+endif
 
 " vim settings
 set noerrorbells
