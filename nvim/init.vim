@@ -218,12 +218,6 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 nmap <leader>rp :RainbowParentheses!!<CR>
 
-" neovim terminal
-if has('nvim')
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <C-v><Esc> <Esc>
-endif
-
 " vim settings
 set noerrorbells
 set tabstop=2 softtabstop=2
