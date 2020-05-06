@@ -96,7 +96,10 @@ let mapleader = " "
 
 " auto save config
 let g:auto_save = 0
-let g:auto_save_events = ["InsertLeave", "CursorHold"]
+let g:auto_save_write_all_buffers = 1
+let g:auto_save_no_updatetime = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_events = ["CursorHold"]
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
