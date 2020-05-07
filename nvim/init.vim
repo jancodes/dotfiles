@@ -21,6 +21,7 @@ Plug 'ap/vim-css-color'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -46,7 +47,6 @@ call plug#end()
 " vscode snippet extensions - remove main field in package.json
 let g:coc_global_extensions = [
       \ 'coc-snippets',
-      \ 'coc-pairs',
       \ 'coc-tsserver',
       \ 'coc-eslint',
       \ 'coc-json',
@@ -226,6 +226,7 @@ set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 set smartindent
 set nu
 set smartcase
