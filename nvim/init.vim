@@ -6,13 +6,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 " onedark uses vim-polygot
-Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'airblade/vim-gitgutter'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'sheerun/vim-polyglot'
 Plug '907th/vim-auto-save'
 Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
@@ -41,6 +41,9 @@ Plug 'tpope/vim-obsession'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+" vim-polyglot has vim-jsx-pretty
+let g:polyglot_disabled = ['jsx']
 
 " jsconfig.json needed for js files to work with tsserver - use global
 " .gitignore
