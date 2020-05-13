@@ -104,8 +104,6 @@ let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_events = ["CursorHold"]
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 let g:NERDTreeWinPos = "left"
 nmap <leader>kb :NERDTreeToggle<CR> 
 let g:NERDTreeShowHidden = 1
@@ -127,6 +125,12 @@ function! SyncTree()
     wincmd p
   endif
 endfunction
+
+" Highjack nerdtree's highjacking to keep normal nerdtree from loading on directories
+let g:NERDTreeHijackNetrw=0
+augroup NERDTreeHijackNetrw
+    autocmd VimEnter * silent! autocmd! FileExplorer
+augroup END
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
@@ -241,6 +245,7 @@ set incsearch
 set backspace=indent,eol,start
 set clipboard+=unnamedplus " use system clipboard
 set history=200
+au FocusGained,BufEnter * checktime
 
 "line number
 augroup numbertoggle
