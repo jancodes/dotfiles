@@ -271,8 +271,7 @@ inoremap <silent><expr> <TAB>
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
+endfunction 
 let g:coc_snippet_next = '<tab>'
 
 " Use tab for trigger completion with characters ahead and navigate.
