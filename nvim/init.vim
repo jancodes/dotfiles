@@ -127,7 +127,7 @@ function! SyncTree()
 endfunction
 
 " Highjack nerdtree's highjacking to keep normal nerdtree from loading on directories
-let g:NERDTreeHijackNetrw=0
+let g:NERDTreeHijackNetrw=1
 augroup NERDTreeHijackNetrw
     autocmd VimEnter * silent! autocmd! FileExplorer
 augroup END
