@@ -9,8 +9,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'yuezk/vim-js'
+Plug 'liuchengxu/vim-which-key'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug '907th/vim-auto-save'
@@ -138,18 +139,35 @@ autocmd BufEnter * call SyncTree()
 " lens.vim config
 let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
 
+"signify config
+" Change these if you want
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+
+" I find the numbers disctracting
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
+
+" Jump though hunks
+nmap ]g <plug>(signify-next-hunk)
+nmap [g <plug>(signify-prev-hunk)
+
 " s opens verictal panel in nerdtree
 " t opens the file in new tab in nerdtree
+
+"vim-which-key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> g :WhichKey 'g'<CR>
+nnoremap <silent> [ :WhichKey '['<CR>
+nnoremap <silent> ] :WhichKey ']'<CR>
 
 " no highlight
 nmap <leader>nh :noh<CR>
 
 " close panel hotkey
 nmap <leader>wq <C-w>q
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -245,6 +263,8 @@ set incsearch
 set backspace=indent,eol,start
 set clipboard+=unnamedplus " use system clipboard
 set history=200
+" added for signify
+set updatetime=100
 au FocusGained,BufEnter * checktime
 
 "line number
@@ -263,7 +283,6 @@ set hidden
 set nobackup
 set nowritebackup
 set cmdheight=2
-set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
