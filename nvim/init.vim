@@ -193,6 +193,19 @@ xmap <leader>fc <Plug>(coc-format-selected)
 nmap <leader>fc <Plug>(coc-format-selected)
 
 " vim sneak
+" use cl (change letter) and cc (change line) instead
+" overwritten by sneak
+
+" this allows you to press s again to search next (if you don't move cursor)
+let g:sneak#use_ic_scs = 1
+let g:sneak#s_next = 1
+
+let g:sneak#prompt = '🕵'
+let g:sneak#prompt = '🔎'
+
+highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
 map s <Plug>Sneak_s
 map S <Plug>Sneak_S
 
