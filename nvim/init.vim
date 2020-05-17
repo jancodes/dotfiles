@@ -11,7 +11,6 @@ Plug 'scrooloose/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhinz/vim-signify'
 Plug 'yuezk/vim-js'
-Plug 'liuchengxu/vim-which-key'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug '907th/vim-auto-save'
@@ -112,29 +111,15 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeHighlightCursorline = 0
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
 
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 
 " Highjack nerdtree's highjacking to keep normal nerdtree from loading on directories
-let g:NERDTreeHijackNetrw=1
+let g:NERDTreeHijackNetrw=0
 augroup NERDTreeHijackNetrw
     autocmd VimEnter * silent! autocmd! FileExplorer
 augroup END
-
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
 
 " lens.vim config
 let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
@@ -156,12 +141,6 @@ nmap [g <plug>(signify-prev-hunk)
 
 " s opens verictal panel in nerdtree
 " t opens the file in new tab in nerdtree
-
-"vim-which-key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> g :WhichKey 'g'<CR>
-nnoremap <silent> [ :WhichKey '['<CR>
-nnoremap <silent> ] :WhichKey ']'<CR>
 
 " no highlight
 nmap <leader>nh :noh<CR>
