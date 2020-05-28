@@ -6,9 +6,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 " onedark uses vim-polygot
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhinz/vim-signify'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -17,6 +14,8 @@ Plug '907th/vim-auto-save'
 Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
+Plug 'justinmk/vim-dirvish'
+Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'ap/vim-css-color'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -104,25 +103,8 @@ let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_events = ["CursorHold"]
 
-let g:NERDTreeWinPos = "left"
-nmap <leader>kb :NERDTreeToggle<CR> 
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeHighlightCursorline = 0
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
-
-" Highjack nerdtree's highjacking to keep normal nerdtree from loading on directories
-let g:NERDTreeHijackNetrw=0
-augroup NERDTreeHijackNetrw
-    autocmd VimEnter * silent! autocmd! FileExplorer
-augroup END
-
 " lens.vim config
-let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
+let g:lens#disabled_filetypes = ['fzf']
 
 "signify config
 " Change these if you want
@@ -135,12 +117,11 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
+let g:dirvish_git_show_ignored = 1
+
 " Jump though hunks
 nmap ]g <plug>(signify-next-hunk)
 nmap [g <plug>(signify-prev-hunk)
-
-" s opens verictal panel in nerdtree
-" t opens the file in new tab in nerdtree
 
 " no highlight
 nmap <leader>nh :noh<CR>
