@@ -15,7 +15,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-dirvish'
-Plug 'kristijanhusak/vim-dirvish-git'
+Plug 'tpope/vim-eunuch'
 Plug 'ap/vim-css-color'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -116,8 +116,6 @@ let g:signify_sign_change            = '~'
 " I find the numbers disctracting
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
-
-let g:dirvish_git_show_ignored = 1
 
 " Jump though hunks
 nmap ]g <plug>(signify-next-hunk)
