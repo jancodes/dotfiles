@@ -44,6 +44,9 @@ call plug#end()
 " vim-polyglot has vim-jsx-pretty
 let g:polyglot_disabled = ['jsx']
 
+let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
 " jsconfig.json needed for js files to work with tsserver - use global
 " .gitignore
 " vscode snippet extensions - remove main field in package.json
