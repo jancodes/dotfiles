@@ -153,6 +153,8 @@ nmap <leader>rf <Plug>(coc-refactor)
 xmap <leader>fc <Plug>(coc-format-selected)
 nmap <leader>fc <Plug>(coc-format-selected)
 
+map J <Nop>
+
 " vim sneak
 " use cl (change letter) and cc (change line) instead
 " overwritten by sneak
