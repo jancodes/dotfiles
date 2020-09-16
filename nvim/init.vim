@@ -1,7 +1,9 @@
-" Font: Fira Nerd Complete Medium
 " Get onedark theme for iterm2
 " Escape+ options key in iterm for mac
 " Change OS key repeat
+
+" vim-polyglot has vim-jsx-pretty
+let g:polyglot_disabled = ['jsx']
 
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
@@ -10,7 +12,6 @@ Plug 'mhinz/vim-signify'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
-Plug '907th/vim-auto-save'
 Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
@@ -40,9 +41,6 @@ Plug 'tpope/vim-obsession'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-" vim-polyglot has vim-jsx-pretty
-let g:polyglot_disabled = ['jsx']
 
 let g:vim_jsx_pretty_colorful_config = 1
 let g:vim_jsx_pretty_highlight_close_tag = 1
@@ -99,13 +97,6 @@ let g:airline#extensions#tabline#fnametruncate=0
 
 let mapleader = " "
 
-" auto save config
-let g:auto_save = 0
-let g:auto_save_write_all_buffers = 1
-let g:auto_save_no_updatetime = 1
-let g:auto_save_in_insert_mode = 0
-let g:auto_save_events = ["CursorHold"]
-
 " lens.vim config
 let g:lens#disabled_filetypes = ['fzf']
 
@@ -153,7 +144,8 @@ nmap <leader>rf <Plug>(coc-refactor)
 xmap <leader>fc <Plug>(coc-format-selected)
 nmap <leader>fc <Plug>(coc-format-selected)
 
-map J <Nop>
+"remaps paste to delete then paste first
+xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
 
 " vim sneak
 " use cl (change letter) and cc (change line) instead
@@ -176,6 +168,8 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+
+map J <Nop>
 
 augroup mygroup
   autocmd!
@@ -217,6 +211,8 @@ nmap <C-l> :Lines<CR>
 " ENTER to transfer to quickfix
 " in quickfix mode, you can select the files and do :s/oldterm/newterm/g
 
+let g:fzf_layout = { 'down': '~40%' }
+
 " RainbowParentheses
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
@@ -240,7 +236,7 @@ set backspace=indent,eol,start
 set clipboard+=unnamedplus " use system clipboard
 set history=200
 " added for signify
-set updatetime=100
+set updatetime=300
 au FocusGained,BufEnter * checktime
 
 "line number
@@ -273,19 +269,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction 
 let g:coc_snippet_next = '<tab>'
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
