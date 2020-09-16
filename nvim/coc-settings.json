@@ -2,15 +2,6 @@
   "tsserver.npm": "/usr/local/bin/npm",
   "tsserver.enableJavascript": true,
   "eslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "graphql"
-  ],
   "suggest.noselect": false,
   "snippets.extends": {
     "javascriptreact": [
