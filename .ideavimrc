@@ -1,2 +1,18 @@
 set relativenumber
+set number
 set sneak
+
+" from init.vim
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+set nu
+set smartcase
+set noswapfile
+set nobackup
+set incsearch
+set backspace=indent,eol,start
+set clipboard+=unnamedplus " use system clipboard
+set history=200
