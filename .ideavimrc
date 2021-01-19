@@ -1,6 +1,58 @@
 set relativenumber
 set number
+set surround
 set sneak
+set ideajoin
+
+let mapleader = " "
+
+" credit: https://gist.github.com/dewaka/ef947e52767bf453eaf77c852051eb7e
+" key bindings for quickly moving between windows
+" h left, l right, k up, j down
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+" Splits manipulation
+nmap <leader>ws :action SplitHorizontally<cr>
+nmap <leader>wv :action SplitVertically<cr>
+nmap <leader>wc :action Unsplit<cr>
+nmap <leader>wC :action UnsplitAll<cr>
+
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rn :action RenameElement<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>rI :action OptimizeImports<cr>
+
+" Inspection
+" nmap <leader>rc :action InspectCode<cr>
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>" Navigation
+
+" Navigations
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <C-f> :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>i :action GotoImplementation<cr>
+nmap <leader>t :action GotoTest<cr>
+
+" Errors
+nmap [g :action GotoNextError<cr>
+nmap ]g :action GotoPreviousError<cr>
+
+" Tabs
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+
+" Search
+nmap <C-g> :action FindInPath<cr>
 
 " from init.vim
 set tabstop=2 softtabstop=2
@@ -9,6 +61,7 @@ set expandtab
 set autoindent
 set smartindent
 set nu
+set ignorecase
 set smartcase
 set noswapfile
 set nobackup
