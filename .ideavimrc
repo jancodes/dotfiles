@@ -51,6 +51,9 @@ nmap ]g :action GotoPreviousError<cr>
 nnoremap [b :action PreviousTab<cr>
 nnoremap ]b :action NextTab<cr>
 
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
 " Search
 nmap <C-g> :action FindInPath<cr>
 
