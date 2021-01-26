@@ -28,7 +28,7 @@ Plug 'vim-airline/vim-airline-themes'
 " quickfix-reflector adds allows you to make files modifiable in the results
 " list - you can also remove files lines from the result before VG
 Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'junegunn/rainbow_parentheses.vim'
 " This is for Coc extensions, but coc has bad proxy support
 Plug 'dsznajder/vscode-es7-javascript-react-snippets'
