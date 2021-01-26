@@ -3,6 +3,7 @@ set number
 set surround
 set sneak
 set ideajoin
+set commentary
 
 let mapleader = " "
 
