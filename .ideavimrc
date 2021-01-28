@@ -4,6 +4,9 @@ set surround
 set sneak
 set ideajoin
 set commentary
+set textobj-entire
+set highlightedyank
+set ReplaceWithRegister
 
 let mapleader = " "
 
@@ -38,11 +41,11 @@ nmap <leader>Q :action ReopenClosedTab<cr>" Navigation
 nmap <leader>gd :action GotoDeclaration<cr>
 nmap <leader>u :action FindUsages<cr>
 nmap <C-f> :action GotoFile<cr>
-nmap <leader>c :action GotoClass<cr>
-nmap <leader>s :action GotoSymbol<cr>
-nmap <leader>d :action ShowErrorDescription<cr>
-nmap <leader>i :action GotoImplementation<cr>
-nmap <leader>t :action GotoTest<cr>
+nmap <leader>gc :action GotoClass<cr>
+nmap <leader>gs :action GotoSymbol<cr>
+nmap <leader>gd :action ShowErrorDescription<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>ac :action ShowErrorDescription<cr>
 
 " Errors
 nmap [g :action GotoNextError<cr>
@@ -57,6 +60,12 @@ nmap <leader>T :action ActivateTerminalToolWindow<cr>
 
 " Search
 nmap <C-g> :action FindInPath<cr>
+
+" External Neovim
+nmap <leader>nv :action Tool_External Tools_nvim<cr>
+
+" External Vscode
+nmap <leader>vs :action Tool_External Tools_vscode<cr>
 
 " from init.vim
 set tabstop=2 softtabstop=2
