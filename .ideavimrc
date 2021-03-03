@@ -8,6 +8,9 @@ set textobj-entire
 set highlightedyank
 set ReplaceWithRegister
 
+" Custom commands
+command! Format action ReformatCode
+
 let mapleader = " "
 
 " credit: https://gist.github.com/dewaka/ef947e52767bf453eaf77c852051eb7e
