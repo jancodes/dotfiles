@@ -6,6 +6,7 @@ set ideajoin
 set commentary
 set textobj-entire
 set highlightedyank
+" grr (replace file with register) grr (replace line with register)
 set ReplaceWithRegister
 
 " Custom commands
