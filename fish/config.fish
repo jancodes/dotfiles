@@ -1,6 +1,7 @@
 # install fisher as plugin manager
 # fisher plugins - bobthefish (theme), z (file history),
 # done (task timer), fast-nvm-fish
+# most plugins found here: https://github.com/jorgebucaran/awsm.fish
 set -g theme_nerd_fonts yes
 
 set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
