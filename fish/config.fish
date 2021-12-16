@@ -15,6 +15,11 @@ set -x EDITOR "nvim"
 set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
 
+# windows only
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+set -gx GPG_TTY (tty)
+# windows end
+
 # Functions
 function createJSConfig
   cp ~/.config/jsconfig.json . 
