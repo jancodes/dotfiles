@@ -276,5 +276,5 @@ command! -nargs=0 Format :call CocAction('format')
 
 " let g:coc_node_path = "/usr/local/bin/node"
 " windows below
-let g:coc_node_path = "/home/jan/.local/share/nvm/v16.13.1/bin/node"
+let g:coc_node_path = "$HOME/.local/share/nvm/v16.13.1/bin/node"
 
