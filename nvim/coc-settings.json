@@ -1,0 +1,16 @@
+{
+  "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.enableJavascript": true,
+  "eslint.autoFixOnSave": true,
+  "suggest.noselect": false,
+  "snippets.extends": {
+    "javascriptreact": [
+      "javascript"
+    ],
+    "typescript": [
+      "javascript"
+    ]
+  },
+  "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false
+}
