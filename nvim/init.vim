@@ -274,7 +274,4 @@ let g:coc_snippet_next = '<tab>'
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-" let g:coc_node_path = "/usr/local/bin/node"
-" windows below
-let g:coc_node_path = "$HOME/.local/share/nvm/v16.13.1/bin/node"
-
+let g:coc_node_path = "/usr/local/bin/node"

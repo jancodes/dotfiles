@@ -1,6 +1,6 @@
 {
-  "tsserver.npm": "$HOME/.local/share/nvm/v16.13.1/bin/npm",
-  "npm.binPath": "$HOME/.local/share/nvm/v16.13.1/bin/npm",
+  "tsserver.npm": "/usr/local/bin/npm",
+  "npm.binPath": "/usr/local/bin/npm",
   "tsserver.enableJavascript": true,
   "eslint.autoFixOnSave": true,
   "suggest.noselect": false,
