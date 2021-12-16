@@ -54,6 +54,7 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-json',
       \ 'coc-css',
+      \ 'coc-tabnine',
       \]
 
 " Use <c-space> to trigger completion.
@@ -273,4 +274,7 @@ let g:coc_snippet_next = '<tab>'
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-let g:coc_node_path = "/usr/local/bin/node"
+" let g:coc_node_path = "/usr/local/bin/node"
+" windows below
+let g:coc_node_path = "/home/jan/.local/share/nvm/v16.13.1/bin/node"
+

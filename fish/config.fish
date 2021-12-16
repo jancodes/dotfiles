@@ -5,9 +5,6 @@
 # font: Fira Mono Regular Nerd Font Complete
 set -g theme_nerd_fonts yes
 
-set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/Cellar/watchman/4.9.0_3/bin" $fish_user_paths
-
 alias ..="cd .."
 
 set -x NODE_ENV development
