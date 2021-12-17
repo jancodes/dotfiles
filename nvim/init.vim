@@ -55,6 +55,8 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-css',
       \ 'coc-tabnine',
+      \ 'coc-styled-components',
+      \ 'coc-yank'
       \]
 
 " Use <c-space> to trigger completion.
@@ -219,6 +221,9 @@ let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 nmap <leader>rp :RainbowParentheses!!<CR>
 
+" coc-yank keymap
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
 " vim settings
 set noerrorbells
 set tabstop=2 softtabstop=2
@@ -234,7 +239,7 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set backspace=indent,eol,start
-set clipboard+=unnamedplus " use system clipboard
+set clipboard=unnamedplus " use system clipboard
 set history=200
 " added for signify
 set updatetime=300
