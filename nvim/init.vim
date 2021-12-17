@@ -52,6 +52,8 @@ Plug 'hrsh7th/vim-vsnip'
 " other lsp stuff
 Plug 'nvim-lua/plenary.nvim'
 " telescope
+Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -186,6 +188,9 @@ nmap <C-f> <cmd>Telescope find_files<cr>
 nmap <C-g> <cmd>Telescope live_grep<cr>
 
 nmap <C-b> <cmd>Telescope buffers<cr>
+
+" Cheatsheet
+nmap <leader>cs :Cheatsheet<CR>
 
 " RainbowParentheses
 let g:rainbow#max_level = 16
