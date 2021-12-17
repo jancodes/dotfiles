@@ -1,6 +1,7 @@
 # install fisher as plugin manager
 # fisher plugins - bobthefish (theme), z (file history),
-# done (task timer), FabioAntunes/fish-nvm
+# done (task timer)
+# Schniz/fnm for nvm usage in fish (not a plugin)
 # most plugins found here: https://github.com/jorgebucaran/awsm.fish
 # font: Fira Mono Regular Nerd Font Complete
 set -g theme_nerd_fonts yes
@@ -45,3 +46,4 @@ end
 function clean
   git reset --soft HEAD~$argv[1]
 end
+
