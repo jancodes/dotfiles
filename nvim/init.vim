@@ -18,9 +18,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-eunuch'
 Plug 'ap/vim-css-color'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 " powerline statusbar
 Plug 'vim-airline/vim-airline'
@@ -37,10 +34,35 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'camspiers/lens.vim'
 Plug 'tpope/vim-obsession'
-": THIS MUST BE LAST PLUGIN
+Plug 'machakann/vim-highlightedyank'
+" lsp plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+" completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+" other lsp stuff
+Plug 'nvim-lua/plenary.nvim'
+" telescope
+Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" THIS MUST BE LAST PLUGIN
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+lua require("lua-config")
 
 let g:vim_jsx_pretty_colorful_config = 1
 let g:vim_jsx_pretty_highlight_close_tag = 1
@@ -48,19 +70,6 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 " jsconfig.json needed for js files to work with tsserver - use global
 " .gitignore
 " vscode snippet extensions - remove main field in package.json
-let g:coc_global_extensions = [
-      \ 'coc-snippets',
-      \ 'coc-tsserver',
-      \ 'coc-eslint',
-      \ 'coc-json',
-      \ 'coc-css',
-      \ 'coc-tabnine',
-      \ 'coc-styled-components',
-      \ 'coc-yank'
-      \]
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
 
 "onedark theme
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -84,7 +93,6 @@ colorscheme onedark
 
 " airline status bar config
 "let g:airline_theme='dark_minimal'
-let g:airline#extensions#coc#enabled = 1
 let g:airline_section_b = ""
 let g:airline_section_c = '%f%m'
 let g:airline_section_z = airline#section#create(['maxlinenr'])  
@@ -99,9 +107,6 @@ let g:airline#extensions#tabline#fnamecollapse=0
 let g:airline#extensions#tabline#fnametruncate=0
 
 let mapleader = " "
-
-" lens.vim config
-let g:lens#disabled_filetypes = ['fzf']
 
 "signify config
 " Change these if you want
@@ -123,29 +128,6 @@ nmap <leader>nh :noh<CR>
 
 " close panel hotkey
 nmap <leader>wq <C-w>q
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>rf <Plug>(coc-refactor)
-
-" Formatting selected code.
-xmap <leader>fc <Plug>(coc-format-selected)
-nmap <leader>fc <Plug>(coc-format-selected)
 
 "remaps paste to delete then paste first
 xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
@@ -200,29 +182,23 @@ nmap <silent> ]B :blast<CR>
 
 nmap <leader>ut :UndotreeShow<CR>
 
-" fzf mappings
-let $FZF_DEFAULT_COMMAND='rg --files --smart-case'
-nmap <C-f> :Files<CR>
+" telescope mappings
+nmap <C-f> <cmd>Telescope find_files<cr>
 
-nmap <C-g> :Rg 
+nmap <C-g> <cmd>Telescope live_grep<cr>
 
-nmap <C-l> :Lines<CR>
+nmap <C-b> <cmd>Telescope buffers<cr>
 
-" fzf notes for editing fzf results
-" alt+a to select all, alt+d to deselect
-" tab to select one at a time
-" ENTER to transfer to quickfix
-" in quickfix mode, you can select the files and do :s/oldterm/newterm/g
-
-let g:fzf_layout = { 'down': '~40%' }
+" Cheatsheet
+nmap <leader>cs :Cheatsheet<CR>
 
 " RainbowParentheses
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 nmap <leader>rp :RainbowParentheses!!<CR>
 
-" coc-yank keymap
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <Leader>o o<Esc>^Da
+nnoremap <Leader>O O<Esc>^Da
 
 " vim settings
 set noerrorbells
@@ -255,28 +231,3 @@ augroup END
 " split config
 set splitbelow
 set splitright
-
-" coc settings 
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set shortmess+=c
-set signcolumn=yes
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction 
-let g:coc_snippet_next = '<tab>'
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-let g:coc_node_path = "/usr/local/bin/node"
