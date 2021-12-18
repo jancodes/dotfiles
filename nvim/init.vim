@@ -9,13 +9,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 " onedark uses vim-polygot
 Plug 'mhinz/vim-signify'
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
-Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-dirvish'
+" allows for unix commands in vim
 Plug 'tpope/vim-eunuch'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
