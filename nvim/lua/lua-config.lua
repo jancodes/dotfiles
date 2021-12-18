@@ -3,6 +3,7 @@ local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local cmp = require("cmp")
 local tabnine = require('cmp_tabnine.config')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 cmp.setup({
   snippet = {
@@ -68,12 +69,22 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
+local capabilitiesWithSnippetSupport = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
+capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
 local servers = { 'tsserver' }
+local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
+}
+end
+for _, lsp in ipairs(serversWithSnippetSupport) do
+  lspconfig[lsp].setup {
+    -- on_attach = my_custom_on_attach,
+    capabilities = capabilitiesWithSnippetSupport,
 }
 end
 
@@ -123,6 +134,22 @@ lspconfig.tsserver.setup({
         on_attach(client, bufnr)
     end,
 })
+
+lspconfig.cssls.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+        on_attach(client, bufnr)
+    end,
+  })
+
+lspconfig.jsonls.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+        on_attach(client, bufnr)
+    end,
+  })
 
 null_ls.setup({
     sources = {
