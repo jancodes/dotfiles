@@ -1,0 +1,8 @@
+require("plugins/null")
+require("plugins/cmp")
+require("plugins/onedark")
+require("plugins/tree")
+require("plugins/tabnine")
+require("plugins/gitsigns")
+require("plugins/autopairs")
+require("plugins/lualine")
