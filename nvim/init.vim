@@ -2,77 +2,11 @@
 " Escape+ options key in iterm for mac
 " Change OS key repeat
 
-call plug#begin('~/.vim/plugged')
-Plug 'monsonjeremy/onedark.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-fugitive'
-Plug 'justinmk/vim-dirvish'
-" allows for unix commands in vim
-Plug 'tpope/vim-eunuch'
-Plug 'ap/vim-css-color'
-Plug 'windwp/nvim-autopairs'
-" lualine 
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-" quickfix-reflector adds allows you to make files modifiable in the results
-" list - you can also remove files lines from the result before VG
-Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
-Plug 'junegunn/rainbow_parentheses.vim'
-" repo for snippets, not a plugin
-Plug 'dsznajder/vscode-es7-javascript-react-snippets'
-Plug 'rhysd/conflict-marker.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'tpope/vim-surround'
-Plug 'camspiers/lens.vim'
-Plug 'tpope/vim-obsession'
-Plug 'machakann/vim-highlightedyank'
-" lsp plugins
-Plug 'neovim/nvim-lspconfig'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-" completion
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-" For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-" other lsp stuff
-Plug 'nvim-lua/plenary.nvim'
-" telescope
-Plug 'sudormrfbin/cheatsheet.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-
-call plug#end()
-
-lua require("lsp")
 lua require("plugins")
+lua require("lsp")
+lua require("commands")
 
 let mapleader = " "
-
-"signify config
-" Change these if you want
-let g:signify_sign_add               = '+'
-let g:signify_sign_delete            = '_'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '~'
-
-" I find the numbers disctracting
-let g:signify_sign_show_count = 0
-let g:signify_sign_show_text = 1
-
-" Jump though hunks
-nmap ]g <plug>(signify-next-hunk)
-nmap [g <plug>(signify-prev-hunk)
 
 " no highlight
 nmap <leader>nh :noh<CR>
