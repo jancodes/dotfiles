@@ -1,6 +1,7 @@
 " Get onedark theme for iterm2
 " Escape+ options key in iterm for mac
 " Change OS key repeat
+" WSL2 init setup - https://jade.fyi/blog/development-in-wsl/
 
 lua require("plugins")
 lua require("lsp")
