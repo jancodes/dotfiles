@@ -1,6 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
 
     local config = function(name)
@@ -41,10 +41,10 @@ return require('packer').startup(function()
 
     -- config nvim plugins
     use_with_config("monsonjeremy/onedark.nvim", "onedark")
-    use_with_config("jose-elias-alvarez/null-ls.nvim", "null") 
+    use_with_config("jose-elias-alvarez/null-ls.nvim", "null")
 
     -- lsp
-    use("neovim/nvim-lspconfig") 
+    use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/nvim-lsp-ts-utils")
 
     -- cmp
@@ -61,7 +61,7 @@ return require('packer').startup(function()
     use "hrsh7th/vim-vsnip"
     -- not plugin, git repo
     use "dsznajder/vscode-es7-javascript-react-snippets"
-    -- local cmp config 
+    -- local cmp config
     require("plugins/cmp")
 
     -- treesitter
@@ -88,5 +88,5 @@ return require('packer').startup(function()
         'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = config("lualine")
-    } 
+    }
 end)
