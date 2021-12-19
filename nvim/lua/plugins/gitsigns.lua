@@ -6,4 +6,4 @@ require('gitsigns').setup({
   }
 })
 
-u.nmap("<Leader>gb", ":Gitsigns toggle_current_line_blame")
+u.nmap("<Leader>gb", ":Gitsigns toggle_current_line_blame<CR>")

@@ -18,6 +18,8 @@ return require('packer').startup(function()
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'windwp/nvim-ts-autotag'
 
     -- no config vim plugins
     use "mbbill/undotree"
