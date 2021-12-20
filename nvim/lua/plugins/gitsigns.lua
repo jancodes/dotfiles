@@ -1,4 +1,4 @@
-local u = require("utils")
+local m = require("mapx")
 require('gitsigns').setup({
   signs = {
         add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
@@ -6,4 +6,4 @@ require('gitsigns').setup({
   }
 })
 
-u.nmap("<Leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
+m.nmap("<Leader>gb", ":Gitsigns toggle_current_line_blame<CR>")

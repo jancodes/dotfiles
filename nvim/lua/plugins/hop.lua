@@ -1,7 +1,10 @@
-local u = require("utils")
+local m = require'mapx'
+
 require('hop').setup ({
     keys = 'etovxqpdygfblzhckisuran'
 })
 
-u.nmap("h","<cmd>lua require'hop'.hint_char1()<cr>" )
-u.nmap("l","<cmd>lua require'hop'.hint_lines()<cr>" )
+m.nmap("h","<cmd>lua require'hop'.hint_char1()<cr>" )
+m.nmap("l","<cmd>lua require'hop'.hint_lines()<cr>" )
+m.vmap("h", "<cmd>lua require'hop'.hint_char1()<cr>")
+m.vmap("l","<cmd>lua require'hop'.hint_lines()<cr>" )

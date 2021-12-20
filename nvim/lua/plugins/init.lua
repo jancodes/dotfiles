@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
     local use_with_config = function(path, name)
         use({ path, config = config(name) })
     end
+    -- leave first to allow global mapping
+    use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
     use "lukas-reineke/indent-blankline.nvim"
     use "yamatsum/nvim-cursorline"
@@ -30,7 +32,6 @@ return require('packer').startup(function(use)
     use "stefandtw/quickfix-reflector.vim"
     use "tpope/vim-commentary"
     use "tpope/vim-sleuth"
-    use "junegunn/rainbow_parentheses.vim"
     use "rhysd/conflict-marker.vim"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"

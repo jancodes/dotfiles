@@ -32,7 +32,7 @@ function cfish
 end
 
 function cnvim
-  nvim ~/.config/nvim/init.vim
+  nvim ~/.config/nvim/init.lua
 end
 
 function reload
