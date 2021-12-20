@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
     use "tpope/vim-sleuth"
     use "junegunn/rainbow_parentheses.vim"
     use "rhysd/conflict-marker.vim"
-    use "justinmk/vim-sneak"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "camspiers/lens.vim"
@@ -42,6 +41,11 @@ return require('packer').startup(function(use)
     -- config nvim plugins
     use_with_config("monsonjeremy/onedark.nvim", "onedark")
     use_with_config("jose-elias-alvarez/null-ls.nvim", "null")
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+        config = config("hop")
+    }
 
     -- lsp
     use("neovim/nvim-lspconfig")
