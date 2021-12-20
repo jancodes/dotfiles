@@ -3,10 +3,6 @@
 -- Change OS key repeat
 -- WSL2 init setup - https://jade.fyi/blog/development-in-wsl/
 
-require("plugins")
-require("lsp")
-require("commands")
-
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
@@ -24,3 +20,8 @@ vim.o.clipboard = "unnamedplus"
 vim.o.history = 200
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.swapfile = false
+
+require("plugins")
+require("lsp")
+require("commands")

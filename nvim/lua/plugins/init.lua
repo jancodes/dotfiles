@@ -1,6 +1,6 @@
-vim.cmd [[packadd packer.nvim]]
+local packer = require("packer")
 
-return require('packer').startup(function(use)
+return packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
     local config = function(name)
