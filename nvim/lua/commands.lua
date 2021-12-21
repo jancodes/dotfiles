@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 m.nmap("<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", "expr")
 
 -- no highlight
-m.nmap("leader>nh", ":noh<CR>")
+m.nmap("<leader>nh", ":noh<CR>")
 
 -- close panel hotkey
 m.nmap("<leader>wq", "<C-w>q" )

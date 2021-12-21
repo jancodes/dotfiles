@@ -64,8 +64,9 @@ return packer.startup(function(use)
     -- cmp snippet
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
-    -- not plugin, git repo
+    -- snippets
     use "dsznajder/vscode-es7-javascript-react-snippets"
+    use "capaj/vscode-standardjs-snippets"
     -- local cmp config
     require("plugins/cmp")
 
