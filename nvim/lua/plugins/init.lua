@@ -95,4 +95,5 @@ return packer.startup(function(use)
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = config("lualine")
     }
+    use_with_config("jancodes/nvim-bufbar", "bufbar")
 end)
