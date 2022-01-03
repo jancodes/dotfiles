@@ -35,6 +35,10 @@ function cnvim
   nvim ~/.config/nvim/init.lua
 end
 
+function pnvim
+  nvim ~/.config/nvim/lua/init.lua
+end
+
 function reload
   source ~/.config/fish/config.fish
 end
