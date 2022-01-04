@@ -16,7 +16,9 @@ null_ls.setup({
         actions.eslint_d,
 
         -- Eslint if eslint config exist or use prettier
-        require("null-ls.helpers").conditional(function(utils)
+        function()
+            local utils = require("null-ls.utils").make_conditional_utils()
+
             local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
 
             if has_eslint then
@@ -53,7 +55,7 @@ null_ls.setup({
                     },
                 })
             end
-        end),
+        end
     },
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then

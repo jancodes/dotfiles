@@ -59,7 +59,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/nvim-cmp"
     -- tabnine
-    use {'tzachar/cmp-tabnine', run='powershell ./install.ps1', requires = 'hrsh7th/nvim-cmp', config = config("tabnine")}
+    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp', config = config("tabnine")}
     use "onsails/lspkind-nvim"
     -- cmp snippet
     use "hrsh7th/cmp-vsnip"

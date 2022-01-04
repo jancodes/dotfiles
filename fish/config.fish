@@ -36,7 +36,7 @@ function cnvim
 end
 
 function pnvim
-  nvim ~/.config/nvim/lua/init.lua
+  nvim ~/.config/nvim/lua/plugins/init.lua
 end
 
 function reload
