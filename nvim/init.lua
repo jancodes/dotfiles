@@ -2,6 +2,7 @@
 -- Escape+ options key in iterm for mac
 -- Change OS key repeat
 -- WSL2 init setup - https://jade.fyi/blog/development-in-wsl/
+local au = require('au')
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
@@ -22,7 +23,22 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.updatetime = 300
+vim.o.relativenumber = true
 
 require("plugins")
 require("lsp")
 require("commands")
+
+au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
+  '*.*',
+  function()
+    vim.o.relativenumber = true
+  end
+})
+
+au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
+  '*.*',
+  function()
+    vim.o.relativenumber = false
+  end
+})
