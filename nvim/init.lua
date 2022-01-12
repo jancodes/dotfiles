@@ -24,6 +24,7 @@ vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.updatetime = 300
 vim.o.relativenumber = true
+vim.o.timeoutlen = 300
 
 require("plugins")
 require("lsp")
