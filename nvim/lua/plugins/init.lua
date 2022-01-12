@@ -96,4 +96,6 @@ return packer.startup(function(use)
         config = config("lualine")
     }
     use_with_config("jancodes/nvim-bufbar", "bufbar")
+
+    use_with_config("folke/which-key.nvim", "whichkey")
 end)
