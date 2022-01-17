@@ -44,7 +44,7 @@ return packer.startup(function(use)
     use_with_config("jose-elias-alvarez/null-ls.nvim", "null")
     use {
         'phaazon/hop.nvim',
-        branch = 'v1', -- optional but strongly recommended
+        -- branch = 'v1', -- optional but strongly recommended
         config = config("hop")
     }
 
