@@ -18,11 +18,11 @@ m.xnoremap ("p", 'p:let @+=@0<CR>:let @"=@0<CR>', "silent")
 m.map("J","<Nop>")
 
 -- navigation remapping leader + h same as ctrl w h
-m.nmap ("<leader>h", ":wincmd h<CR>")
-m.nmap ("<leader>j", ":wincmd j<CR>")
-m.nmap ("<leader>k", ":wincmd k<CR>")
-m.nmap ("<leader>l", ":wincmd l<CR>")
-m.nmap ("<leader>cw", ":wincmd w<CR>")
+-- using focus.nvim instead now
+-- m.nmap ("<leader>h", ":wincmd h<CR>")
+-- m.nmap ("<leader>j", ":wincmd j<CR>")
+-- m.nmap ("<leader>k", ":wincmd k<CR>")
+-- m.nmap ("<leader>l", ":wincmd l<CR>")
 
 m.cnoremap ( "<C-p>", "<Up>")
 m.cnoremap ( "<C-n>", "<Down>")

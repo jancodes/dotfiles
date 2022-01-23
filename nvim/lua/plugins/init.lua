@@ -112,4 +112,5 @@ return packer.startup(function(use)
     use_with_config("jancodes/nvim-bufbar", "bufbar")
 
     use_with_config("folke/which-key.nvim", "whichkey")
+    use_with_config("beauwilliams/focus.nvim", "focus")
 end)
