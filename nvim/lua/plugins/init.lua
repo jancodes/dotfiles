@@ -28,12 +28,16 @@ return packer.startup(function(use)
     use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
     use "lukas-reineke/indent-blankline.nvim"
-    use "yamatsum/nvim-cursorline"
     use "sudormrfbin/cheatsheet.nvim"
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+        config = config('fzf')
+    }
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use 'windwp/nvim-ts-autotag'
 
