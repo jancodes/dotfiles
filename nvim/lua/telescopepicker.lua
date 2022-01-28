@@ -15,7 +15,7 @@ my_pickers.live_grep_in_folder = function(opts)
   opts = opts or {}
   local data = {}
   scan.scan_dir(vim.loop.cwd(), {
-    hidden = opts.hidden,
+    hidden = true,
     only_dirs = true,
     respect_gitignore = true,
     on_insert = function(entry)
