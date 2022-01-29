@@ -48,3 +48,9 @@ m.nmap ("<leader>cs", ":Cheatsheet<CR>")
 -- insert line without taking formatting from current line
 m.nnoremap("<Leader>o", "o<Esc>^Da")
 m.nnoremap("<Leader>O", "OEsc>^Da")
+
+-- Fugitive
+m.nmap("<leader>gs", ":G<CR>")
+-- dd to resolve conflict on file in gs
+m.nmap("<leader>gh", ":diffget //3<CR>")
+m.nmap("<leader>gu", ":diffget //2<CR>")
