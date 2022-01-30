@@ -83,8 +83,6 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
     -- snippets
-    use "dsznajder/vscode-es7-javascript-react-snippets"
-    use "capaj/vscode-standardjs-snippets"
     use "rafamadriz/friendly-snippets"
     -- local cmp config
     require("plugins/cmp")
