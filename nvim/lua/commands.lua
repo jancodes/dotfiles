@@ -36,11 +36,9 @@ m.nmap("]B", ":blast<CR>", "silent")
 m.nmap ( "<leader>ut", ":UndotreeShow<CR>")
 
 -- telescope mappings
-m.nmap ("<C-f>", "<cmd>Telescope find_files<cr>")
+m.nmap ("<C-f>", "<cmd>lua require('fzf-lua').files()<CR>", "silent")
 
-m.nmap ("<C-g>", "<cmd>lua require('telescopepicker').live_grep_in_folder()<cr>")
-
-m.nmap ("<C-b>", "<cmd>Telescope buffers<cr>")
+m.nmap ("<C-g>", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", "silent")
 
 -- Cheatsheet
 m.nmap ("<leader>cs", ":Cheatsheet<CR>")

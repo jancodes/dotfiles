@@ -33,11 +33,12 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make',
-        config = config('fzf')
+
+    use { 'ibhagwan/fzf-lua',
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      run = './install --bin',
     }
+
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use 'windwp/nvim-ts-autotag'
 
