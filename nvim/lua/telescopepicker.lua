@@ -42,7 +42,7 @@ my_pickers.live_grep_in_folder = function(opts)
           end
         end
         actions._close(prompt_bufnr, current_picker.initial_mode == "insert")
-        require("telescope.builtin").live_grep { search_dirs = dirs }
+        require("telescope.builtin").live_grep { search_dirs = dirs, only_sort_text = true }
       end)
       return true
     end,
