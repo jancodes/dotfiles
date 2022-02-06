@@ -1,4 +1,6 @@
-require("focus").setup()
+require("focus").setup({
+    autoresize = false
+})
 
 local m = require'mapx'
 
