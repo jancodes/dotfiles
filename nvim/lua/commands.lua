@@ -40,6 +40,8 @@ m.nmap ("<C-f>", "<cmd>lua require('fzf-lua').files()<CR>", "silent")
 
 m.nmap ("<C-g>", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", "silent")
 
+m.nmap ("<C-b>", "<cmd>lua require('fzf-lua').buffers()<CR>", "silent")
+
 -- Cheatsheet
 m.nmap ("<leader>cs", ":Cheatsheet<CR>")
 
