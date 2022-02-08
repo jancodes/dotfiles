@@ -32,14 +32,17 @@ return packer.startup(function(use)
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-    use "nvim-telescope/telescope.nvim"
-
-    use { 
-     'ibhagwan/fzf-lua',
-      requires = { 'kyazdani42/nvim-web-devicons' }
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = 'nvim-telescope/telescope-live-grep-raw.nvim',
+        config = config('telescope')
     }
 
-    use { 'junegunn/fzf', run = './install --bin', }
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make',
+        config = config('fzf')
+    }
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use 'windwp/nvim-ts-autotag'
