@@ -122,4 +122,5 @@ return packer.startup(function(use)
 
     use_with_config("folke/which-key.nvim", "whichkey")
     use_with_config("beauwilliams/focus.nvim", "focus")
+    use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
 end)
