@@ -1,22 +1,16 @@
-local vim = vim
-
-local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local packer_bootstrap = nil
 
 if fn.empty(fn.glob(install_path)) > 0 then
-	execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-    execute 'packadd packer.nvim'
+    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-vim.cmd('packadd packer.nvim')
-
-local packer = require'packer'
+local packer = require('packer')
 
 return packer.startup(function(use)
-    use "wbthomason/packer.nvim"
-
+    use 'wbthomason/packer.nvim'
     local config = function(name)
         return string.format("require('plugins.%s')", name)
     end
@@ -124,4 +118,8 @@ return packer.startup(function(use)
     use_with_config("beauwilliams/focus.nvim", "focus")
     use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
     use_with_config('jedi2610/nvim-rooter.lua', 'rooter')
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
