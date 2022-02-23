@@ -54,7 +54,7 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "camspiers/lens.vim"
-    use "tpope/vim-obsession"
+    use "rmagatti/auto-session"
     use "machakann/vim-highlightedyank"
 
     -- config nvim plugins
