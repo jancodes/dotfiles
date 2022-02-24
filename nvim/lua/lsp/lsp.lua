@@ -57,13 +57,14 @@ end
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({})
+        ts_utils.setup({
+            enable_import_on_completion = true,
+        })
         ts_utils.setup_client(client)
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
-        buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-        buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-        buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+        buf_map(bufnr, "n", "grf", ":TSLspRenameFile<CR>")
+        buf_map(bufnr, "n", "gi", ":TSLspImportCurrent<CR>")
         on_attach(client, bufnr)
     end,
 })
