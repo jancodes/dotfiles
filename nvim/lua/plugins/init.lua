@@ -23,6 +23,7 @@ return packer.startup(function(use)
     -- no config nvim plugins
     use "lukas-reineke/indent-blankline.nvim"
     use "sudormrfbin/cheatsheet.nvim"
+    use { 'michaelb/sniprun', run = 'bash ./install.sh'}
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
@@ -46,7 +47,6 @@ return packer.startup(function(use)
     use "tpope/vim-fugitive"
     use "justinmk/vim-dirvish"
     use "tpope/vim-eunuch"
-    use "ap/vim-css-color"
     use "stefandtw/quickfix-reflector.vim"
     use "tpope/vim-commentary"
     use "tpope/vim-sleuth"
@@ -118,6 +118,7 @@ return packer.startup(function(use)
     use_with_config("beauwilliams/focus.nvim", "focus")
     use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
     use_with_config('jedi2610/nvim-rooter.lua', 'rooter')
+    use_with_config('norcalli/nvim-colorizer.lua', 'colorizer')
 
     if packer_bootstrap then
         require('packer').sync()

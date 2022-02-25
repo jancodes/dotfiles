@@ -54,3 +54,7 @@ m.nmap("<leader>gs", ":G<CR>")
 -- dd to resolve conflict on file in gs
 m.nmap("<leader>gh", ":diffget //3<CR>")
 m.nmap("<leader>gu", ":diffget //2<CR>")
+
+-- SnipRun
+m.nmap ("<leader>sr", ":%SnipRun<CR>")
+

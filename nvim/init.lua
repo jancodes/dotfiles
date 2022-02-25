@@ -23,23 +23,24 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.updatetime = 300
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.o.timeoutlen = 300
+vim.o.termguicolors = true
 
 require("plugins")
 require("lsp")
 require("commands")
 
-au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
-  '*.*',
-  function()
-    vim.o.relativenumber = true
-  end
-})
+-- au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
+--   '*.*',
+--   function()
+--     vim.o.relativenumber = true
+--   end
+-- })
 
-au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
-  '*.*',
-  function()
-    vim.o.relativenumber = false
-  end
-})
+-- au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
+--   '*.*',
+--   function()
+--     vim.o.relativenumber = false
+--   end
+-- })
