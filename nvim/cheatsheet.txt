@@ -1,1 +1,2 @@
 Exit out of CMP or Exit from Snippet | <C-e>
+Jump to next inner bracket {, [, ( | z%

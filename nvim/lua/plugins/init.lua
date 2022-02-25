@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use "camspiers/lens.vim"
     use "rmagatti/auto-session"
     use "machakann/vim-highlightedyank"
+    use "andymass/vim-matchup"
 
     -- config nvim plugins
     use_with_config("monsonjeremy/onedark.nvim", "onedark")
