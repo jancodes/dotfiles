@@ -16,6 +16,7 @@ set -x LSCOLORS "ExFxBxDxCxegedabagacad"
 # windows only
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 set -gx GPG_TTY (tty)
+set DISPLAY (grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 # windows end
 
 # Functions
