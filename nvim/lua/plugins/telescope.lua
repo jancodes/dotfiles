@@ -1,6 +1,6 @@
 local telescope = require('telescope')
 
-telescope.load_extension('live_grep_raw')
+telescope.load_extension('live_grep_args')
 
 telescope.setup({
     defaults = {

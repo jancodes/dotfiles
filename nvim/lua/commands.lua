@@ -38,7 +38,7 @@ m.nmap ( "<leader>ut", ":UndotreeShow<CR>")
 -- telescope mappings
 m.nmap ("<C-f>", "<cmd>Telescope find_files<cr>")
 
-m.nmap ("<C-g>", "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>")
+m.nmap ("<C-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_raw()<cr>")
 
 m.nmap ("<C-b>", "<cmd>Telescope buffers<cr>")
 
