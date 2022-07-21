@@ -49,7 +49,7 @@ local on_attach = function(client, bufnr)
     buf_map(bufnr, "n", "ga", ":LspCodeAction<CR>")
     buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
@@ -61,8 +61,8 @@ lspconfig.tsserver.setup({
             enable_import_on_completion = true,
         })
         ts_utils.setup_client(client)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
         buf_map(bufnr, "n", "grf", ":TSLspRenameFile<CR>")
         buf_map(bufnr, "n", "gi", ":TSLspImportCurrent<CR>")
         on_attach(client, bufnr)
@@ -71,16 +71,16 @@ lspconfig.tsserver.setup({
 
 lspconfig.cssls.setup({
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
         on_attach(client, bufnr)
     end,
   })
 
 lspconfig.jsonls.setup({
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
         on_attach(client, bufnr)
     end,
   })
