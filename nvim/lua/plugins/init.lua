@@ -23,7 +23,11 @@ return packer.startup(function(use)
     -- no config nvim plugins
     use "lukas-reineke/indent-blankline.nvim"
     use "sudormrfbin/cheatsheet.nvim"
-    use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+    use { 
+        'michaelb/sniprun',
+        run = 'bash ./install.sh',
+        config = config('sniprun')
+    }
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
@@ -120,6 +124,7 @@ return packer.startup(function(use)
     use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
     use_with_config('jedi2610/nvim-rooter.lua', 'rooter')
     use_with_config('norcalli/nvim-colorizer.lua', 'colorizer')
+    use_with_config('Maan2003/lsp_lines.nvim', 'lsplines')
 
     if packer_bootstrap then
         require('packer').sync()
