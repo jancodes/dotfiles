@@ -23,11 +23,6 @@ return packer.startup(function(use)
     -- no config nvim plugins
     use "lukas-reineke/indent-blankline.nvim"
     use "sudormrfbin/cheatsheet.nvim"
-    use { 
-        'michaelb/sniprun',
-        run = 'bash ./install.sh',
-        config = config('sniprun')
-    }
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
