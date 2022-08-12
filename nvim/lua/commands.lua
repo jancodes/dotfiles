@@ -56,5 +56,5 @@ m.nmap("<leader>gh", ":diffget //3<CR>")
 m.nmap("<leader>gu", ":diffget //2<CR>")
 
 -- SnipRun
-m.nmap ("<leader>sr", ":%SnipRun<CR>")
+m.nmap ("<leader>sr", ":!node %<CR>")
 
