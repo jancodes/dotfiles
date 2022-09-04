@@ -44,7 +44,6 @@ return packer.startup(function(use)
     -- no config vim plugins
     use "mbbill/undotree"
     use "tpope/vim-fugitive"
-    use "justinmk/vim-dirvish"
     use "tpope/vim-eunuch"
     use "stefandtw/quickfix-reflector.vim"
     use "tpope/vim-commentary"
@@ -120,6 +119,9 @@ return packer.startup(function(use)
     use_with_config('jedi2610/nvim-rooter.lua', 'rooter')
     use_with_config('norcalli/nvim-colorizer.lua', 'colorizer')
     use_with_config('Maan2003/lsp_lines.nvim', 'lsplines')
+
+    -- lir
+    use_with_config('tamago324/lir.nvim', "lir")
 
     if packer_bootstrap then
         require('packer').sync()
