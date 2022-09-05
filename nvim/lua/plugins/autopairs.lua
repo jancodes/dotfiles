@@ -8,7 +8,7 @@ autopairs.setup({
         javascript = {'template_string'},
         java = false,
     },
-    ignored_next_char = [=[[%(%[%{%w%%%'%[%"%.]]=],
+    ignored_next_char = [=[[%(%[%{%%%%w%%%'%[%"%.]]=],
     map_cr = true,
 })
 

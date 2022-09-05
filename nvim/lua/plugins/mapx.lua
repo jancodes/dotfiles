@@ -1,4 +1,4 @@
-require'mapx'.setup{ 
-    global = true 
+require'mapx'.setup {
+    global = true
 }
 
