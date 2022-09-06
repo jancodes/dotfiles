@@ -21,7 +21,6 @@ return packer.startup(function(use)
     -- leave first to allow global mapping
     use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
-    use "lukas-reineke/indent-blankline.nvim"
     use "sudormrfbin/cheatsheet.nvim"
     -- telescope
     use "nvim-lua/popup.nvim"
@@ -53,7 +52,6 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "camspiers/lens.vim"
-    use "rmagatti/auto-session"
     use "machakann/vim-highlightedyank"
     use "andymass/vim-matchup"
 
@@ -121,6 +119,10 @@ return packer.startup(function(use)
     use_with_config('norcalli/nvim-colorizer.lua', 'colorizer')
     use_with_config('Maan2003/lsp_lines.nvim', 'lsplines')
     use_with_config('napmn/react-extract.nvim', 'reactextract')
+
+    -- use_with_config("glepnir/dashboard-nvim", "dashboard")
+    use_with_config("olimorris/persisted.nvim", "persisted")
+    use_with_config("lukas-reineke/indent-blankline.nvim", "indentblank")
 
     if packer_bootstrap then
         require('packer').sync()
