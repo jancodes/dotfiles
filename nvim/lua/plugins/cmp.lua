@@ -57,16 +57,20 @@ cmp.setup({
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end
     end, { "i", "s" }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = function(fallback)
+      if not cmp.visible() or not cmp.get_selected_entry() or cmp.get_selected_entry().source.name == 'nvim_lsp_signature_help' then
+        fallback()
+      else
+        cmp.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = false,
+        })
+      end
+    end
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip', max_item_count = 2 }, -- For vsnip users.
+    { name = 'vsnip', max_item_count = 5 }, -- For vsnip users.
     { name = 'cmp_tabnine' },
   }, {
     { name = 'buffer' },

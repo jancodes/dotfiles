@@ -81,7 +81,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-vsnip"
     use "hrsh7th/vim-vsnip"
     -- snippets
-    use "rafamadriz/friendly-snippets"
+    use { "rafamadriz/friendly-snippets", branch = 'main' }
     -- local cmp config
     require("plugins/cmp")
 
