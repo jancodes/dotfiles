@@ -78,8 +78,10 @@ return packer.startup(function(use)
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp', config = config("tabnine")}
     use "onsails/lspkind-nvim"
     -- cmp snippet
-    use "hrsh7th/cmp-vsnip"
-    use "hrsh7th/vim-vsnip"
+    -- use "hrsh7th/cmp-vsnip"
+    -- use "hrsh7th/vim-vsnip"
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
     -- snippets
     use { "rafamadriz/friendly-snippets", branch = 'main' }
     -- local cmp config
