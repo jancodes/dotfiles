@@ -31,16 +31,16 @@ require("plugins")
 require("lsp")
 require("commands")
 
--- au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
---   '*.*',
---   function()
---     vim.o.relativenumber = true
---   end
--- })
+au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
+  '*.*',
+  function()
+    vim.o.relativenumber = true
+  end
+})
 
--- au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
---   '*.*',
---   function()
---     vim.o.relativenumber = false
---   end
--- })
+au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
+  '*.*',
+  function()
+    vim.o.relativenumber = false
+  end
+})
