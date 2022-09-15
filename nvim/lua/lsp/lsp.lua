@@ -6,17 +6,15 @@ local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
 local capabilitiesWithSnippetSupport = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
 capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
-local servers = { 'tsserver' }
+local servers = { 'tsserver', 'omnisharp' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
 }
 end
 for _, lsp in ipairs(serversWithSnippetSupport) do
   lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
     capabilities = capabilitiesWithSnippetSupport,
 }
 end
@@ -59,6 +57,8 @@ lspconfig.tsserver.setup({
         local ts_utils = require("nvim-lsp-ts-utils")
         ts_utils.setup({
             enable_import_on_completion = true,
+            update_imports_on_move = true,
+            require_confirmation_on_move = true,
         })
         ts_utils.setup_client(client)
         client.server_capabilities.documentFormattingProvider = false
@@ -84,3 +84,12 @@ lspconfig.jsonls.setup({
         on_attach(client, bufnr)
     end,
   })
+
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/usr/local/bin/omnisharp/run"
+
+lspconfig.omnisharp.setup({
+    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+    on_attach = on_attach
+})
+
