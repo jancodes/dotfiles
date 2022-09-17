@@ -17,7 +17,7 @@ require'lualine'.setup {
       function()
         if vim.g.persisting then
           return "   "
-        elseif vim.g.persisting == false then
+        else
           return "   "
         end
       end,
