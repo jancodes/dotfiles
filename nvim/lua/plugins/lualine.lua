@@ -9,18 +9,26 @@ require'lualine'.setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'diff', 'diagnostics'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     -- S means paused, $ means recording
-    lualine_c = {{'ObsessionStatus'}},
+    lualine_c = {'filename'},
     lualine_x = {'filetype'},
-    lualine_y = {},
+    lualine_y = {
+      function()
+        if vim.g.persisting then
+          return "   "
+        elseif vim.g.persisting == false then
+          return "   "
+        end
+      end,
+    },
     lualine_z = {'location'}
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = {},
+    lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
   },
