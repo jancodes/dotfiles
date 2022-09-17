@@ -55,6 +55,9 @@ m.nmap("<leader>gs", ":G<CR>")
 m.nmap("<leader>gh", ":diffget //3<CR>")
 m.nmap("<leader>gu", ":diffget //2<CR>")
 
--- SnipRun
+-- Node run file
 m.nmap ("<leader>sr", ":!node %<CR>")
 
+-- jester
+m.nmap("<leader>rt", "<cmd>:Lua require('jester').run()")
+m.nmap("<leader>rf", "<cmd>:Lua require('jester').run_file()")

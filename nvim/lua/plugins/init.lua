@@ -128,6 +128,8 @@ return packer.startup(function(use)
 
     use_with_config("williamboman/nvim-lsp-installer", "lspinstaller")
 
+    use "David-Kunz/jester"
+
     if packer_bootstrap then
         require('packer').sync()
     end
