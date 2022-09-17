@@ -59,5 +59,5 @@ m.nmap("<leader>gu", ":diffget //2<CR>")
 m.nmap ("<leader>sr", ":!node %<CR>")
 
 -- jester
-m.nmap("<leader>rt", "<cmd>:Lua require('jester').run()")
-m.nmap("<leader>rf", "<cmd>:Lua require('jester').run_file()")
+m.nmap("<leader>tn", "<cmd>lua require('jester').run({cmd = 'npm run test -- $file --coverage=False', path_to_jest = 'npm run test'})<cr>", "test nearest")
+m.nmap("<leader>tf", "<cmd>lua require('jester').run_file({cmd = 'npm run test -- $file -t $result --coverage=False', path_to_jest = 'npm run test' })<cr>", "test file")
