@@ -22,6 +22,8 @@ return packer.startup(function(use)
     use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
     use "sudormrfbin/cheatsheet.nvim"
+    -- brew install gnu-sed
+    use "windwp/nvim-spectre"
     -- telescope
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
@@ -124,7 +126,7 @@ return packer.startup(function(use)
 
     -- use_with_config("glepnir/dashboard-nvim", "dashboard")
     use_with_config("olimorris/persisted.nvim", "persisted")
-    use_with_config("lukas-reineke/indent-blankline.nvim")
+    use "lukas-reineke/indent-blankline.nvim"
 
     use "David-Kunz/jester"
 

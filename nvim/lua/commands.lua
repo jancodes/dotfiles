@@ -61,3 +61,6 @@ m.nmap("<leader>tf", "<cmd>lua require('jester').run_file({cmd = 'npm run test -
 
 -- persisted nvim
 m.nmap("<leader>st", ":SessionToggle<cr>")
+
+-- spectre
+m.nnoremap("<leader>S", "<cmd>lua require('spectre').open()<CR>")
