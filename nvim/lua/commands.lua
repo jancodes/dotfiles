@@ -24,9 +24,6 @@ m.map("J","<Nop>")
 -- m.nmap ("<leader>k", ":wincmd k<CR>")
 -- m.nmap ("<leader>l", ":wincmd l<CR>")
 
-m.cnoremap ( "<C-p>", "<Up>")
-m.cnoremap ( "<C-n>", "<Down>")
-
 -- buffers
 m.nmap("[b", ":bprevious<CR>", "silent")
 m.nmap("]b", ":bnext<CR>", "silent")

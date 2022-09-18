@@ -1,2 +1,16 @@
 Exit out of CMP or Exit from Snippet | <C-e>
 Jump to next inner bracket {, [, ( | z%
+Undo tree show | <leader>ut
+Show unstaged files | <leader>gs
+Choose left in conflict | <leader>gh
+Choose right in conflict | <leader>gu
+Run single test closest to cursor | <leader>tn
+Run whole test file | <leader>tf
+Session Toggle Persisted | <leader>st
+Extract React code into component file | <leader>ec
+Git blame | <leader>gb
+Visual lines for warns and errors| <leader>vl
+Next Signature overload | "<C-j>"
+Previous Signature overload | "<C-k>"
+Next Parameter overload | "<C-l>"
+Previous Parameter overload | "<C-h>"
