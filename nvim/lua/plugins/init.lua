@@ -18,6 +18,8 @@ return packer.startup(function(use)
     local use_with_config = function(path, name)
         use({ path, config = config(name) })
     end
+    -- load impatient first after packer
+    use_with_config('lewis6991/impatient.nvim', 'impatient')
     -- leave first to allow global mapping
     use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
@@ -134,6 +136,14 @@ return packer.startup(function(use)
     use 'Issafalcon/lsp-overloads.nvim'
 
     use_with_config('lvimuser/lsp-inlayhints.nvim', 'lspinlayhints')
+
+    use {
+        'ruifm/gitlinker.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = config("gitlinker")
+    }
+
+    use_with_config('RRethy/vim-illuminate', 'illuminate')
 
     if packer_bootstrap then
         require('packer').sync()
