@@ -133,6 +133,8 @@ return packer.startup(function(use)
     -- c#
     use 'Issafalcon/lsp-overloads.nvim'
 
+    use_with_config('lvimuser/lsp-inlayhints.nvim', 'lspinlayhints')
+
     if packer_bootstrap then
         require('packer').sync()
     end
