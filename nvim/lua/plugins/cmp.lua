@@ -75,11 +75,12 @@ cmp.setup({
     end
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip', max_item_count = 5 }, -- For vsnip users.
-    { name = 'cmp_tabnine' },
+    { name = 'nvim_lsp', group_index = 1},
+    { name = 'luasnip', max_item_count = 5, group_index = 1 }, -- For vsnip users.
+    { name = 'cmp_tabnine', group_index = 1},
   }, {
-    { name = 'buffer' },
+    { name = 'path', group_index = 1},
+    { name = 'buffer', keyword_length = 3, group_index = 2 },
   })
 })
 
