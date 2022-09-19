@@ -26,6 +26,8 @@ vim.o.updatetime = 300
 vim.o.relativenumber = false
 vim.o.timeoutlen = 300
 vim.o.termguicolors = true
+-- use for toggleterm
+vim.o.hidden = true
 
 require("plugins")
 require("lsp")

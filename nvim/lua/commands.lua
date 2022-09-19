@@ -64,3 +64,7 @@ m.nmap("<leader>st", ":SessionToggle<cr>")
 
 -- spectre
 m.nnoremap("<leader>S", "<cmd>lua require('spectre').open()<CR>")
+
+-- disable q:
+m.nnoremap("q:", "<Nop>")
+m.nnoremap("Q", "<Nop>")

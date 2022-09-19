@@ -14,11 +14,13 @@ require('illuminate').configure({
     filetype_overrides = {},
     -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
     filetypes_denylist = {
+      "toggleterm",
       "dirvish",
       "fugitive",
       "packer",
       "spectre_panel",
       "TelescopePrompt",
+      "vim"
     },
     -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
     filetypes_allowlist = {},

@@ -144,7 +144,7 @@ return packer.startup(function(use)
     }
 
     use_with_config('RRethy/vim-illuminate', 'illuminate')
-
+    use_with_config('akinsho/toggleterm.nvim', 'toggleterm')
     if packer_bootstrap then
         require('packer').sync()
     end

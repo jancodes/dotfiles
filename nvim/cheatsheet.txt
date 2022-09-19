@@ -10,9 +10,19 @@ Session Toggle Persisted | <leader>st
 Extract React code into component file | <leader>ec
 Git blame | <leader>gb
 Visual lines for warns and errors| <leader>vl
-Next Signature overload | "<C-j>"
-Previous Signature overload | "<C-k>"
-Next Parameter overload | "<C-l>"
-Previous Parameter overload | "<C-h>"
-Spectre search and replace | "<leader>S"
-Link to code in Github | "<leader>gl"
+Next Signature overload | <C-j>
+Previous Signature overload | <C-k>
+Next Parameter overload | <C-l>
+Previous Parameter overload | <C-h>
+Spectre search and replace | <leader>S
+Link to code in Github | <leader>gl
+Code Action | ga
+Go to definition | gd
+Go to references | gr
+Rename variables in project | <leader>rn
+Type definition | gy
+LSP Hover | K
+LSP Diagnostics Previous | [g
+LSP Diagnostics Next | ]g
+LSP Signature Help | <C-x><C-x>
+
