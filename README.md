@@ -9,7 +9,7 @@ that traveled the world with me
 </em>
 </p>
 
-> Tools used: Fish shell, Neovim, and IntelliJ IDEA .ideavimrc
+> Tools used: Fish shell, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
 ### Setup
 
