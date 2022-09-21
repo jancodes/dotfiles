@@ -7,6 +7,7 @@
 set -g theme_nerd_fonts yes
 
 alias ..="cd .."
+alias g="git"
 
 set -x NODE_ENV development
 set -x EDITOR "nvim"

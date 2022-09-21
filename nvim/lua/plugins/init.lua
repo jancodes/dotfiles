@@ -23,6 +23,8 @@ return packer.startup(function(use)
     -- leave first to allow global mapping
     use_with_config ("b0o/mapx.nvim", "mapx")
     -- no config nvim plugins
+    use "lukas-reineke/indent-blankline.nvim"
+    use "David-Kunz/jester"
     use "sudormrfbin/cheatsheet.nvim"
     -- brew install gnu-sed
     use "windwp/nvim-spectre"
@@ -90,14 +92,12 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets", branch = 'main' }
     -- local cmp config
     require("plugins/cmp")
-
     -- treesitter
     use ({
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = config("tree")
     })
-
     -- gitsigns
     use {
         'lewis6991/gitsigns.nvim',
@@ -106,18 +106,15 @@ return packer.startup(function(use)
         },
         config = config("gitsigns")
     }
-
-    -- autopairs
-    use_with_config("windwp/nvim-autopairs", "autopairs")
-
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = config("lualine")
     }
+    -- autopairs
+    use_with_config("windwp/nvim-autopairs", "autopairs")
     use_with_config("jancodes/nvim-bufbar", "bufbar")
-
     use_with_config("folke/which-key.nvim", "whichkey")
     use_with_config("beauwilliams/focus.nvim", "focus")
     use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
@@ -125,26 +122,27 @@ return packer.startup(function(use)
     use_with_config('norcalli/nvim-colorizer.lua', 'colorizer')
     use_with_config('Maan2003/lsp_lines.nvim', 'lsplines')
     use_with_config('napmn/react-extract.nvim', 'reactextract')
-
-    -- use_with_config("glepnir/dashboard-nvim", "dashboard")
     use_with_config("olimorris/persisted.nvim", "persisted")
-    use "lukas-reineke/indent-blankline.nvim"
-
-    use "David-Kunz/jester"
-
+    use_with_config('lvimuser/lsp-inlayhints.nvim', 'lspinlayhints')
+    use_with_config('RRethy/vim-illuminate', 'illuminate')
+    use_with_config('akinsho/toggleterm.nvim', 'toggleterm')
     -- c#
     use 'Issafalcon/lsp-overloads.nvim'
-
-    use_with_config('lvimuser/lsp-inlayhints.nvim', 'lspinlayhints')
 
     use {
         'ruifm/gitlinker.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = config("gitlinker")
     }
+    use({
+        "jancodes/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" }, 
+    })
 
-    use_with_config('RRethy/vim-illuminate', 'illuminate')
-    use_with_config('akinsho/toggleterm.nvim', 'toggleterm')
+    use("nathom/filetype.nvim")
+
     if packer_bootstrap then
         require('packer').sync()
     end
