@@ -1,9 +1,3 @@
-# install fisher as plugin manager
-# fisher plugins - bobthefish (theme), z (file history),
-# done (task timer)
-# Schniz/fnm for nvm usage in fish (not a plugin)
-# most plugins found here: https://github.com/jorgebucaran/awsm.fish
-# font: Fira Mono Regular Nerd Font Complete
 set -g theme_nerd_fonts yes
 
 alias ..="cd .."
@@ -14,11 +8,11 @@ set -x EDITOR "nvim"
 set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
 
-# windows only
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-set -gx GPG_TTY (tty)
-set DISPLAY (grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
-# windows end
+if [ (uname) = 'Linux' ]
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  set -gx GPG_TTY (tty)
+  set DISPLAY (grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+end
 
 # Functions
 function createJSConfig
