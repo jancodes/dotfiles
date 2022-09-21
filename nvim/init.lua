@@ -25,9 +25,14 @@ vim.o.swapfile = false
 vim.o.updatetime = 300
 vim.o.relativenumber = false
 vim.o.timeoutlen = 300
-vim.o.termguicolors = true
 -- use for toggleterm
 vim.o.hidden = true
+-- for tmux
+vim.o.termguicolors = true
+vim.o.background = "dark"
+vim.o.term = "screen-256color"
+
+vim.cmd'colorscheme onedark'
 
 require("plugins")
 require("lsp")

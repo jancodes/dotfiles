@@ -8,6 +8,8 @@ set -x EDITOR "nvim"
 set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
 
+set -Ux fish_tmux_config $HOME/.config/tmux.conf
+
 if [ (uname) = 'Linux' ]
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   set -gx GPG_TTY (tty)
@@ -33,6 +35,10 @@ end
 
 function pnvim
   nvim ~/.config/nvim/lua/plugins/init.lua
+end
+
+function ctmux
+  nvim ~/.config/tmux.conf
 end
 
 function reload

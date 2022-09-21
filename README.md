@@ -38,6 +38,8 @@ Make fish default shell
 
 > https://github.com/franciscolourenco/done
 
+> https://github.com/budimanjojo/tmux.fish
+
 ##### List of fish plugins
 
 https://github.com/jorgebucaran/awsm.fish
