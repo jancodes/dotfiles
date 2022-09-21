@@ -13,11 +13,10 @@ that traveled the world with me
 
 ### Setup
 
-1. Clone repo
-2. Move files into config folder
-3. Fix missing packages
-4. ???
-5. Profit
+1. Clone repo into ~/.config folder
+2. Fix missing packages
+3. ???
+4. Profit
 
 ### Useful notes and resources
 
@@ -39,7 +38,7 @@ Make fish default shell
 
 > https://github.com/franciscolourenco/done
 
-List of fish plugins
+##### List of fish plugins
 
 https://github.com/jorgebucaran/awsm.fish
 
