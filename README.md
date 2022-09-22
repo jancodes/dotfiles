@@ -44,6 +44,10 @@ Make fish default shell
 
 https://github.com/jorgebucaran/awsm.fish
 
+#### Tmux
+
+.tmux.conf must be in ~/ directory | do a symlink (ln -s)
+
 <br>
 
 Packer.nvim

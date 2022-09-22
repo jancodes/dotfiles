@@ -2,13 +2,17 @@ set -g theme_nerd_fonts yes
 
 alias ..="cd .."
 alias g="git"
+alias ta="tmux attach -t" # attach new tmux session
+alias tad="tmux attach -d t" # detach named tmux session
+alias ts="tmux new-session -s" # create new named tmux session
+alias tl="tmux list-sessions" # list sessions
+alias tksv="tmux kill-server" # terminate all sessions
+alias tkss="tmux kill-session -t" # terminate current named session
 
 set -x NODE_ENV development
 set -x EDITOR "nvim"
 set -x CLICOLOR 1
 set -x LSCOLORS "ExFxBxDxCxegedabagacad"
-
-set -Ux fish_tmux_config $HOME/.config/tmux.conf
 
 if [ (uname) = 'Linux' ]
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -38,7 +42,7 @@ function pnvim
 end
 
 function ctmux
-  nvim ~/.config/tmux.conf
+  nvim ~/.config/.tmux.conf
 end
 
 function reload
