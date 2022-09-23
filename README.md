@@ -9,12 +9,12 @@ that traveled the world with me
 </em>
 </p>
 
-> Tools used: Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
+> Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
 ### Setup
 
 1. Clone repo into ~/.config folder
-2. Fix missing packages
+2. Fix missing packages and setup symlinks
 3. ???
 4. Profit
 
