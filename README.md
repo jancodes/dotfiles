@@ -60,6 +60,33 @@ https://github.com/jorgebucaran/awsm.fish
 
 .tmux.conf must be in ~/ directory | do a symlink (ln -s)
 
+#### Live grep related
+
+> source: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+
+`"foo" --iglob` search for foo ignoring ignore files
+
+`"foo" --tts` search for foo only in typescript files
+
+`rg --type-list` get the possible types add `| rg "filter string"` to filter down the results
+
+### Mappings
+
+| Mappings | Action                              |
+| -------- | ----------------------------------- |
+| `<C-k>`  | Quote prompt, e.g. `foo` → `"foo" ` |
+
+### Grep argument examples
+
+(Some examples are ripgrep specific)
+
+| Prompt                   | Args                      | Description                            |
+| ------------------------ | ------------------------- | -------------------------------------- |
+| `foo bar`                | `foo bar`                 | search for „foo bar“                   |
+| `"foo bar" baz`          | `foo bar`, `baz`          | search for „foo bar“ in dir „baz“      |
+| `--no-ignore "foo bar`   | `--no-ignore`, `foo bar`  | search for „foo bar“ ignoring ignores  |
+| `"foo" ../other-project` | `foo`, `../other-project` | search for „foo“ in `../other-project` |
+
 <br>
 
 Packer.nvim

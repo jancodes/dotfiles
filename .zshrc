@@ -1,3 +1,5 @@
+# this needs to be above p10k promot
+export GPG_TTY=$TTY
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,7 +9,6 @@ fi
 
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  export GPG_TTY=$(tty)
   export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 fi
 
