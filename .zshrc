@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-alias ..="cd .."
-alias g="git"
-
-export NODE_ENV="development"
-export EDITOR="nvim"
-
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export GPG_TTY=$(tty)
@@ -121,6 +114,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ..="cd .."
+alias g="git"
+
+export NODE_ENV="development"
+export EDITOR="nvim"
+
 # Functions
 createJSConfig () {
   cp ~/.config/jsconfig.json . 
@@ -132,6 +131,10 @@ config () {
 
 cfish () {
   nvim ~/.config/fish/config.fish
+}
+
+czsh () {
+  nvim  ~/.zshrc
 }
 
 cnvim () {
