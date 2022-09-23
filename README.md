@@ -20,6 +20,18 @@ that traveled the world with me
 
 ### Useful notes and resources
 
+#### Zsh related
+
+Helpful starter setup
+
+> https://github.com/jancodes/zsh_to_fish
+
+###### Zsh Plugins
+
+> https://github.com/agkozak/zsh-z
+
+> https://github.com/romkatv/powerlevel10k
+
 #### Fish related
 
 Make fish default shell
