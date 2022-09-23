@@ -5,12 +5,25 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+alias ..="cd .."
+alias g="git"
+
+export NODE_ENV="development"
+export EDITOR="nvim"
+
+if [[ "$(uname)" = 'Linux' ]] then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  export GPG_TTY=$(tty)
+  export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export GPG_TTY=$(tty)
+export ZSH_TMUX_AUTOSTART=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -78,7 +91,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-z zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+plugins=(tmux zsh-z zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +120,43 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Functions
+createJSConfig () {
+  cp ~/.config/jsconfig.json . 
+}
+
+config () {
+  cd ~/.config
+}
+
+cfish () {
+  nvim ~/.config/fish/config.fish
+}
+
+cnvim () {
+  nvim ~/.config/nvim/init.lua
+}
+
+pnvim () {
+  nvim ~/.config/nvim/lua/plugins/init.lua
+}
+
+ctmux () {
+  nvim ~/.config/.tmux.conf
+}
+
+reload () {
+  source ~/.zshrc
+}
+
+coverage () {
+  open ./test-results/coverage/lcov-report/index.html
+}
+
+clean () {
+  git reset --soft HEAD~$argv[1]
+}
 
 # fnm
 export PATH=$HOME/.fnm:$PATH
