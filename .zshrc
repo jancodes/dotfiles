@@ -117,6 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ..="cd .."
 alias g="git"
+alias tsd="tmux new-session -d -s" # create a new session detach from inside a tmux session
 
 export NODE_ENV="development"
 export EDITOR="nvim"
