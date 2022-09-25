@@ -125,6 +125,12 @@ lspconfig.jsonls.setup({
     end,
   })
 
+lspconfig.tailwindcss.setup{
+    root_dir = lspconfig.util.root_pattern('tailwind.config.js', 'tailwind.config.ts'),
+    flags = { debounce_text_changes = 150 }
+}
+
+-- C# LSP
 local pid = vim.fn.getpid()
 local omnisharp_bin = "/usr/local/bin/omnisharp/run"
 
@@ -132,4 +138,5 @@ lspconfig.omnisharp.setup({
     cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
     on_attach = on_attach
 })
+
 
