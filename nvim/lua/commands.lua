@@ -70,12 +70,12 @@ m.nnoremap("q:", "<Nop>")
 m.nnoremap("Q", "<Nop>")
 
 -- Touch file & Mkdir folder 
-vim.api.nvim_create_user_command('touch', function(opts)
+vim.api.nvim_create_user_command('Touch', function(opts)
     local fileName = string.format('%s', opts.args)
     vim.api.nvim_command(':e %/'..fileName)
 end, { nargs = 1 })
 
-vim.api.nvim_create_user_command('mkdir', function(opts)
+vim.api.nvim_create_user_command('Mkdir', function(opts)
     local folder = string.format('%s', opts.args)
     vim.api.nvim_command('!mkdir %/'..folder)
 end, { nargs = 1 })
