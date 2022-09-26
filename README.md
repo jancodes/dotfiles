@@ -60,6 +60,8 @@ https://github.com/jorgebucaran/awsm.fish
 
 .tmux.conf must be in ~/ directory | do a symlink (ln -s)
 
+`prefix + [ to go into vim copy mode`
+
 #### Live grep related
 
 > source: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
