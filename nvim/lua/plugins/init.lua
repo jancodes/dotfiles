@@ -142,6 +142,7 @@ return packer.startup(function(use)
     })
 
     use("nathom/filetype.nvim")
+    use_with_config("williamboman/mason.nvim", "mason")
 
     if packer_bootstrap then
         require('packer').sync()

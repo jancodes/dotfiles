@@ -11,12 +11,47 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
-### Setup
+### Setup (Last updated 9/28/2022)
+
+<em>one day this will be script once I change jobs enough</em>
 
 1. Clone repo into ~/.config folder
-2. Fix missing packages and setup symlinks
-3. ???
-4. Profit
+2. Install Homebrew (https://brew.sh/)
+3. Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+4. Make zsh the default shell
+   > `command -v zsh | sudo tee -a /etc/shells chsh -s $(which zsh)`
+5. Install Oh My Zsh
+6. Symlink .zshrc
+   > `ln -s ~/.config/.zshrc`
+7. Install Zsh plugins and p10k (check the starter setup link in resources)
+8. Run p10k configure
+9. Install Tmux with homebrew
+10. Symlink .tmux.conf
+11. Install tpm (https://github.com/tmux-plugins/tpm)
+12. Install tmux plugins
+13. Install Fnm https://github.com/Schniz/fnm
+14. Install Node and set default version
+15. Set theme in terminal of choice
+
+    > https://github.com/microsoft/cascadia-code
+
+    > https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
+
+16. Install neovim --head with brew
+17. Install Packer vim then sync
+18. Mason install lsps
+    > (prettier, json-lsp, typescript, tailwindcss, omnisharp, lua, eslint_d, cssls)
+19. (Linux WSL) Install VcXsrv
+
+    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
+
+    > https://installati.one/ubuntu/20.04/xclip/
+
+20. Additional installs:
+
+    > https://github.com/BurntSushi/ripgrep
+
+    > https://github.com/sharkdp/fd
 
 ### Useful notes and resources
 
@@ -31,30 +66,6 @@ Helpful starter setup
 > https://github.com/agkozak/zsh-z
 
 > https://github.com/romkatv/powerlevel10k
-
-#### Fish related
-
-Make fish default shell
-
-> echo /usr/local/bin/fish | sudo tee -a /etc/shells
-
-> chsh -s /usr/local/bin/fish
-
-##### Fish plugins
-
-> https://github.com/jorgebucaran/fisher
-
-> https://github.com/oh-my-fish/theme-bobthefish
-
-> https://github.com/jethrokuan/z
-
-> https://github.com/franciscolourenco/done
-
-> https://github.com/budimanjojo/tmux.fish
-
-##### List of fish plugins
-
-https://github.com/jorgebucaran/awsm.fish
 
 #### Tmux
 
@@ -106,3 +117,13 @@ Fnm (fast nvm replacement)
 Git commit message cli
 
 > https://github.com/commitizen/cz-cli
+
+#### WSL
+
+WSL Optimization
+
+> https://jade.fyi/blog/development-in-wsl/
+
+#### Mac stuff
+
+`Change key repeat for moving faster in vim with hjkl`

@@ -1,7 +1,3 @@
--- Get onedark theme for iterm2
--- Escape+ options key in iterm for mac
--- Change OS key repeat
--- WSL2 init setup - https://jade.fyi/blog/development-in-wsl/
 local au = require('au')
 
 vim.o.tabstop = 2
@@ -31,8 +27,6 @@ vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.o.term = "screen-256color"
-
-vim.cmd'colorscheme onedark'
 
 require("plugins")
 require("lsp")
