@@ -51,6 +51,8 @@ that traveled the world with me
 
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
+    > https://command-not-found.com/xdg-open (wsl only)
+
     > https://github.com/BurntSushi/ripgrep
 
     > https://github.com/sharkdp/fd
