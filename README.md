@@ -15,17 +15,17 @@ that traveled the world with me
 
 <em>one day this will be script once I change jobs enough</em>
 
-1. Clone repo into ~/.config folder
-2. Install Homebrew (https://brew.sh/)
-3. Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
-4. Make zsh the default shell
-   > `command -v zsh | sudo tee -a /etc/shells chsh -s $(which zsh)`
-5. Install Oh My Zsh
-6. Symlink .zshrc
-   > `ln -s ~/.config/.zshrc`
-7. Install Zsh plugins and p10k (check the starter setup link in resources)
-8. Run p10k configure
-9. Install Tmux with homebrew
+1.  Clone repo into ~/.config folder
+2.  Install Homebrew (https://brew.sh/)
+3.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+4.  Make zsh the default shell
+    > `command -v zsh | sudo tee -a /etc/shells chsh -s $(which zsh)`
+5.  Install Oh My Zsh
+6.  Symlink .zshrc
+    > `ln -s ~/.config/.zshrc`
+7.  Install Zsh plugins and p10k (check the starter setup link in resources)
+8.  Run p10k configure
+9.  Install Tmux with homebrew
 10. Symlink .tmux.conf
 11. Install tpm (https://github.com/tmux-plugins/tpm)
 12. Install tmux plugins
@@ -33,9 +33,9 @@ that traveled the world with me
 14. Install Node and set default version
 15. Set theme in terminal of choice
 
-    > https://github.com/microsoft/cascadia-code
+    > https://www.nerdfonts.com/font-downloads (casacadia or firacode mono)
 
-    > https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
+    > windows terminal issues try restarting windows explorer and restart terminal
 
 16. Install neovim --head with brew
 17. Install Packer vim then sync
@@ -48,6 +48,8 @@ that traveled the world with me
     > https://installati.one/ubuntu/20.04/xclip/
 
 20. Additional installs:
+
+    > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
     > https://github.com/BurntSushi/ripgrep
 
