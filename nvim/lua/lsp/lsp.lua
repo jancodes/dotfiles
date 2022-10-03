@@ -67,7 +67,7 @@ lspconfig.tsserver.setup({
         ts_utils.setup({
             enable_import_on_completion = true,
             update_imports_on_move = true,
-            require_confirmation_on_move = true,
+            require_confirmation_on_move = false,
         })
         ts_utils.setup_client(client)
         client.server_capabilities.documentFormattingProvider = false
