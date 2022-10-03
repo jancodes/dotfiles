@@ -1,7 +1,10 @@
 local saga = require("lspsaga")
 
 saga.init_lsp_saga {
-  finder_request_timeout = 5000
+  finder_request_timeout = 5000,
+  symbol_in_winbar = {
+    enable = false
+  }
 }
 
 local opts = { silent = true }

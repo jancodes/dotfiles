@@ -146,7 +146,8 @@ return packer.startup(function(use)
     use({
         "glepnir/lspsaga.nvim",
         -- bug with main where the screen decreases in height
-        branch = "version_2.2",
+        -- branch = "version_2.2",
+        -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
         config = config("lspsaga")
     })
 
