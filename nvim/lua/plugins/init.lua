@@ -143,6 +143,7 @@ return packer.startup(function(use)
 
     use("nathom/filetype.nvim")
     use_with_config("williamboman/mason.nvim", "mason")
+    use_with_config("glepnir/lspsaga.nvim", "lspsaga")
 
     if packer_bootstrap then
         require('packer').sync()
