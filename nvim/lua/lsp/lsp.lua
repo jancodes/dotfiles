@@ -149,12 +149,16 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●'
-  },
-  update_in_insert = true,
-  float = {
-    source = "always", -- Or "if_many"
-  },
-})
+-- replace default lsp symbols
+local function lspSymbol(name, icon)
+  vim.fn.sign_define(
+    'DiagnosticSign' .. name,
+    { text = icon, numhl = 'DiagnosticDefault' .. name }
+  )
+end
+
+lspSymbol('Error', '')
+lspSymbol('Information', '')
+lspSymbol('Hint', '')
+lspSymbol('Info', '')
+lspSymbol('Warn', '')
