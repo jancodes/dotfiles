@@ -1,8 +1,10 @@
 local saga = require("lspsaga")
 
-saga.init_lsp_saga()
+saga.init_lsp_saga {
+  finder_request_timeout = 5000
+}
 
-local opts = { noremap = true, silent = true }
+local opts = { silent = true }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)

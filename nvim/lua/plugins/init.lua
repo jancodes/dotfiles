@@ -143,7 +143,12 @@ return packer.startup(function(use)
 
     use("nathom/filetype.nvim")
     use_with_config("williamboman/mason.nvim", "mason")
-    use_with_config("glepnir/lspsaga.nvim", "lspsaga")
+    use({
+        "glepnir/lspsaga.nvim",
+        -- bug with main where the screen decreases in height
+        branch = "version_2.2",
+        config = config("lspsaga")
+    })
 
     if packer_bootstrap then
         require('packer').sync()
