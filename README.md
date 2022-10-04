@@ -16,14 +16,33 @@ that traveled the world with me
 <em>one day this will be script once I change jobs enough</em>
 
 1.  Clone repo into as ~/.config folder
-2.  Install Homebrew (https://brew.sh/)
-3.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
-4.  Make zsh the default shell
-    > `command -v zsh | sudo tee -a /etc/shells chsh -s $(which zsh)`
-5.  Install Oh My Zsh
-6.  Symlink .zshrc
+    > `git clone git@github.com:jancodes/dotfiles.git ~/.config`
+2.  Install Homebrew
+    > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+3.  Symlink .tmux.conf
+4.  Install Tmux
+    > `brew install tmux`
+5.  Install tpm
+    > `$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+6.  Install tmux plugins
+    > `prefix + I`
+7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+    > `brew install zsh`
+8.  Make zsh the default shell and symlink to `/usr/bin/zsh`
+
+    > `command -v zsh | sudo tee -a /etc/shells`
+
+    > `chsh -s $(which zsh)`
+
+    > `ln -s zshpath /usr/bin/zsh`
+
+9.  Symlink .zshrc
     > `ln -s ~/.config/.zshrc`
-7.  Install Zsh plugins and p10k theme
+10. Install Fnm https://github.com/Schniz/fnm
+11. Install Node and set default version with fnm
+12. Install Oh My Zsh
+    > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+13. Install Zsh plugins below and p10k theme
 
     > https://github.com/jancodes/zsh_to_fish
 
@@ -31,24 +50,26 @@ that traveled the world with me
 
     > https://github.com/romkatv/powerlevel10k
 
-8.  Run p10k configure
-9.  Install Tmux with homebrew
-10. Symlink .tmux.conf
-11. Install tpm (https://github.com/tmux-plugins/tpm)
-12. Install tmux plugins
-13. Install Fnm https://github.com/Schniz/fnm
-14. Install Node and set default version
-15. Set theme in terminal of choice
+14. Run p10k configure
+15. Set theme and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (casacadia or firacode mono)
 
-    > windows terminal issues try restarting windows explorer and restart terminal
+    > For WSL2 font issues, restart windows explorer
 
-16. brew install neovim --HEAD
-17. Install Packer vim then sync
+16. Install Neovim
+
+    > `brew install neovim --HEAD`
+
+17. Install Packer.nvim and `:PackerSync`
+
+    > `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+
 18. Mason install lsps
-    > (prettier, json-lsp, typescript, tailwindcss, omnisharp, lua, eslint_d, cssls)
-19. (Linux WSL) Install VcXsrv
+
+    > (lua, prettier, json-lsp, typescript, tailwindcss, omnisharp , eslint_d, cssls)
+
+19. Install VcXsrv (WSL only)
 
     > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
 
