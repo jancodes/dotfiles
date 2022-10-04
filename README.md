@@ -15,7 +15,7 @@ that traveled the world with me
 
 <em>one day this will be script once I change jobs enough</em>
 
-1.  Clone repo into ~/.config folder
+1.  Clone repo into as ~/.config folder
 2.  Install Homebrew (https://brew.sh/)
 3.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 4.  Make zsh the default shell
@@ -23,7 +23,14 @@ that traveled the world with me
 5.  Install Oh My Zsh
 6.  Symlink .zshrc
     > `ln -s ~/.config/.zshrc`
-7.  Install Zsh plugins and p10k (check the starter setup link in resources)
+7.  Install Zsh plugins and p10k theme
+
+    > https://github.com/jancodes/zsh_to_fish
+
+    > https://github.com/agkozak/zsh-z
+
+    > https://github.com/romkatv/powerlevel10k
+
 8.  Run p10k configure
 9.  Install Tmux with homebrew
 10. Symlink .tmux.conf
@@ -37,7 +44,7 @@ that traveled the world with me
 
     > windows terminal issues try restarting windows explorer and restart terminal
 
-16. Install neovim --head with brew
+16. brew install neovim --HEAD
 17. Install Packer vim then sync
 18. Mason install lsps
     > (prettier, json-lsp, typescript, tailwindcss, omnisharp, lua, eslint_d, cssls)
@@ -59,21 +66,7 @@ that traveled the world with me
 
 ### Useful notes and resources
 
-#### Zsh related
-
-Helpful starter setup
-
-> https://github.com/jancodes/zsh_to_fish
-
-###### Zsh Plugins
-
-> https://github.com/agkozak/zsh-z
-
-> https://github.com/romkatv/powerlevel10k
-
 #### Tmux
-
-.tmux.conf must be in ~/ directory | do a symlink (ln -s)
 
 `prefix + [ to go into vim copy mode`
 
