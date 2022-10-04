@@ -71,11 +71,15 @@ that traveled the world with me
 
 19. Install VcXsrv (WSL only)
 
-    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
+    > https://sourceforge.net/projects/vcxsrv/
 
     > https://installati.one/ubuntu/20.04/xclip/
 
+    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
+
 20. Additional installs:
+
+    > https://github.com/commitizen/cz-cli
 
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
