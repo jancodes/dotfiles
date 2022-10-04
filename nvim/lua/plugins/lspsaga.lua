@@ -2,9 +2,28 @@ local saga = require("lspsaga")
 
 saga.init_lsp_saga {
   finder_request_timeout = 5000,
-  symbol_in_winbar = {
-    enable = false
-  }
+  finder_action_keys = {
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    tabe = "t",
+    quit = "q",
+  },
+  code_action_keys = {
+      quit = "q",
+      exec = "<CR>",
+  },
+  definition_action_keys = {
+    edit = '<C-c>o',
+    vsplit = '<C-c>v',
+    split = '<C-c>i',
+    tabe = '<C-c>t',
+    quit = 'q',
+  },
+  rename_action_quit = "<C-c>",
+    symbol_in_winbar = {
+      enable = false
+    }
 }
 
 local opts = { silent = true }
