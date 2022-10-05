@@ -66,8 +66,8 @@ m.nmap("<leader>st", ":SessionToggle<cr>")
 m.nnoremap("<leader>S", "<cmd>lua require('spectre').open()<CR>")
 
 -- disable q:
-m.nnoremap("q:", "<nop>")
-m.nnoremap("Q", "<nop>")
+m.map("q:", "<Nop>")
+m.map("Q", "<Nop>")
 
 -- Touch file & Mkdir folder 
 vim.api.nvim_create_user_command('Touch', function(opts)
