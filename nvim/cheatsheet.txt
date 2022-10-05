@@ -25,4 +25,4 @@ LSP Hover | K
 LSP Diagnostics Previous | [g
 LSP Diagnostics Next | ]g
 LSP Signature Help | <C-x><C-x>
-
+Create file in Nvim-tree | a

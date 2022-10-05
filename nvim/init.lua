@@ -23,6 +23,9 @@ vim.o.relativenumber = false
 vim.o.timeoutlen = 300
 -- use for toggleterm
 vim.o.hidden = true
+-- disable netrw 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 -- for tmux
 vim.o.termguicolors = true
 vim.o.background = "dark"

@@ -114,7 +114,6 @@ return packer.startup(function(use)
     }
     -- autopairs
     use_with_config("windwp/nvim-autopairs", "autopairs")
-    use_with_config("jancodes/nvim-bufbar", "bufbar")
     use_with_config("folke/which-key.nvim", "whichkey")
     use_with_config("beauwilliams/focus.nvim", "focus")
     use_with_config('ggandor/lightspeed.nvim', 'lightspeed')
@@ -138,7 +137,7 @@ return packer.startup(function(use)
         "jancodes/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-        ft = { "markdown" }, 
+        ft = { "markdown" },
     })
 
     use("nathom/filetype.nvim")
@@ -150,6 +149,8 @@ return packer.startup(function(use)
         -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
         config = config("lspsaga")
     })
+
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons', config = config("bufferline")}
 
     if packer_bootstrap then
         require('packer').sync()
