@@ -7,7 +7,7 @@ saga.init_lsp_saga {
     vsplit = "s",
     split = "i",
     tabe = "t",
-    quit = "q",
+    quit = "<Esc>",
   },
   code_action_keys = {
       quit = "q",
@@ -20,7 +20,7 @@ saga.init_lsp_saga {
     tabe = '<C-c>t',
     quit = 'q',
   },
-  rename_action_quit = "<C-c>",
+  rename_action_quit = "<Esc>",
     symbol_in_winbar = {
       enable = false
     }
