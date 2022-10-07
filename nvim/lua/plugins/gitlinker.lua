@@ -16,7 +16,15 @@ local function get_azure_devops_url(url_data)
   end
 
   url = ('%s?version=GC%s&path=%s'):format(url, url_data.rev, url_data.file)
-  if not url_data.lstart or not url_data.lend then
+  if not url_data.lstart then
+    return url
+  end
+
+  if not url_data.lend then
+    url = ('%s&line=%d&lineStartColumn=1&lineEndColumn=1&lineStyle=plain&_a=contents'):format(
+      url,
+      url_data.lstart
+    )
     return url
   end
 
@@ -40,7 +48,7 @@ require"gitlinker".setup({
     -- callback for what to do with the url
     action_callback = require"gitlinker.actions".copy_to_clipboard,
     -- print the url after performing the action
-    print_url = true,
+    print_url = false,
   },
 -- default mapping to call url generation with action_callback
   mappings = "<leader>gl"
