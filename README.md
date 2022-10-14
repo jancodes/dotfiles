@@ -11,7 +11,7 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
-### Setup (Last updated 9/28/2022)
+### Setup (Last updated 10/13/2022)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -61,25 +61,31 @@ that traveled the world with me
 
     > `brew install neovim --HEAD`
 
-17. Install Packer.nvim and `:PackerSync`
+17. Install Packer.nvim and `:PackerSync` in a nvim session
 
     > `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
 18. Mason install lsps
 
-    > (lua, prettier, json-lsp, typescript, tailwindcss, omnisharp , eslint_d, cssls)
+    > `:Mason` in a nvim session then pick the lsp you want to use
 
-19. Install VcXsrv (WSL only)
+    LSP used in my config: `lua, prettier, json-lsp, typescript, tailwindcss, omnisharp , eslint_d, cssls`
 
-    > https://sourceforge.net/projects/vcxsrv/
+19. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
+
+    Follow Step 2, my config already did Step 3:
+
+    > https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541#2-set-up-vcxsrv-windows-x-server
+
+    Other potential issues:
 
     > https://installati.one/ubuntu/20.04/xclip/
 
-    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard
+    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard (only applicable if you're not using TMUX)
 
 20. Additional installs:
 
-    > https://github.com/commitizen/cz-cli
+    > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 

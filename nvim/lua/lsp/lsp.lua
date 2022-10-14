@@ -6,7 +6,7 @@ local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
 local capabilitiesWithSnippetSupport = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
 capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
-local servers = { 'tsserver', 'omnisharp' }
+local servers = { 'tsserver', 'omnisharp', 'html' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -124,6 +124,7 @@ lspconfig.tailwindcss.setup{
     flags = { debounce_text_changes = 150 }
 }
 
+
 -- C# LSP
 local pid = vim.fn.getpid()
 local omnisharp_bin = "/usr/local/bin/omnisharp/run"
@@ -141,6 +142,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   severity_sort = true,
 }
 )
+
+-- html lsp
+require'lspconfig'.html.setup{}
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
