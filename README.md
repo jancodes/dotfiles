@@ -20,6 +20,7 @@ that traveled the world with me
 2.  Install Homebrew
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 3.  Symlink .tmux.conf
+    > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
 4.  Install Tmux
     > `brew install tmux`
 5.  Install tpm
@@ -50,14 +51,14 @@ that traveled the world with me
 
     > https://github.com/romkatv/powerlevel10k
 
-14. Run p10k configure
+14. Run `p10k configure`
 15. Set theme and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (casacadia or firacode mono)
 
     > For WSL2 font issues, restart windows explorer
 
-16. Install Neovim
+16. Install Neovim (beta version)
 
     > `brew install neovim --HEAD`
 
@@ -129,22 +130,6 @@ that traveled the world with me
 | `"foo" ../other-project` | `foo`, `../other-project` | search for „foo“ in `../other-project` |
 
 <br>
-
-Packer.nvim
-
-> https://github.com/wbthomason/packer.nvim
-
-Nerd Font
-
-> https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
-
-Fnm (fast nvm replacement)
-
-> https://github.com/Schniz/fnm
-
-Git commit message cli
-
-> https://github.com/commitizen/cz-cli
 
 #### WSL
 
