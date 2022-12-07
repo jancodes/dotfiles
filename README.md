@@ -11,7 +11,7 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
-### Setup (Last updated 10/13/2022)
+### Setup (Last updated 12/06/2022)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -82,7 +82,7 @@ that traveled the world with me
 
     > https://installati.one/ubuntu/20.04/xclip/
 
-    > https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard (only applicable if you're not using TMUX)
+    > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
 20. Additional installs:
 
