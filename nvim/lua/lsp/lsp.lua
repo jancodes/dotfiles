@@ -3,8 +3,8 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Setup lspconfig.
 local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
-local capabilities = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
-local capabilitiesWithSnippetSupport = cmp_nvim_lsp.update_capabilities(defaultCapabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
+local capabilitiesWithSnippetSupport = cmp_nvim_lsp.default_capabilities()
 capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
 local servers = { 'tsserver', 'omnisharp', 'html' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }

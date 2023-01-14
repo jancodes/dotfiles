@@ -8,5 +8,8 @@ require 'colorizer'.setup {
     html = {
         mode = 'foreground';
         names = false;
-    }
+    };
+    sh = {
+        mode = 'foreground';
+    };
 }
