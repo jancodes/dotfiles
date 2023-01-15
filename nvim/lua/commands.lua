@@ -1,6 +1,5 @@
 local m = require("mapx")
 
-vim.g.mapleader = " "
 
 -- save on enter in normal mode
 m.nmap("<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", "expr")

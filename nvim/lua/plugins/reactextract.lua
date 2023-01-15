@@ -1,5 +1,10 @@
-local m = require('mapx')
+return {
+  'napmn/react-extract.nvim',
+  config = function()
+    local m = require('mapx')
 
-require('react-extract').setup()
+    require('react-extract').setup()
 
-m.vmap("<Leader>ec", "<cmd>lua require('react-extract').extract_to_new_file()<cr>")
+    m.vmap("<Leader>ec", "<cmd>lua require('react-extract').extract_to_new_file()<cr>")
+  end
+}
