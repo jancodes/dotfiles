@@ -78,3 +78,9 @@ vim.api.nvim_create_user_command('Mkdir', function(opts)
     local folder = string.format('%s', opts.args)
     vim.api.nvim_command('!mkdir %/'..folder)
 end, { nargs = 1 })
+
+-- Format file using built in lsp
+vim.api.nvim_create_user_command('Format', function()
+    vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
+end, { nargs = 0 })
+
