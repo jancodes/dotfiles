@@ -6,7 +6,7 @@ local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.default_capabilities()
 local capabilitiesWithSnippetSupport = cmp_nvim_lsp.default_capabilities()
 capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
-local servers = { 'tsserver', 'omnisharp', 'html' }
+local servers = { 'tsserver', 'html' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -123,16 +123,6 @@ lspconfig.tailwindcss.setup{
     root_dir = lspconfig.util.root_pattern('tailwind.config.js', 'tailwind.config.ts'),
     flags = { debounce_text_changes = 150 }
 }
-
-
--- C# LSP
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/usr/local/bin/omnisharp/run"
-
-lspconfig.omnisharp.setup({
-    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
-    on_attach = on_attach
-})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
