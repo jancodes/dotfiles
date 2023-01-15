@@ -31,6 +31,7 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.o.term = "screen-256color"
 vim.g.mapleader = " "
+vim.g.localleader = "\\"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
