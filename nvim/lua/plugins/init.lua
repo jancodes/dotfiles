@@ -63,4 +63,5 @@ return {
     },
 
     "nathom/filetype.nvim",
+    'Issafalcon/lsp-overloads.nvim'
 }
