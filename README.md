@@ -11,7 +11,7 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
-### Setup (Last updated 12/06/2022)
+### Setup (Last updated 01/15/2023)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -60,19 +60,19 @@ that traveled the world with me
 
 16. Install Neovim (beta version)
 
-    > `brew install neovim --HEAD`
+    > `brew install neovim --fetch-head`
 
-17. Install Packer.nvim and `:PackerSync` in a nvim session
-
-    > `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-
-18. Mason install lsps
+17. Mason install lsps
 
     > `:Mason` in a nvim session then pick the lsp you want to use
 
-    LSP used in my config: `lua, prettier, json-lsp, typescript, tailwindcss, omnisharp , eslint_d, cssls`
+    LSP used in my config: `lua, prettier, json-lsp, typescript, tailwindcss , eslint_d, cssls`
 
-19. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
+    Note: lua, json, typescript, tailwindcss, cssls is installed by default with setup with Mason
+
+    There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
+
+18. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
@@ -84,7 +84,7 @@ that traveled the world with me
 
     > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
-20. Additional installs:
+19. Additional installs:
 
     > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
