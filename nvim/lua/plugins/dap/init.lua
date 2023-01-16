@@ -25,7 +25,7 @@ return {
     -- it, so I forked it and added it back myself. The debugger requires a
     -- special adapter, seen in /lua/plugins/dap/adapters.lua
     mason_dap.setup({
-      ensure_installed = { "delve", "node2", "js" }
+      ensure_installed = { "node2", "js" }
     })
 
     -- ╭──────────────────────────────────────────────────────────╮
