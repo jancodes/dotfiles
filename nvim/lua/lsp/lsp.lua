@@ -41,6 +41,12 @@ local on_attach = function(client, bufnr)
     buf_map(bufnr, "n", "[g", ":LspDiagPrev<CR>")
     buf_map(bufnr, "n", "]g", ":LspDiagNext<CR>")
     buf_map(bufnr, "n", "ga", ":LspCodeAction<CR>")
+    buf_map(bufnr, "n", "gd", ":LspDef<CR>")
+    buf_map(bufnr, "n", "gr", ":LspRefs<CR>")
+    buf_map(bufnr, "n", "<Leader>rn", ":LspRename<CR>")
+    buf_map(bufnr, "n", "K", ":LspHover<CR>")
+    buf_map(bufnr, "i", "<C-k>", "<cmd> LspSignatureHelp<CR>")
+    buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     if client.server_capabilities.documentFormattingProvider then
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
     end
