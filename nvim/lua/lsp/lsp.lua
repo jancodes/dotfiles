@@ -68,12 +68,18 @@ local on_attach = function(client, bufnr)
 end
 
 lspconfig.tsserver.setup({
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        }
+    },
     on_attach = function(client, bufnr)
         local ts_utils = require("nvim-lsp-ts-utils")
         ts_utils.setup({
             enable_import_on_completion = true,
             update_imports_on_move = true,
             require_confirmation_on_move = false,
+            -- filter_out_diagnostics_by_code = { 80001 },
         })
         ts_utils.setup_client(client)
         client.server_capabilities.documentFormattingProvider = false

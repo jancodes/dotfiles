@@ -1,3 +1,6 @@
+if [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s workspace
+fi
 # this needs to be above p10k promot
 export GPG_TTY=$TTY
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
