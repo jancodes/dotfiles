@@ -64,7 +64,7 @@ au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
   end
 })
 
-vim.cmd('autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc')
-vim.cmd('autocmd BufNewFile,BufRead .eslintrc.json setlocal filetype=jsonc')
-
-
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "tsconfig.json, .eslintrc.json",
+  command = "setlocal filetype=jsonc",
+})
