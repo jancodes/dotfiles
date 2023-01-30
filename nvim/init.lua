@@ -63,3 +63,8 @@ au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
     vim.o.relativenumber = false
   end
 })
+
+vim.cmd('autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc')
+vim.cmd('autocmd BufNewFile,BufRead .eslintrc.json setlocal filetype=jsonc')
+
+
