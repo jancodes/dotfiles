@@ -66,9 +66,9 @@ that traveled the world with me
 
     > `:Mason` in a nvim session then pick the lsp you want to use
 
-    LSP used in my config: `lua, prettier, json-lsp, typescript, tailwindcss , eslint_d, cssls`
+    LSP used in my config: `lua, prettierd, json-lsp, typescript, tailwindcss , eslint_d, cssls`
 
-    Note: lua, json, typescript, tailwindcss, cssls is installed by default with setup with Mason
+    Note: lua, json, typescript, tailwindcss, cssls is installed by default with setup with Mason lspconfig
 
     There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
 

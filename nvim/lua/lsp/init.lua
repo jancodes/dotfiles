@@ -14,10 +14,10 @@ local servers = {
   "tsserver",
   "jsonls",
   "cssls",
+  -- not all servers here since mason lspconfig does not support all
 }
 
 mason_lspconfig.setup({ ensure_installed = servers, automatic_installation = true })
 
 require('lsp/lsp')
 require('lsp/lua')
-

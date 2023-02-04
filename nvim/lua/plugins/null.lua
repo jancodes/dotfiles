@@ -23,11 +23,11 @@ return {
                 function()
                     local utils = require("null-ls.utils").make_conditional_utils()
 
-                    local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+                    local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json") or utils.root_has_file(".eslintrc.cjs")
 
                     if has_eslint then
                         -- returns a prettier that only affects those file types
-                        return formatter.prettier.with({
+                        return formatter.prettierd.with({
                             filetypes = {
                                 "css",
                                 "html",
@@ -41,7 +41,7 @@ return {
                             },
                         })
                     else
-                        return formatter.prettier.with({
+                        return formatter.prettierd.with({
                             filetypes = {
                                 "css",
                                 "html",
