@@ -84,3 +84,34 @@ vim.api.nvim_create_user_command('Format', function()
     vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
 end, { nargs = 0 })
 
+
+local keymap = vim.keymap.set
+
+keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
+keymap("n", "grp", "<cmd>Lspsaga rename ++project<CR>")
+-- keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+
+keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
+keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+
+keymap("n", "[g", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+keymap("n", "]g", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+-- Diagnostic jump with filters such as only jumping to an error
+keymap("n", "[G", function()
+  require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end)
+keymap("n", "]G", function()
+  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+end)
+
+-- Toggle outline
+keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+-- Call hierarchy
+keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")

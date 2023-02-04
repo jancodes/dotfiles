@@ -4,7 +4,7 @@ return {
         require("focus").setup({
             autoresize = false,
             excluded_filetypes = {
-                -- "toggleterm",
+                "toggleterm",
                 "dirvish",
                 "fugitive",
                 "packer",

@@ -2,7 +2,6 @@ local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Setup lspconfig.
-local defaultCapabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.default_capabilities()
 local capabilitiesWithSnippetSupport = cmp_nvim_lsp.default_capabilities()
 capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSupport = true
@@ -37,16 +36,6 @@ local on_attach = function(client, bufnr)
     vim.cmd("command! LspDiagNext lua vim.diagnostic.goto_next()")
     vim.cmd("command! LspDiagLine lua vim.diagnostic.open_float()")
     vim.cmd("command! LspSignatureHelp lua vim.lsp.buf.signature_help()")
-    buf_map(bufnr, "n", "gy", ":LspTypeDef<CR>")
-    buf_map(bufnr, "n", "[g", ":LspDiagPrev<CR>")
-    buf_map(bufnr, "n", "]g", ":LspDiagNext<CR>")
-    buf_map(bufnr, "n", "ga", ":LspCodeAction<CR>")
-    buf_map(bufnr, "n", "gd", ":LspDef<CR>")
-    buf_map(bufnr, "n", "gr", ":LspRefs<CR>")
-    buf_map(bufnr, "n", "<Leader>rn", ":LspRename<CR>")
-    buf_map(bufnr, "n", "K", ":LspHover<CR>")
-    buf_map(bufnr, "i", "<C-k>", "<cmd> LspSignatureHelp<CR>")
-    buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     if client.server_capabilities.documentFormattingProvider then
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
     end
