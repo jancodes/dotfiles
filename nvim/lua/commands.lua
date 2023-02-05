@@ -88,7 +88,7 @@ end, { nargs = 0 })
 local keymap = vim.keymap.set
 
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({"n","v"}, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 keymap("n", "grp", "<cmd>Lspsaga rename ++project<CR>")
 -- keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
