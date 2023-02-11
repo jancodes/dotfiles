@@ -11,6 +11,8 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
+> Currently configs does not work with Warp
+
 ### Setup (Last updated 02/10/2023)
 
 <em>one day this will be script once I change jobs enough</em>
@@ -29,7 +31,7 @@ that traveled the world with me
     > `prefix + I`
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-8.  Make zsh the default shell and symlink to `/usr/bin/zsh` For mac, it is `/usr/local/bin/zsh`
+8.  Make zsh the default shell and symlink to `/usr/bin/zsh` For MAC, replace with `/usr/local/bin/zsh`
 
     > `command -v zsh | sudo tee -a /etc/shells`
 
@@ -97,9 +99,11 @@ that traveled the world with me
     > https://github.com/BurntSushi/ripgrep
 
     > https://github.com/sharkdp/fd
-    
-    > make and gcc for fzf plugin
 
+    > https://formulae.brew.sh/formula/make
+
+    > https://formulae.brew.sh/formula/gcc
+    
 ### Useful notes and resources
 
 #### Tmux
