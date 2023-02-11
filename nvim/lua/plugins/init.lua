@@ -24,7 +24,7 @@ return {
     -- no config vim plugins
     "mbbill/undotree",
     "tpope/vim-fugitive",
-    "justinmk/vim-dirvish",
+    -- "justinmk/vim-dirvish",
     "tpope/vim-eunuch",
     "stefandtw/quickfix-reflector.vim",
     "tpope/vim-commentary",
