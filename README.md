@@ -11,7 +11,7 @@ that traveled the world with me
 
 > Tools used: Zsh or Fish shell, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
 
-### Setup (Last updated 01/15/2023)
+### Setup (Last updated 02/10/2023)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -29,7 +29,7 @@ that traveled the world with me
     > `prefix + I`
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-8.  Make zsh the default shell and symlink to `/usr/bin/zsh`
+8.  Make zsh the default shell and symlink to `/usr/bin/zsh` For mac, it is `/usr/local/bin/zsh`
 
     > `command -v zsh | sudo tee -a /etc/shells`
 
@@ -91,10 +91,14 @@ that traveled the world with me
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
     > https://command-not-found.com/xdg-open (wsl only)
+    
+    > https://formulae.brew.sh/formula/gnu-sed
 
     > https://github.com/BurntSushi/ripgrep
 
     > https://github.com/sharkdp/fd
+    
+    > make and gcc for fzf plugin
 
 ### Useful notes and resources
 
