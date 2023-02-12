@@ -9,7 +9,7 @@ if not (mason_status_ok and mason_lspconfig_ok) then
 end
 
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "tailwindcss",
   "tsserver",
   "jsonls",
