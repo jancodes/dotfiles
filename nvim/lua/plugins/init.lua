@@ -62,6 +62,7 @@ return {
         ft = { "markdown" },
     },
 
-    "nathom/filetype.nvim",
+    -- plugin have issues with Oil.nvim when repo has Make files
+    -- "nathom/filetype.nvim",
     'Issafalcon/lsp-overloads.nvim'
 }
