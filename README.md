@@ -37,7 +37,7 @@ that traveled the world with me
 
     > `chsh -s $(which zsh)`
 
-    > `ln -s zshpath /usr/bin/zsh`
+    > `ln -s zshpath /usr/bin/zsh ~/.zshrc`
 
 9.  Symlink .zshrc
     > `ln -s ~/.config/.zshrc`
