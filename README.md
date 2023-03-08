@@ -29,6 +29,9 @@ that traveled the world with me
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 6.  Install tmux plugins
     > `prefix + I` Mac uses ctrl b and WSL uses alt b.
+    
+    TODO if you see extra keys being typed while in tmux for mac, check below link to install the missing colors
+    > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
 8.  Make zsh the default shell and symlink to `/usr/bin/zsh` Note: this could be a different path check where zsh is installed
