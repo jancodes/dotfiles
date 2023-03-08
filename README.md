@@ -59,7 +59,7 @@ that traveled the world with me
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
 14. Run `p10k configure`
-15. Set theme and fonts in terminal of choice
+15. Set theme and fonts in terminal of choice (move before powerline install)
 
     > https://www.nerdfonts.com/font-downloads (casacadia or firacode mono)
 
