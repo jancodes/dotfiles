@@ -61,7 +61,7 @@ that traveled the world with me
 14. Run `p10k configure`
 15. Set theme and fonts in terminal of choice (move before powerline install)
 
-    > https://www.nerdfonts.com/font-downloads (casacadia or firacode mono)
+    > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
     > For WSL2 font issues, restart windows explorer
 
