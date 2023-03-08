@@ -13,7 +13,7 @@ that traveled the world with me
 
 > Currently configs does not work with Warp
 
-### Setup (Last updated 02/10/2023)
+### Setup (Last updated 03/08/2023)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -21,7 +21,7 @@ that traveled the world with me
     > `git clone git@github.com:jancodes/dotfiles.git ~/.config`
 2.  Install Homebrew
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-3.  Symlink .tmux.conf
+3.  Symlink .tmux.conf TODO move after zsh install
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
 4.  Install Tmux
     > `brew install tmux`
@@ -59,7 +59,7 @@ that traveled the world with me
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
 14. Run `p10k configure`
-15. Set theme and fonts in terminal of choice (move before powerline install)
+15. Set theme and fonts in terminal of choice (TODO move before powerline install)
 
     > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
