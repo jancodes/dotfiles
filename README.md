@@ -21,58 +21,56 @@ that traveled the world with me
     > `git clone git@github.com:jancodes/dotfiles.git ~/.config`
 2.  Install Homebrew
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-3.  Symlink .tmux.conf TODO move after zsh install
-    > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
-4.  Install Tmux
-    > `brew install tmux`
-5.  Install tpm
-    > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-6.  Install tmux plugins
-    > `prefix + I` Mac uses ctrl b and WSL uses alt b.
-    
-    TODO if you see extra keys being typed while in tmux for mac, check below link to install the missing colors
-    > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
-7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+3.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-8.  Make zsh the default shell and symlink to `/usr/bin/zsh` Note: this could be a different path check where zsh is installed
-
-    > `command -v zsh | sudo tee -a /etc/shells`
+4.  Make zsh the default shell
 
     > `chsh -s $(which zsh)`
 
-    > `ln -s zshpath /usr/bin/zsh ~/.zshrc`
-
-9.  Symlink .zshrc
-    > `ln -s ~/.config/.zshrc`
-10. Install Fnm https://github.com/Schniz/fnm
+5.  Symlink .zshrc
+    > `ln -s ~/.config/.zshrc ~/.zshrc`
+6.  Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
-12. Install Node and set default version with fnm
-    > `fnm install nodeversion`
-    > `fnm alias default nodeversion`
-14. Install Oh My Zsh
+7.  Install Node and set default version with fnm
+    > `fnm install nodeversion` > `fnm alias default nodeversion`
+8.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-15. Install Zsh plugins below and p10k theme
+9.  Install Zsh plugins below
 
     > https://github.com/jancodes/zsh_to_fish
 
-    > https://github.com/agkozak/zsh-z
-    > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
+    > https://github.com/agkozak/zsh-z > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
 
-    > https://github.com/romkatv/powerlevel10k
-    > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-
-14. Run `p10k configure`
-15. Set theme and fonts in terminal of choice (TODO move before powerline install)
+10. Set theme and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
     > For WSL2 font issues, restart windows explorer
 
-16. Install Neovim (beta version)
+11. Install powerline theme
+
+    > https://github.com/romkatv/powerlevel10k > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+
+12. Run `p10k configure`
+13. Symlink .tmux.conf
+    > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
+14. Install Tmux
+    > `brew install tmux`
+15. Install tpm
+    > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+16. Install tmux plugins
+
+    > `prefix + I` Mac uses ctrl b and WSL uses alt b.
+
+    If you see extra keys being typed while in tmux for mac, check below link to install the missing colors
+
+    > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
+
+17. Install Neovim (beta version)
 
     > `brew install neovim --fetch-head`
 
-17. Mason install lsps
+18. Mason install lsps
 
     > `:Mason` in a nvim session then pick the lsp you want to use
 
@@ -82,7 +80,7 @@ that traveled the world with me
 
     There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
 
-18. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
+19. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
@@ -94,14 +92,14 @@ that traveled the world with me
 
     > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
-19. Additional installs:
+20. Additional installs:
 
     > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
     > https://command-not-found.com/xdg-open (wsl only)
-    
+
     > https://formulae.brew.sh/formula/gnu-sed
 
     > https://github.com/BurntSushi/ripgrep
@@ -111,7 +109,7 @@ that traveled the world with me
     > https://formulae.brew.sh/formula/make
 
     > https://formulae.brew.sh/formula/gcc
-    
+
 ### Useful notes and resources
 
 #### Tmux
