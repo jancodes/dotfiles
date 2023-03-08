@@ -28,7 +28,7 @@ that traveled the world with me
 5.  Install tpm
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 6.  Install tmux plugins
-    > `prefix + I`
+    > `prefix + I` If your prefix key uses alt, you might need to disable the option key for Mac.
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
 8.  Make zsh the default shell and symlink to `/usr/bin/zsh` Note: this could be a different path check where zsh is installed
