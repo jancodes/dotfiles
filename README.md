@@ -44,9 +44,11 @@ that traveled the world with me
 10. Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
 12. Install Node and set default version with fnm
-13. Install Oh My Zsh
+    > `fnm install nodeversion`
+    > `fnm alias default nodeversion`
+14. Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-14. Install Zsh plugins below and p10k theme
+15. Install Zsh plugins below and p10k theme
 
     > https://github.com/jancodes/zsh_to_fish
 
