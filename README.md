@@ -17,7 +17,7 @@ that traveled the world with me
 
 <em>one day this will be script once I change jobs enough</em>
 
-1.  Clone repo into as ~/.config folder
+1.  Clone repo into as ~/.config folder. If your computer is not new, there might be a config folder already. You can move the files into config or delete your config folder if there is nothing important.
     > `git clone git@github.com:jancodes/dotfiles.git ~/.config`
 2.  Install Homebrew
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
@@ -26,7 +26,7 @@ that traveled the world with me
 4.  Install Tmux
     > `brew install tmux`
 5.  Install tpm
-    > `$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+    > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 6.  Install tmux plugins
     > `prefix + I`
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
