@@ -31,7 +31,7 @@ that traveled the world with me
     > `prefix + I`
 7.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-8.  Make zsh the default shell and symlink to `/usr/bin/zsh` For MAC, replace with `/usr/local/bin/zsh`
+8.  Make zsh the default shell and symlink to `/usr/bin/zsh` Note: this could be a different path check where zsh is installed
 
     > `command -v zsh | sudo tee -a /etc/shells`
 
@@ -42,10 +42,11 @@ that traveled the world with me
 9.  Symlink .zshrc
     > `ln -s ~/.config/.zshrc`
 10. Install Fnm https://github.com/Schniz/fnm
-11. Install Node and set default version with fnm
-12. Install Oh My Zsh
+    > `brew install fnm`
+12. Install Node and set default version with fnm
+13. Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-13. Install Zsh plugins below and p10k theme
+14. Install Zsh plugins below and p10k theme
 
     > https://github.com/jancodes/zsh_to_fish
 
