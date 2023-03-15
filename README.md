@@ -71,7 +71,7 @@ that traveled the world with me
 
     > `brew install neovim --fetch-head`
     
- TODO: brew install gcc and make to before installing neovim plugins
+ TODO: brew install gcc and make to before installing neovim plugins TODO: add brew install for everything in one command
 
 18. Mason install lsps
 
