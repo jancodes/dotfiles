@@ -48,7 +48,7 @@ that traveled the world with me
 
     > For WSL2 font issues, restart windows explorer
 
-11. Install powerline theme
+11. Install powerline theme TODO move before setting up .zshrc
 
     > https://github.com/romkatv/powerlevel10k > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
