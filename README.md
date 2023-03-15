@@ -61,7 +61,7 @@ that traveled the world with me
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 16. Install tmux plugins
 
-    > `prefix + I` Mac uses ctrl b and WSL uses alt b.
+    > `prefix + I` Mac uses ctrl and Windows/WSL uses alt. Example: Ctrl A is the prefix combo for Mac.
 
     If you see extra keys being typed while in tmux for mac, check below link to install the missing colors
 
