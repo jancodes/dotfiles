@@ -27,7 +27,7 @@ that traveled the world with me
 
     > `chsh -s $(which zsh)`
 
-5.  Symlink .zshrc
+5.  Symlink .zshrc TODO: move after zsh install and rm -rf default one
     > `ln -s ~/.config/.zshrc ~/.zshrc`
 6.  Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
@@ -39,7 +39,8 @@ that traveled the world with me
 
     > https://github.com/jancodes/zsh_to_fish
 
-    > https://github.com/agkozak/zsh-z > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
+    > https://github.com/agkozak/zsh-z 
+    > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
 
 10. Set theme and fonts in terminal of choice
 
