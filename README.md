@@ -70,6 +70,8 @@ that traveled the world with me
 17. Install Neovim (beta version)
 
     > `brew install neovim --fetch-head`
+    
+ TODO: brew install gcc and make to before installing neovim plugins
 
 18. Mason install lsps
 
