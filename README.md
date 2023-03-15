@@ -53,7 +53,7 @@ that traveled the world with me
     > https://github.com/romkatv/powerlevel10k > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
 12. Run `p10k configure`
-13. Symlink .tmux.conf
+13. Symlink .tmux.conf TODO: add remove and not in right order
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
 14. Install Tmux
     > `brew install tmux`
