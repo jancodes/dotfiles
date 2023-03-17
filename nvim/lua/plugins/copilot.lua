@@ -9,8 +9,6 @@ return {
         auto_trigger = true,
         keymap = {
           accept = false,
-          -- accept_word = false,
-          -- accept_line = false,
           next = "<M-]>",
           prev = "<M-[>",
           dismiss = "<C-]>",
