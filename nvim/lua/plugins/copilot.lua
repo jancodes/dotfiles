@@ -1,24 +1,21 @@
 return {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
-  event = "InsertEnter",
+  event = "VimEnter",
   config = function()
     require("copilot").setup({
-      panel = {
+      suggestion = {
         enabled = true,
-        auto_refresh = false,
+        auto_trigger = true,
         keymap = {
-          jump_prev = "[[",
-          jump_next = "]]",
-          accept = "<CR>",
-          refresh = "cpr",
-          open = "<M-CR>"
-        },
-        layout = {
-          position = "bottom", -- | top | left | right
-          ratio = 0.4
-        },
-      },
+          accept = false,
+          -- accept_word = false,
+          -- accept_line = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        }
+      }
     })
   end,
 }
