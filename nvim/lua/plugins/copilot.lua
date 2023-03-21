@@ -13,6 +13,10 @@ return {
           prev = "<M-[>",
           dismiss = "<C-]>",
         }
+      },
+      filetypes = {
+        yaml = true,
+        markdown = true
       }
     })
   end,

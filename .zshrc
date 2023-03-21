@@ -180,3 +180,9 @@ export PATH="/home/jan/.fnm:$PATH"
 eval "`fnm env`"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+eval "$(rbenv init - zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$VOLTA_HOME/bin:$PATH"
