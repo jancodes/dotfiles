@@ -9,7 +9,6 @@ return {
         end,
     },
     -- no config nvim plugins
-    "lukas-reineke/indent-blankline.nvim",
     "David-Kunz/jester",
     "sudormrfbin/cheatsheet.nvim",
     -- brew install gnu-sed for spectre
@@ -24,7 +23,6 @@ return {
     -- no config vim plugins
     "mbbill/undotree",
     "tpope/vim-fugitive",
-    -- "justinmk/vim-dirvish",
     "tpope/vim-eunuch",
     "stefandtw/quickfix-reflector.vim",
     "tpope/vim-commentary",
