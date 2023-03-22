@@ -72,7 +72,7 @@ that traveled the world with me
     > `brew install neovim --fetch-head`
 18. Install Neovim plugins dep
 
-    > `brew install gcc make gnu-sed ripgrep fd`
+    > `brew install gcc make gnu-sed ripgrep fd fzf`
     
 19. Mason install lsps
 
