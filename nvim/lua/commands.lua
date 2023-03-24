@@ -16,13 +16,6 @@ m.xnoremap ("p", 'p:let @+=@0<CR>:let @"=@0<CR>', "silent")
 -- remove J mapping
 m.map("J","<Nop>")
 
--- navigation remapping leader + h same as ctrl w h
--- using focus.nvim instead now
--- m.nmap ("<leader>h", ":wincmd h<CR>")
--- m.nmap ("<leader>j", ":wincmd j<CR>")
--- m.nmap ("<leader>k", ":wincmd k<CR>")
--- m.nmap ("<leader>l", ":wincmd l<CR>")
-
 -- buffers
 m.nmap("[b", ":bprevious<CR>", "silent")
 m.nmap("]b", ":bnext<CR>", "silent")
@@ -87,12 +80,12 @@ end, { nargs = 0 })
 
 local keymap = vim.keymap.set
 
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
 keymap({"n","v"}, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 keymap("n", "grp", "<cmd>Lspsaga rename ++project<CR>")
--- keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+-- <C-t> to go back to previous
+keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
 
 keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
