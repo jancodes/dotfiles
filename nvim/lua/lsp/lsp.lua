@@ -24,6 +24,8 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
     })
 end
 local on_attach = function(client, bufnr)
+    local lsp_format_modifications = require "lsp-format-modifications"
+    lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
     --- Guard against servers without the signatureHelper capability
     if client.server_capabilities.signatureHelpProvider then
         require('lsp-overloads').setup(client, {
@@ -110,11 +112,11 @@ lspconfig.jsonls.setup({
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "●" },
-    severity_sort = true,
-}
+        underline = true,
+        update_in_insert = false,
+        virtual_text = { spacing = 4, prefix = "●" },
+        severity_sort = true,
+    }
 )
 
 -- html lsp
