@@ -26,9 +26,9 @@ return {
                     local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json") or
                         utils.root_has_file(".eslintrc.cjs") or utils.root_has_file(".eslintrc")
 
-                    if false then
+                    if has_eslint then
                         -- returns a prettier that only affects those file types
-                        return formatter.prettierd.with({
+                        return formatter.prettier.with({
                             filetypes = {
                                 "css",
                                 "html",
@@ -42,7 +42,7 @@ return {
                             },
                         })
                     else
-                        return formatter.prettierd.with({
+                        return formatter.prettier.with({
                             filetypes = {
                                 "css",
                                 "html",

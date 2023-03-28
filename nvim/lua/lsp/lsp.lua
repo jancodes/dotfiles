@@ -24,8 +24,10 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
     })
 end
 local on_attach = function(client, bufnr)
-    local lsp_format_modifications = require "lsp-format-modifications"
-    lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+    if client.server_capabilities.signatureHelpProvider then
+        local lsp_format_modifications = require "lsp-format-modifications"
+        lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+    end
     --- Guard against servers without the signatureHelper capability
     if client.server_capabilities.signatureHelpProvider then
         require('lsp-overloads').setup(client, {
