@@ -64,7 +64,7 @@ return {
             },
             on_attach = function(client, bufnr)
                 local lsp_format_modifications = require "lsp-format-modifications"
-                lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
+                lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
             end
             -- on_attach = function(client, bufnr)
             --     if client.supports_method("textDocument/formatting") then
