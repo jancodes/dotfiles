@@ -23,7 +23,8 @@ return {
                 function()
                     local utils = require("null-ls.utils").make_conditional_utils()
 
-                    local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json") or utils.root_has_file(".eslintrc.cjs") or utils.root_has_file(".eslintrc")
+                    local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json") or
+                        utils.root_has_file(".eslintrc.cjs") or utils.root_has_file(".eslintrc")
 
                     if false then
                         -- returns a prettier that only affects those file types
@@ -62,22 +63,26 @@ return {
                 end
             },
             on_attach = function(client, bufnr)
-                if client.supports_method("textDocument/formatting") then
-                    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr, })
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        group = augroup,
-                        buffer = bufnr,
-                        callback = function()
-                            vim.lsp.buf.format({
-                                bufnr = bufnr,
-                                filter = function(client)
-                                    return client.name == 'null-ls'
-                                end
-                        })
-                        end,
-                    })
-                end
-            end,
+                local lsp_format_modifications = require "lsp-format-modifications"
+                lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
+            end
+            -- on_attach = function(client, bufnr)
+            --     if client.supports_method("textDocument/formatting") then
+            --         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr, })
+            --         vim.api.nvim_create_autocmd("BufWritePre", {
+            --             group = augroup,
+            --             buffer = bufnr,
+            --             callback = function()
+            --                 vim.lsp.buf.format({
+            --                     bufnr = bufnr,
+            --                     filter = function(client)
+            --                         return client.name == 'null-ls'
+            --                     end
+            --             })
+            --             end,
+            --         })
+            --     end
+            -- end,
         })
     end
 }

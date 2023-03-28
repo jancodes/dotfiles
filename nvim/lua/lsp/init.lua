@@ -10,7 +10,6 @@ end
 
 local servers = {
   "lua_ls",
-  "tailwindcss",
   "tsserver",
   "jsonls",
   "cssls",

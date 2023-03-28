@@ -8,14 +8,14 @@ capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSup
 local servers = { 'tsserver', 'html' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    capabilities = capabilities,
-}
+    lspconfig[lsp].setup {
+        capabilities = capabilities,
+    }
 end
 for _, lsp in ipairs(serversWithSnippetSupport) do
-  lspconfig[lsp].setup {
-    capabilities = capabilitiesWithSnippetSupport,
-}
+    lspconfig[lsp].setup {
+        capabilities = capabilitiesWithSnippetSupport,
+    }
 end
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
@@ -24,33 +24,18 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
     })
 end
 local on_attach = function(client, bufnr)
-    vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
-    vim.cmd("command! LspFormatting lua vim.lsp.buf.format()")
-    vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
-    vim.cmd("command! LspHover lua vim.lsp.buf.hover()")
-    vim.cmd("command! LspRename lua vim.lsp.buf.rename()")
-    vim.cmd("command! LspRefs lua vim.lsp.buf.references()")
-    vim.cmd("command! LspTypeDef lua vim.lsp.buf.type_definition()")
-    vim.cmd("command! LspImplementation lua vim.lsp.buf.implementation()")
-    vim.cmd("command! LspDiagPrev lua vim.diagnostic.goto_prev()")
-    vim.cmd("command! LspDiagNext lua vim.diagnostic.goto_next()")
-    vim.cmd("command! LspDiagLine lua vim.diagnostic.open_float()")
-    vim.cmd("command! LspSignatureHelp lua vim.lsp.buf.signature_help()")
-    if client.server_capabilities.documentFormattingProvider then
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-    end
     --- Guard against servers without the signatureHelper capability
     if client.server_capabilities.signatureHelpProvider then
         require('lsp-overloads').setup(client, {
             ui = {
-              -- The border to use for the signature popup window. Accepts same border values as |nvim_open_win()|.
-              border = "single"
+                -- The border to use for the signature popup window. Accepts same border values as |nvim_open_win()|.
+                border = "single"
             },
             keymaps = {
-              next_signature = "<C-j>",
-              previous_signature = "<C-k>",
-              next_parameter = "<C-l>",
-              previous_parameter = "<C-h>",
+                next_signature = "<C-j>",
+                previous_signature = "<C-k>",
+                next_parameter = "<C-l>",
+                previous_parameter = "<C-h>",
             },
         })
     end
@@ -71,16 +56,14 @@ lspconfig.tsserver.setup({
             filter_out_diagnostics_by_code = { 80001 },
         })
         ts_utils.setup_client(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
         buf_map(bufnr, "n", "grf", ":TSLspRenameFile<CR>")
         buf_map(bufnr, "n", "gi", ":TSLspImportCurrent<CR>")
         on_attach(client, bufnr)
     end,
-  -- for lsp-inlayhints
+    -- for lsp-inlayhints
     settings = {
         typescript = {
-          inlayHints = {
+            inlayHints = {
                 includeInlayParameterNameHints = 'all',
                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
                 includeInlayFunctionParameterTypeHints = true,
@@ -91,7 +74,7 @@ lspconfig.tsserver.setup({
             }
         },
         javascript = {
-          inlayHints = {
+            inlayHints = {
                 includeInlayParameterNameHints = 'all',
                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
                 includeInlayFunctionParameterTypeHints = true,
@@ -110,7 +93,7 @@ lspconfig.cssls.setup({
         client.server_capabilities.documentRangeFormattingProvider = false
         on_attach(client, bufnr)
     end,
-  })
+})
 
 lspconfig.jsonls.setup({
     on_attach = function(client, bufnr)
@@ -118,38 +101,38 @@ lspconfig.jsonls.setup({
         client.server_capabilities.documentRangeFormattingProvider = false
         on_attach(client, bufnr)
     end,
-  })
+})
 
-lspconfig.tailwindcss.setup{
-    root_dir = lspconfig.util.root_pattern('tailwind.config.js', 'tailwind.config.ts'),
-    flags = { debounce_text_changes = 150 }
-}
+-- lspconfig.tailwindcss.setup {
+--     root_dir = lspconfig.util.root_pattern('tailwind.config.js', 'tailwind.config.ts'),
+--     flags = { debounce_text_changes = 150 }
+-- }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-  underline = true,
-  update_in_insert = false,
-  virtual_text = { spacing = 4, prefix = "●" },
-  severity_sort = true,
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    update_in_insert = false,
+    virtual_text = { spacing = 4, prefix = "●" },
+    severity_sort = true,
 }
 )
 
 -- html lsp
-require'lspconfig'.html.setup{}
+require 'lspconfig'.html.setup {}
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
 -- replace default lsp symbols
 local function lspSymbol(name, icon)
-  vim.fn.sign_define(
-    'DiagnosticSign' .. name,
-    { text = icon, numhl = 'DiagnosticDefault' .. name }
-  )
+    vim.fn.sign_define(
+        'DiagnosticSign' .. name,
+        { text = icon, numhl = 'DiagnosticDefault' .. name }
+    )
 end
 
 lspSymbol('Error', '')

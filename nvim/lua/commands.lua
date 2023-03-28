@@ -47,9 +47,10 @@ m.nmap("<leader>gu", ":diffget //2<CR>")
 -- Node run file
 m.nmap ("<leader>sr", ":!node %<CR>")
 
--- jester
-m.nmap("<leader>tn", "<cmd>lua require('jester').run({cmd = 'npm run test -- $file --coverage=False', path_to_jest = 'npm run test'})<cr>", "test nearest")
-m.nmap("<leader>tf", "<cmd>lua require('jester').run_file({cmd = 'npm run test -- $file -t $result --coverage=False', path_to_jest = 'npm run test' })<cr>", "test file")
+-- Jest
+m.nmap("<leader>tf", ":JestFile<CR>", "silent")
+m.nmap("<leader>ts", ":JestSingle<CR>", "silent")
+m.nmap("<leader>ts", ":JestSingle<CR>", "silent")
 
 -- persisted nvim
 m.nmap("<leader>st", ":SessionToggle<cr>")

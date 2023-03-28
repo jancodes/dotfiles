@@ -9,7 +9,7 @@ return {
         end,
     },
     -- no config nvim plugins
-    "David-Kunz/jester",
+    "joechrisellis/lsp-format-modifications.nvim",
     "sudormrfbin/cheatsheet.nvim",
     -- brew install gnu-sed for spectre
     "windwp/nvim-spectre",
