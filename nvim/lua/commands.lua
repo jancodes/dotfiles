@@ -1,5 +1,6 @@
 local m = require("mapx")
 
+-- TODO refactor this file
 
 -- save on enter in normal mode
 m.nmap("<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", "expr")
@@ -102,10 +103,38 @@ keymap("n", "]G", function()
   require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 
--- Toggle outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
-
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+
+-- Buffer barbar.nvim
+m.nnoremap("<A-,>", "<Cmd>BufferPrevious<CR>", "silent")
+m.nnoremap("<A-.>", "<Cmd>BufferNext<CR>", "silent")
+
+m.nnoremap("<A-1>", "<Cmd>BufferGoto 1<CR>", "silent")
+m.nnoremap("<A-2>", "<Cmd>BufferGoto 2<CR>", "silent")
+m.nnoremap("<A-3>", "<Cmd>BufferGoto 3<CR>", "silent")
+m.nnoremap("<A-4>", "<Cmd>BufferGoto 4<CR>", "silent")
+m.nnoremap("<A-5>", "<Cmd>BufferGoto 5<CR>", "silent")
+m.nnoremap("<A-6>", "<Cmd>BufferGoto 6<CR>", "silent")
+m.nnoremap("<A-7>", "<Cmd>BufferGoto 7<CR>", "silent")
+m.nnoremap("<A-8>", "<Cmd>BufferGoto 8<CR>", "silent")
+m.nnoremap("<A-9>", "<Cmd>BufferGoto 9<CR>", "silent")
+m.nnoremap("<A-0>", "<Cmd>BufferLast<CR>", "silent")
+
+-- " Pin/unpin buffer
+-- nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
+m.nnoremap("<A-p>", "<Cmd>BufferPin<CR>", "silent")
+
+-- " Close buffer
+-- nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
+m.nnoremap("<A-c>", "<Cmd>BufferClose<CR>", "silent")
+
+m.nnoremap("<Leader>bc", "<Cmd>BufferCloseAllButCurrent<CR>", "silent")
+m.nnoremap("<Leader>bv", "<Cmd>BufferCloseAllButVisible<CR>", "silent")
+m.nnoremap("<Leader>bp", "<Cmd>BufferCloseAllButPinned<CR>", "silent")
+m.nnoremap("<Leader>bl", "<Cmd>BufferCloseAllButCurrentOrPinned<CR>", "silent")
+m.nnoremap("<Leader>br", "<Cmd>BufferCloseBuffersRight<CR>", "silent")
+
+m.nnoremap("<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", "silent")

@@ -50,19 +50,19 @@ require('lazy').setup('plugins')
 require("lsp")
 require("commands")
 
-au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
-  '*.*',
-  function()
-    vim.o.relativenumber = true
-  end
-})
+-- au({ 'BufEnter', 'FocusGained', 'InsertLeave'}, {
+--   '*.*',
+--   function()
+--     vim.o.relativenumber = true
+--   end
+-- })
 
-au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
-  '*.*',
-  function()
-    vim.o.relativenumber = false
-  end
-})
+-- au({ 'BufLeave', 'FocusLost', 'InsertEnter'}, {
+--   '*.*',
+--   function()
+--     vim.o.relativenumber = false
+--   end
+-- })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "tsconfig.json, .eslintrc.json",
