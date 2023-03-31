@@ -10,6 +10,12 @@ return {
         vim.notify("No existing session to load.")
       end
     })
+    vim.api.nvim_create_autocmd({ "User" }, {
+      pattern = "PersistedSavePre",
+      callback = function()
+        vim.cmd("doautocmd User SessionSavePre")
+      end
+    })
     require("telescope").load_extension("persisted") -- To load the telescope extension
   end
 }
