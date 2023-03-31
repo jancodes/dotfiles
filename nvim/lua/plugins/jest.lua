@@ -1,9 +1,6 @@
 return {
-  'mattkubej/jest.nvim',
-  config = function()
-    require 'nvim-jest'.setup {
+  'jancodes/jest.nvim',
+  opts = {
       jest_cmd = 'npm run test --',
-      silent = false,
-    }
-  end
+  },
 }

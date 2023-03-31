@@ -10,10 +10,6 @@ Session Toggle Persisted | <leader>st
 Extract React code into component file | <leader>ec
 Git blame | <leader>gb
 Visual lines for warns and errors| <leader>vl
-Next Signature overload | <C-j>
-Previous Signature overload | <C-k>
-Next Parameter overload | <C-l>
-Previous Parameter overload | <C-h>
 Spectre search and replace | <leader>S
 Link to code in Github | <leader>gl
 Code Action | ga
