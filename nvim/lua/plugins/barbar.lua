@@ -19,5 +19,5 @@ return {
     }
   end,
   -- icons broken in the barbar refactor
-  commit = 'b5b9888'
+  -- commit = 'b5b9888'
 }
