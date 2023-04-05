@@ -27,7 +27,7 @@ return {
                     --     utils.root_has_file(".eslintrc.cjs") or utils.root_has_file(".eslintrc")
                     local has_prettier = utils.root_has_file(".prettierrc")
 
-                    if !has_prettier then
+                    if not has_prettier then
                         -- returns a prettier that only affects those file types
                         return formatter.prettier.with({
                             filetypes = {
