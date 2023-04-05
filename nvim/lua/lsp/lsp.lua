@@ -26,7 +26,7 @@ end
 local on_attach = function(client, bufnr)
     if client.server_capabilities.signatureHelpProvider then
         local lsp_format_modifications = require "lsp-format-modifications"
-        lsp_format_modifications.attach(client, bufnr, { format_on_save = true })
+        lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
     end
 end
 
@@ -45,7 +45,6 @@ lspconfig.tsserver.setup({
             filter_out_diagnostics_by_code = { 80001 },
         })
         ts_utils.setup_client(client)
-        buf_map(bufnr, "n", "grf", ":TSLspRenameFile<CR>")
         buf_map(bufnr, "n", "gi", ":TSLspImportCurrent<CR>")
         on_attach(client, bufnr)
     end,
