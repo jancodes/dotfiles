@@ -19,49 +19,23 @@ return {
                 -- Code actions
                 actions.eslint_d,
 
-                -- Eslint if eslint config exist or use prettier
-                function()
-                    local utils = require("null-ls.utils").make_conditional_utils()
-
-                    -- local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json") or
-                    --     utils.root_has_file(".eslintrc.cjs") or utils.root_has_file(".eslintrc")
-                    local has_prettier = utils.root_has_file(".prettierrc")
-
-                    if not has_prettier then
-                        -- returns a prettier that only affects those file types
-                        return formatter.prettier.with({
-                            filetypes = {
-                                "css",
-                                "html",
-                                "yaml",
-                                "markdown",
-                                "json",
-                            },
-                            args = {
-                                "--stdin-filepath",
-                                "$FILENAME",
-                            },
-                        })
-                    else
-                        return formatter.prettierd.with({
-                            filetypes = {
-                                "css",
-                                "html",
-                                "yaml",
-                                "markdown",
-                                "json",
-                                "javascript",
-                                "javascriptreact",
-                                "typescript",
-                                "typescriptreact",
-                            },
-                            args = {
-                                "--stdin-filepath",
-                                "$FILENAME",
-                            },
-                        })
-                    end
-                end
+                formatter.prettierd.with({
+                    filetypes = {
+                        "css",
+                        "html",
+                        "yaml",
+                        "markdown",
+                        "json",
+                        "javascript",
+                        "javascriptreact",
+                        "typescript",
+                        "typescriptreact",
+                    },
+                    args = {
+                        "--stdin-filepath",
+                        "$FILENAME",
+                    }
+                })
             },
             -- on_attach = function(client, bufnr)
             --     if client.supports_method("textDocument/formatting") then
