@@ -42,7 +42,6 @@ that traveled the world with me
 9. Install powerline theme
 
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-10. Run `p10k configure` if it didn't come up after install
 11.  Symlink .zshrc
 
     > `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
