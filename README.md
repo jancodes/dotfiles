@@ -45,7 +45,7 @@ that traveled the world with me
 10. Run `p10k configure` if it didn't come up after install
 11.  Symlink .zshrc
 
-    > rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc
+    > `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
 
 12. Set theme (I'm using One Dark) and fonts in terminal of choice
 
