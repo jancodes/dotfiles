@@ -30,7 +30,7 @@ return {
     "rhysd/conflict-marker.vim",
     "tpope/vim-surround",
     "tpope/vim-repeat",
-    "camspiers/lens.vim",
+    "jancodes/lens.vim",
     "machakann/vim-highlightedyank",
     "andymass/vim-matchup",
 
