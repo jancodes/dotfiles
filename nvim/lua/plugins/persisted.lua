@@ -8,7 +8,8 @@ return {
       autoload = true,
       on_autoload_no_session = function()
         vim.notify("No existing session to load.")
-      end
+      end,
+      use_git_branch = true,
     })
     vim.api.nvim_create_autocmd({ "User" }, {
       pattern = "PersistedSavePre",
