@@ -10,8 +10,7 @@ return {
         keymap = {
           accept = false,
           next = "<A-]>",
-          prev = "<A-[>",
-          dismiss = "<C-]>",
+          dismiss = "<A-[>",
         }
       },
       filetypes = {
