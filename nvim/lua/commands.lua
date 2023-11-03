@@ -32,6 +32,8 @@ m.nmap("<C-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_gr
 
 m.nmap("<C-b>", "<cmd>Telescope buffers<cr>")
 
+m.nmap("<C-t>", "<cmd>Telescope resume<cr>")
+
 -- Cheatsheet
 m.nmap("<leader>cs", ":Cheatsheet<CR>")
 
