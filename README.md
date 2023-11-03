@@ -23,42 +23,43 @@ that traveled the world with me
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 3.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-4.  Make zsh the default shell
-    > `chsh -s $(which zsh)`
-5.  Install Fnm https://github.com/Schniz/fnm
+4.  Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
-6.  Install Node and set default version with fnm
-    > `fnm install nodeversion` 
+5.  Install Node and set default version with fnm
 
-    > `fnm alias default nodeversion`
-7.  Install Oh My Zsh
+    > `fnm install ${LTS}`
+
+    > `fnm alias default ${LTS}`
+
+6.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-8.  Install Zsh plugins below
+7.  Install Zsh plugins below
 
     > https://github.com/jancodes/zsh_to_fish
 
     > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
-    
-9. Install powerline theme
+
+8.  Install powerline theme
 
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-11.  Symlink .zshrc
 
-    > `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
+9.  Symlink .zshrc
 
-12. Set theme (I'm using One Dark) and fonts in terminal of choice
+    `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
+
+10. Set theme (I'm using One Dark) and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
     > For WSL2 font issues, restart windows explorer
 
-13. Install Tmux
+11. Install Tmux
     > `brew install tmux`
-14. Install tpm
+12. Install tpm
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-15. Symlink .tmux.conf
+13. Symlink .tmux.conf
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
-16. Install tmux plugins
+14. Install tmux plugins
 
     > `prefix + I` Mac uses ctrl and Windows/WSL uses alt. Example: Ctrl A is the prefix combo for Mac.
 
@@ -66,14 +67,15 @@ that traveled the world with me
 
     > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
 
-17. Install Neovim (beta version)
+15. Install Neovim (beta version)
 
     > `brew install neovim --fetch-head`
-18. Install Neovim plugins dep
+
+16. Install Neovim plugins dep
 
     > `brew install gcc make gnu-sed ripgrep fd fzf`
-    
-19. Mason install lsps
+
+17. Mason install lsps
 
     > `:Mason` in a nvim session then pick the lsp you want to use
 
@@ -83,7 +85,7 @@ that traveled the world with me
 
     There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
 
-20. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
+18. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
@@ -95,7 +97,7 @@ that traveled the world with me
 
     > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
-21. Additional installs:
+19. Additional installs:
 
     > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
@@ -143,6 +145,10 @@ that traveled the world with me
 WSL Optimization
 
 > https://jade.fyi/blog/development-in-wsl/
+
+MarkdownPreview, use wsl-open
+
+If gcc can't postinstall, make sure you have installed build-essential
 
 #### Mac stuff
 
