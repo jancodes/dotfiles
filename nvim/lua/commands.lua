@@ -9,13 +9,13 @@ m.nmap("<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", "expr")
 m.nmap("<leader>nh", ":noh<CR>")
 
 -- close panel hotkey
-m.nmap("<leader>wq", "<C-w>q" )
+m.nmap("<leader>wq", "<C-w>q")
 
 -- remaps paste to delete then paste first
-m.xnoremap ("p", 'p:let @+=@0<CR>:let @"=@0<CR>', "silent")
+m.xnoremap("p", 'p:let @+=@0<CR>:let @"=@0<CR>', "silent")
 
 -- remove J mapping
-m.map("J","<Nop>")
+m.map("J", "<Nop>")
 
 -- buffers
 m.nmap("[b", ":bprevious<CR>", "silent")
@@ -23,17 +23,17 @@ m.nmap("]b", ":bnext<CR>", "silent")
 m.nmap("[B", ":bfirst<CR>", "silent")
 m.nmap("]B", ":blast<CR>", "silent")
 
-m.nmap ( "<leader>ut", ":UndotreeShow<CR>")
+m.nmap("<leader>ut", ":UndotreeShow<CR>")
 
 -- telescope mappings
-m.nmap ("<C-f>", "<cmd>Telescope find_files<cr>")
+m.nmap("<C-f>", "<cmd>Telescope find_files<cr>")
 
-m.nmap ("<C-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_raw()<cr>")
+m.nmap("<C-g>", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_raw()<cr>")
 
-m.nmap ("<C-b>", "<cmd>Telescope buffers<cr>")
+m.nmap("<C-b>", "<cmd>Telescope buffers<cr>")
 
 -- Cheatsheet
-m.nmap ("<leader>cs", ":Cheatsheet<CR>")
+m.nmap("<leader>cs", ":Cheatsheet<CR>")
 
 -- insert line without taking formatting from current line
 m.nnoremap("<Leader>o", "o<Esc>^Da")
@@ -46,7 +46,7 @@ m.nmap("<leader>gh", ":diffget //3<CR>")
 m.nmap("<leader>gu", ":diffget //2<CR>")
 
 -- Node run file
-m.nmap ("<leader>sr", ":!node %<CR>")
+m.nmap("<leader>sr", ":!node %<CR>")
 
 -- Jest
 m.nmap("<leader>tf", ":JestFile<CR>", "silent")
@@ -64,19 +64,20 @@ m.map("q:", "<Nop>")
 m.map("Q", "<Nop>")
 
 -- Format file using built in lsp
-vim.api.nvim_create_user_command('Format', function()
-    vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
-end, { nargs = 0 })
+-- vim.api.nvim_create_user_command('Format', function()
+--   require("conform").format({ bufnr = args.buf })
+--   vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
+-- end, { nargs = 0 })
 
 
 local keymap = vim.keymap.set
 
 keymap("n", "gf", "<cmd>Lspsaga finder<CR>")
-keymap({"n","v"}, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 keymap("n", "grp", "<cmd>Lspsaga rename ++project<CR>")
 -- <C-t> to go back to previous
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
