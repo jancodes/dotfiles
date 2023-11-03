@@ -13,7 +13,7 @@ that traveled the world with me
 
 > Currently configs does not work with Warp
 
-### Setup (Last updated 03/15/2023)
+### Setup (Last updated 11/02/2023)
 
 <em>one day this will be script once I change jobs enough</em>
 
