@@ -62,16 +62,15 @@ m.nmap("<leader>st", ":SessionToggle<cr>")
 m.nnoremap("<leader>S", "<cmd>lua require('spectre').open()<CR>")
 
 -- disable q:
-m.map("q:", "<Nop>")
-vim.keymap.set("n", "q:", "<Nop>")
 m.map("Q", "<Nop>")
+-- can't disable q: so disable q instead
+m.map("q", "<Nop>")
 
 -- Format file using built in lsp
 -- vim.api.nvim_create_user_command('Format', function()
 --   require("conform").format({ bufnr = args.buf })
 --   vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
 -- end, { nargs = 0 })
-
 
 local keymap = vim.keymap.set
 
