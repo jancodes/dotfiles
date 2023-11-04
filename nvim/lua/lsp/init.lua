@@ -10,6 +10,7 @@ end
 
 local servers = {
   "lua_ls",
+  "tsserver",
   "jsonls",
   "cssls",
   -- not all servers here since mason lspconfig does not support all

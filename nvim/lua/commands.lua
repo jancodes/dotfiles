@@ -63,6 +63,7 @@ m.nnoremap("<leader>S", "<cmd>lua require('spectre').open()<CR>")
 
 -- disable q:
 m.map("q:", "<Nop>")
+vim.keymap.set("n", "q:", "<Nop>")
 m.map("Q", "<Nop>")
 
 -- Format file using built in lsp
