@@ -1,8 +1,8 @@
-local api = require("typescript-tools.api")
 return {
   "pmizio/typescript-tools.nvim",
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   config = function()
+    local api = require("typescript-tools.api")
     require("typescript-tools").setup({
       on_attach = function(client)
         require("plugins.utils.on_attach").on_attach()
@@ -11,7 +11,7 @@ return {
       end,
       handlers = {
         ["textDocument/publishDiagnostics"] = api.filter_diagnostics(
-          { 80001 }
+          { 80001, 7016 }
         )
       },
       settings = {
