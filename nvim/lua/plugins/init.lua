@@ -60,6 +60,4 @@ return {
         ft = { "markdown" },
     },
 
-    -- plugin have issues with Oil.nvim when repo has Make files
-    -- "nathom/filetype.nvim",
 }
