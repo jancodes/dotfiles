@@ -14,19 +14,19 @@ return {
         return { timeout_ms = 500, lsp_fallback = true, async = true }
       end,
       formatters_by_ft = {
-        ["javascript"] = { { "eslint_d", "prettierd", "prettier" } },
-        ["javascriptreact"] = { { "eslint_d", "prettierd", "prettier" } },
-        ["typescript"] = { { "eslint_d", "prettierd", "prettier" } },
-        ["typescriptreact"] = { { "eslint_d", "prettierd", "prettier" } },
-        ["css"] = { { "prettierd", "prettier" } },
-        ["scss"] = { { "prettierd", "prettier" } },
-        ["less"] = { { "prettierd", "prettier" } },
-        ["html"] = { { "prettierd", "prettier" } },
-        ["json"] = { { "prettierd", "prettier" } },
-        ["jsonc"] = { { "prettierd", "prettier" } },
-        ["yaml"] = { { "prettierd", "prettier" } },
-        ["markdown"] = { { "deno_fmt", "prettierd", "prettier" } },
-        ["markdown.mdx"] = { { "deno_fmt", "prettierd", "prettier" } },
+        ["javascript"] = { { "eslint_d", "prettierd" } },
+        ["javascriptreact"] = { { "eslint_d", "prettierd" } },
+        ["typescript"] = { { "eslint_d", "prettierd" } },
+        ["typescriptreact"] = { { "eslint_d", "prettierd" } },
+        ["css"] = { { "prettierd" } },
+        ["scss"] = { { "prettierd" } },
+        ["less"] = { { "prettierd" } },
+        ["html"] = { { "prettierd" } },
+        ["json"] = { { "prettierd" } },
+        ["jsonc"] = { { "prettierd" } },
+        ["yaml"] = { { "prettierd" } },
+        ["markdown"] = { { "prettierd" } },
+        ["markdown.mdx"] = { { "prettierd" } },
       },
 
     })
@@ -44,4 +44,3 @@ return {
     end
   end
 }
-
