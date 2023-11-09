@@ -1,7 +1,7 @@
 local M = {}
 
 function M.on_attach(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- (this allows checking server capabilities to avoid calling invalid commands)
   if client.server_capabilities.document_highlight then
