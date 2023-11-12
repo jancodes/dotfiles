@@ -185,6 +185,13 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="/home/jan/.fnm:$PATH"
 eval "`fnm env`"
 
+#homebrew m1 mac
+export PATH="/usr/local/bin:$PATH"    # arm64e homebrew path (m1   )
+export PATH="/opt/homebrew/bin:$PATH" # x86_64 homebrew path (intel)
+
+alias mbrew="arch -arm64e /opt/homebrew/bin/brew" # arm64e homebrew path (m1   )
+alias ibrew="arch -x86_64 /usr/local/bin/brew"    # x86_64 homebrew path (intel)
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
