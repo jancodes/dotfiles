@@ -14,10 +14,14 @@ return {
         return { timeout_ms = 500, lsp_fallback = true, async = true }
       end,
       formatters_by_ft = {
-        ["javascript"] = { { "eslint_d", "prettierd" } },
-        ["javascriptreact"] = { { "eslint_d", "prettierd" } },
-        ["typescript"] = { { "eslint_d", "prettierd" } },
-        ["typescriptreact"] = { { "eslint_d", "prettierd" } },
+        -- ["javascript"] = { { "eslint_d", "prettierd" } },
+        -- ["javascriptreact"] = { { "eslint_d", "prettierd" } },
+        -- ["typescript"] = { { "eslint_d", "prettierd" } },
+        -- ["typescriptreact"] = { { "eslint_d", "prettierd" } },
+        ["javascript"] = { { "prettierd" } },
+        ["javascriptreact"] = { { "prettierd" } },
+        ["typescript"] = { { "prettierd" } },
+        ["typescriptreact"] = { { "prettierd" } },
         ["css"] = { { "prettierd" } },
         ["scss"] = { { "prettierd" } },
         ["less"] = { { "prettierd" } },
