@@ -23,7 +23,7 @@
   "lsp-format-modifications.nvim": { "branch": "main", "commit": "006d4cd88f4f09fdc4375fcb75dd5b7d981a723b" },
   "lsp_lines.nvim": { "branch": "main", "commit": "dbfd8e96ec2696e1ceedcd23fd70e842256e3dea" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
-  "lspsaga.nvim": { "branch": "main", "commit": "7ebd0cc5923c81516c1c050fc9aea70bec23fd02" },
+  "lspsaga.nvim": { "branch": "main", "commit": "283a3fc8e01191095d33c078031c577e8f9427b9" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
   "mapx.nvim": { "branch": "main", "commit": "c3dd43474a5fc2f266309bc04a69b74eb2524671" },
   "markdown-preview.nvim": { "branch": "master", "commit": "1cb842dd91f779ab5b6e8b91178374cd138a1f00" },

@@ -5,7 +5,7 @@ return {
     local api = require("typescript-tools.api")
     require("typescript-tools").setup({
       on_attach = function(client)
-        require("plugins.utils.on_attach").on_attach()
+        -- require("plugins.utils.on_attach").on_attach()
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
       end,
@@ -15,7 +15,8 @@ return {
         )
       },
       settings = {
-        expose_as_code_action = { "all" }
+        -- expose_as_code_action = { "all" }
+        seperate_diagnostic_server = true,
       },
       tsserver_file_preferences = {
         includeInlayParameterNameHints = "all",
