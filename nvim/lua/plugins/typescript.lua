@@ -5,7 +5,6 @@ return {
     local api = require("typescript-tools.api")
     require("typescript-tools").setup({
       on_attach = function(client)
-        -- require("plugins.utils.on_attach").on_attach()
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
       end,
