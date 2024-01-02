@@ -1,5 +1,6 @@
 return {
-  "olimorris/persisted.nvim",
+  "jancodes/persisted.nvim",
+  branch = "feat/disable-autoloading-default-branch",
   dependencies = {
     "nvim-telescope/telescope.nvim",
   },
@@ -10,6 +11,7 @@ return {
         vim.notify("No existing session to load.")
       end,
       use_git_branch = true,
+      use_fallback_branch = false,
     })
     vim.api.nvim_create_autocmd({ "User" }, {
       pattern = "PersistedSavePre",
