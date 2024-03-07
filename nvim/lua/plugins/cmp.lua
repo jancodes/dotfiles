@@ -111,12 +111,13 @@ return {
         { name = 'cmdline' }
       })
     })
-    cmp.event:on("menu_opened", function()
-      vim.b.copilot_suggestion_hidden = true
-    end)
+    -- bug: if you're using TAB for copilot, the below config will block both if both copilot and cmp is available
+    -- cmp.event:on("menu_opened", function()
+    --   vim.b.copilot_suggestion_hidden = true
+    -- end)
 
-    cmp.event:on("menu_closed", function()
-      vim.b.copilot_suggestion_hidden = false
-    end)
+    -- cmp.event:on("menu_closed", function()
+    --   vim.b.copilot_suggestion_hidden = false
+    -- end)
   end
 }
