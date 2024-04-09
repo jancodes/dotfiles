@@ -59,5 +59,6 @@ return {
         init = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     },
-    "phelipetls/jsonpath.nvim"
+    "phelipetls/jsonpath.nvim",
+    "theHamsta/nvim-treesitter-pairs",
 }
