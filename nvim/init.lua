@@ -29,7 +29,6 @@ vim.g.loaded_netrwPlugin = 1
 -- for tmux
 vim.o.termguicolors = true
 vim.o.background = "dark"
--- vim.o.term = "screen-256color"
 vim.g.mapleader = " "
 vim.g.localleader = "\\"
 -- save session options
