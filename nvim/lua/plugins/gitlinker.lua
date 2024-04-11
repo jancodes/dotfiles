@@ -52,7 +52,7 @@ return {
         -- callback for what to do with the url
         action_callback = require "gitlinker.actions".copy_to_clipboard,
         -- print the url after performing the action
-        print_url = false,
+        print_url = true,
       },
       -- default mapping to call url generation with action_callback
       mappings = "<leader>gl"
