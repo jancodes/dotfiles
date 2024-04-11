@@ -85,13 +85,11 @@ that traveled the world with me
 
     There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
 
-18. Install VcXsrv (WSL only) https://sourceforge.net/projects/vcxsrv/
+18. Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
     > https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541#2-set-up-vcxsrv-windows-x-server
-
-    Other potential issues:
 
     > https://installati.one/ubuntu/20.04/xclip/
 
