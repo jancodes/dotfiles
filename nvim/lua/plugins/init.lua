@@ -31,7 +31,6 @@ return {
     "tpope/vim-surround",
     "tpope/vim-repeat",
     "jancodes/lens.vim",
-    "machakann/vim-highlightedyank",
     "andymass/vim-matchup",
 
     -- config nvim plugins

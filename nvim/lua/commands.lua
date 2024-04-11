@@ -149,3 +149,11 @@ vim.api.nvim_create_user_command("FormatEnable", function()
 end, {
   desc = "FormatEnable",
 })
+
+vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+
+vim.keymap.set("n", "<M-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<M-n>", "<Plug>(YankyNextEntry)")
+
+m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
