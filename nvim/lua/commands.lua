@@ -147,19 +147,13 @@ vim.api.nvim_create_user_command("FormatEnable", function()
   vim.b.disable_autoformat = false
   vim.g.disable_autoformat = false
 end, {
-  desc = "Re-enable autoformat-on-save",
+  desc = "FormatEnable",
 })
 
-local function visual_paste_without_yank()
-  local register = '+'
+vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
 
-  if vim.o.clipboard == 'unnamed' then
-    register = '*'
-  end
+vim.keymap.set("n", "<M-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<M-n>", "<Plug>(YankyNextEntry)")
 
-  vim.fn.setreg('x', vim.fn.getreg(register))
-  vim.api.nvim_paste(vim.fn.getreg(register), {}, -1)
-  vim.fn.setreg(register, vim.fn.getreg('x'))
-end
-
-vim.keymap.set('v', 'p', visual_paste_without_yank, { noremap = true, silent = true })
+m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
