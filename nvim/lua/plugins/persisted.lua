@@ -1,6 +1,6 @@
 return {
   "jancodes/persisted.nvim",
-  branch = "feat/disable-autoloading-default-branch",
+  branch = "main",
   dependencies = {
     "nvim-telescope/telescope.nvim",
   },
