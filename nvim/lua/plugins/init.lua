@@ -59,5 +59,4 @@ return {
         ft = { "markdown" },
     },
     "phelipetls/jsonpath.nvim",
-    "theHamsta/nvim-treesitter-pairs",
 }
