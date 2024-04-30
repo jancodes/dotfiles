@@ -152,8 +152,7 @@ end, {
 
 vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
 vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-
-vim.keymap.set("n", "<M-p>", "<Plug>(YankyPreviousEntry)")
-vim.keymap.set("n", "<M-n>", "<Plug>(YankyNextEntry)")
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
