@@ -16,6 +16,22 @@ return {
         ["`"] = "actions.cd",
         ["~"] = "actions.tcd",
         ["g."] = "actions.toggle_hidden",
+        ["yp"] = {
+          callback = function()
+            local entry = require("oil").get_cursor_entry()
+
+            local dir = require("oil").get_current_dir()
+
+            if not entry or not dir then
+              return
+            end
+
+            local relpath = vim.fn.fnamemodify(dir, ":.")
+
+            vim.fn.setreg("+", relpath .. entry.name)
+          end,
+
+        },
       },
       view_options = {
         show_hidden = true,
