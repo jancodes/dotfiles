@@ -5,13 +5,16 @@ return {
   config = function()
     require("copilot").setup({
       suggestion = {
-        enabled = true,
+        enabled = false,
         auto_trigger = true,
         keymap = {
           accept = false,
           next = "<A-]>",
           dismiss = "<A-[>",
         }
+      },
+      panel = {
+        enabled = false
       },
       filetypes = {
         ["*"] = true

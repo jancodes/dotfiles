@@ -54,10 +54,10 @@ return {
       },
       mapping = {
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif require("copilot.suggestion").is_visible() then
+          if require("copilot.suggestion").is_visible() then
             require("copilot.suggestion").accept()
+          elseif cmp.visible() then
+            cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
@@ -89,9 +89,9 @@ return {
         end
       },
       sources = cmp.config.sources({
+        { name = "copilot",  group_index = 1 },
         { name = 'nvim_lsp', group_index = 1 },
         { name = 'luasnip',  max_item_count = 5, group_index = 1 }, -- For vsnip users.
-        -- { name = 'cmp_tabnine', group_index = 1 },
       }, {
         { name = 'path',   group_index = 1 },
         { name = 'buffer', keyword_length = 3, group_index = 2 },
