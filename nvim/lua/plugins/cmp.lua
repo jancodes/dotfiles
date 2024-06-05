@@ -56,11 +56,16 @@ return {
             fallback()
           end
         end, { "i", "s" }),
-        ['<CR>'] = function()
-          cmp.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-          })
+        ['<CR>'] = function(fallback)
+          if not cmp.visible() or not cmp.get_selected_entry() or
+              cmp.get_selected_entry().source.name == 'nvim_lsp_signature_help' then
+            fallback()
+          else
+            cmp.confirm({
+              behavior = cmp.ConfirmBehavior.Replace,
+              select = false,
+            })
+          end
         end
       },
       sources = cmp.config.sources({
