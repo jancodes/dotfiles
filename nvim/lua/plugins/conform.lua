@@ -5,7 +5,7 @@ return {
   config = function()
     vim.o.formatexpr = "vim:lua.require'conform'.formatexpr()"
     require("conform").setup({
-      format_on_save = function(bufnr)
+      format_after_save = function(bufnr)
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
           return
         end
