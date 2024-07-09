@@ -18,23 +18,23 @@ return {
         return { timeout_ms = 500, lsp_fallback = true, async = true }
       end,
       formatters_by_ft = {
-        ["javascript"] = { "eslint_d", "prettierd" },
-        ["javascriptreact"] = { "eslint_d", "prettierd" },
-        ["typescript"] = { "eslint_d", "prettierd" },
-        ["typescriptreact"] = { "eslint_d", "prettierd" },
-        ["css"] = { { "prettierd", "prettier" } },
-        ["scss"] = { { "prettierd", "prettier" } },
-        ["less"] = { { "prettierd", "prettier" } },
-        ["html"] = { { "prettierd", "prettier" } },
-        ["json"] = { { "prettierd", "prettier" } },
-        ["jsonc"] = { { "prettierd", "prettier" } },
-        ["yaml"] = { { "prettierd", "prettier" } },
-        ["markdown"] = { { "prettierd", "prettier" } },
-        ["markdown.mdx"] = { { "prettierd", "prettier" } },
+        ["javascript"] = { "prettierd", "eslint_d" },
+        ["javascriptreact"] = { "prettierd", "eslint_d" },
+        ["typescript"] = { "prettierd", "eslint_d" },
+        ["typescriptreact"] = { "prettierd", "eslint_d" },
+        ["css"] = { { "prettierd" } },
+        ["scss"] = { { "prettierd" } },
+        ["less"] = { { "prettierd" } },
+        ["html"] = { { "prettierd" } },
+        ["json"] = { { "prettierd" } },
+        ["jsonc"] = { { "prettierd" } },
+        ["yaml"] = { { "prettierd" } },
+        ["markdown"] = { { "prettierd" } },
+        ["markdown.mdx"] = { { "prettierd" } },
       },
 
     })
-    require("conform.formatters.prettier").args = function(ctx)
+    require("conform.formatters.prettierd").args = function(ctx)
       local args = { "--stdin-filepath", "$FILENAME" }
       local found = vim.fs.find("~/.config/nvim/utils/linter-config/prettier.config.js",
         { upward = true, path = ctx.dirname })[1]
@@ -48,3 +48,4 @@ return {
     end
   end
 }
+
