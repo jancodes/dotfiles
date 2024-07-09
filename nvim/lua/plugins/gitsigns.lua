@@ -7,11 +7,10 @@ return {
     local m = require("mapx")
     require('gitsigns').setup({
       signs = {
-        add    = { hl = 'GitSignsAdd', text = '+', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-        change = { hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+        add    = { text = '+' },
+        change = { text = '~' },
       }
     })
-
     m.nmap("<Leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
   end
 }
