@@ -21,14 +21,6 @@ return {
     end
 
     cmp.setup({
-      formatting = {
-        format = lspkind.cmp_format({
-          mode = "symbol",
-          maxwidth = 50,
-          symbol_map = { Copilot = "" }
-        }),
-
-      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -69,7 +61,6 @@ return {
         end
       },
       sources = cmp.config.sources({
-        { name = "copilot",  group_index = 1 },
         { name = 'nvim_lsp', group_index = 1 },
         { name = 'luasnip',  max_item_count = 5, group_index = 1 }, -- For vsnip users.
       }, {
