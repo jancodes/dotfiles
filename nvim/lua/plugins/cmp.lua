@@ -30,6 +30,8 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
+          elseif require("copilot.suggestion").is_visible() then
+            require("copilot.suggestion").accept()
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
@@ -82,13 +84,12 @@ return {
         { name = 'cmdline' }
       })
     })
-    -- bug: if you're using TAB for copilot, the below config will block both if both copilot and cmp is available
-    -- cmp.event:on("menu_opened", function()
-    --   vim.b.copilot_suggestion_hidden = true
-    -- end)
+    cmp.event:on("menu_opened", function()
+      vim.b.copilot_suggestion_hidden = true
+    end)
 
-    -- cmp.event:on("menu_closed", function()
-    --   vim.b.copilot_suggestion_hidden = false
-    -- end)
+    cmp.event:on("menu_closed", function()
+      vim.b.copilot_suggestion_hidden = false
+    end)
   end
 }
