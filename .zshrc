@@ -16,7 +16,7 @@ export GPG_TTY=$TTY
 
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+  export DISPLAY=$(ip route list default | awk '{print $3}'):0
 fi
 
 # If you come from bash you might have to change your $PATH.
