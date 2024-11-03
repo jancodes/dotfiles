@@ -91,7 +91,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- html lsp
-require 'lspconfig'.html.setup {}
+lspconfig.html.setup {}
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -113,3 +113,10 @@ lspSymbol('Information', '')
 lspSymbol('Hint', '')
 lspSymbol('Info', '')
 lspSymbol('Warn', '')
+
+
+-- go lsp
+lspconfig.gopls.setup({
+    -- custom settings here
+    -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
+})
