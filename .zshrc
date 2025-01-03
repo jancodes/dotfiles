@@ -22,7 +22,7 @@ if [[ "$(uname)" = 'Linux' ]] then
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export PATH="/home/jan/.pyenv/versions/3.10.16/bin:$PATH"
+export PATH="$HOME/.pyenv/versions/3.10.16/bin:$PATH"
 
 export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
 export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"

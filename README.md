@@ -31,19 +31,20 @@ that traveled the world with me
 
     > `fnm alias default ${LTS}`
 
-7.  Install Oh My Zsh
+6.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-8.  Install Zsh plugins below:
+7.  Install Zsh plugins below:
 
     > https://github.com/jancodes/zsh_to_fish
 
     > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
 
-9.  Install powerline theme
+8.  Install powerline theme
 
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
-10.  Symlink .zshrc
+9.  Symlink .zshrc
+
 
     `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
 
@@ -103,6 +104,8 @@ that traveled the world with me
     > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
 
     > https://command-not-found.com/xdg-open (wsl only)
+
+    > https://github.com/cpbotha/xdg-open-wsl xdg-open is not in wsl, so you will need an alternative
 
 ### Useful notes and resources
 
