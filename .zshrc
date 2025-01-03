@@ -17,6 +17,16 @@ export GPG_TTY=$TTY
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export DISPLAY=$(ip route list default | awk '{print $3}'):0
+  # wsl config for windows to run stable diffusion
+  export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export PATH="/home/jan/.pyenv/versions/3.10.16/bin:$PATH"
+
+export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
+export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
+
 fi
 
 # If you come from bash you might have to change your $PATH.
