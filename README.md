@@ -78,7 +78,7 @@ that traveled the world with me
 
 18. Mason install lsps
 
-    > `:Mason` in a nvim session then pick the lsp you want to use
+    > `:Mason` in a nvim session (nvim in terminal then use the command) then pick the lsp you want to use
 
     LSP used in my config: `lua, prettierd, json-lsp, typescript, tailwindcss , eslint_d, cssls`
 
