@@ -13,7 +13,7 @@ that traveled the world with me
 
 > Currently configs does not work with Warp
 
-### Setup (Last updated 11/02/2023)
+### Setup (Last updated 01/03/2025)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -25,41 +25,41 @@ that traveled the world with me
     > `brew install zsh`
 4.  Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
-5.  Install Node and set default version with fnm
+5.  Install Node and set default version with fnm. Replace LTS with the version on https://nodejs.org/en.
 
     > `fnm install ${LTS}`
 
     > `fnm alias default ${LTS}`
 
-6.  Install Oh My Zsh
+7.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-7.  Install Zsh plugins below
+8.  Install Zsh plugins below:
 
     > https://github.com/jancodes/zsh_to_fish
 
     > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
 
-8.  Install powerline theme
+9.  Install powerline theme
 
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
-9.  Symlink .zshrc
+10.  Symlink .zshrc
 
     `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
 
-10. Set theme (I'm using One Dark) and fonts in terminal of choice
+11. Set theme (I'm using One Dark) and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
     > For WSL2 font issues, restart windows explorer
 
-11. Install Tmux
+12. Install Tmux
     > `brew install tmux`
-12. Install tpm
+13. Install tpm
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-13. Symlink .tmux.conf
+14. Symlink .tmux.conf
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
-14. Install tmux plugins
+15. Install tmux plugins
 
     > `prefix + I` Mac uses ctrl and Windows/WSL uses alt. Example: Ctrl A is the prefix combo for Mac.
 
@@ -67,15 +67,16 @@ that traveled the world with me
 
     > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
 
-15. Install Neovim (beta version)
+16. Install Neovim with bob
 
-    > `brew install neovim --fetch-head`
+    > https://github.com/MordechaiHadad/bob
+    > bob use nightly
 
-16. Install Neovim plugins dep
+17. Install Neovim plugins dep
 
     > `brew install gcc make gnu-sed ripgrep fd fzf`
 
-17. Mason install lsps
+18. Mason install lsps
 
     > `:Mason` in a nvim session then pick the lsp you want to use
 
@@ -83,9 +84,9 @@ that traveled the world with me
 
     Note: lua, json, typescript, tailwindcss, cssls is installed by default with setup with Mason lspconfig
 
-    There is no support for eslint_d and prettier for auto install, so install manuall with :Mason
+    There is no support for eslint_d and prettier for auto install, so install manually with :Mason
 
-18. Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
+19. Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
@@ -95,7 +96,7 @@ that traveled the world with me
 
     > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
-19. Additional installs:
+20. Additional installs:
 
     > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
