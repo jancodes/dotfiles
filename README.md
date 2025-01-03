@@ -13,7 +13,7 @@ that traveled the world with me
 
 > Currently configs does not work with Warp
 
-### Setup (Last updated 01/03/2025)
+### Setup (Last updated and tested on 01/03/2025)
 
 <em>one day this will be script once I change jobs enough</em>
 
@@ -25,11 +25,11 @@ that traveled the world with me
     > `brew install zsh`
 4.  Install Fnm https://github.com/Schniz/fnm
     > `brew install fnm`
-5.  Install Node and set default version with fnm. Replace LTS with the version on https://nodejs.org/en.
+5.  Install Node and set default version with fnm.
 
-    > `fnm install ${LTS}`
+    > `fnm install --lts`
 
-    > `fnm alias default ${LTS}`
+    > `fnm use lts/latest`
 
 6.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
@@ -45,22 +45,23 @@ that traveled the world with me
 
 9.  Symlink .zshrc
 
-
     `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
 
-11. Set theme (I'm using One Dark) and fonts in terminal of choice
+10. Set theme (I'm using One Dark) and fonts in terminal of choice
 
     > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
 
+    > https://github.com/one-dark/iterm-one-dark-theme/blob/main/One%20Dark.itermcolors
+
     > For WSL2 font issues, restart windows explorer
 
-12. Install Tmux
+11. Install Tmux
     > `brew install tmux`
-13. Install tpm
+12. Install tpm
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-14. Symlink .tmux.conf
+13. Symlink .tmux.conf
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
-15. Install tmux plugins
+14. Install tmux plugins
 
     > `prefix + I` Mac uses ctrl and Windows/WSL uses alt. Example: Ctrl A is the prefix combo for Mac.
 
@@ -68,16 +69,16 @@ that traveled the world with me
 
     > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
 
-16. Install Neovim with bob
+15. Install Neovim nightly with bob
 
     > https://github.com/MordechaiHadad/bob
     > bob use nightly
 
-17. Install Neovim plugins dep
+16. Install Neovim plugins dep
 
     > `brew install gcc make gnu-sed ripgrep fd fzf`
 
-18. Mason install lsps
+17. Mason install lsps
 
     > `:Mason` in a nvim session (nvim in terminal then use the command) then pick the lsp you want to use
 
@@ -87,7 +88,7 @@ that traveled the world with me
 
     There is no support for eslint_d and prettier for auto install, so install manually with :Mason
 
-19. Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
+18. Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
 
     Follow Step 2, my config already did Step 3:
 
@@ -97,7 +98,7 @@ that traveled the world with me
 
     > if clipboard still don't work, check if your firewall is blocking VcXsrv.
 
-20. Additional installs:
+19. Additional installs:
 
     > https://github.com/commitizen/cz-cli for writing beatiful commit messages
 
