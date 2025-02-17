@@ -17,16 +17,12 @@ export GPG_TTY=$TTY
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export DISPLAY=$(ip route list default | awk '{print $3}'):0
-  # wsl config for windows to run stable diffusion
-  export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+  # for bitandbytes
+  export PATH=$PATH:/opt/rocm-6.3.2/bin
+  export LD_LIBRARY_PATH=/opt/rocm-6.3.2/lib
 
-export PATH="$(pyenv prefix)/bin:$PATH"
-
-export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
-export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
-
+  export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
+  export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
 fi
 
 # Path to your oh-my-zsh installation.
