@@ -18,7 +18,6 @@ return {
     "nvim-lua/plenary.nvim",
 
     'JoosepAlviste/nvim-ts-context-commentstring',
-    'windwp/nvim-ts-autotag',
 
     -- no config vim plugins
     "mbbill/undotree",

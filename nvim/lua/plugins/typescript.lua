@@ -16,6 +16,10 @@ return {
       settings = {
         -- expose_as_code_action = { "all" }
         seperate_diagnostic_server = true,
+        jsx_close_tag = {
+          enable = true,
+          filetypes = { "javascriptreact", "typescriptreact" },
+        },
       },
       tsserver_file_preferences = {
         includeInlayParameterNameHints = "all",
