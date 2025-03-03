@@ -93,27 +93,25 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- html lsp
 lspconfig.html.setup {}
 
--- Diagnostic symbols in the sign column (gutter)
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
--- replace default lsp symbols
-local function lspSymbol(name, icon)
-    vim.fn.sign_define(
-        'DiagnosticSign' .. name,
-        { text = icon, numhl = 'DiagnosticDefault' .. name }
-    )
-end
-
-lspSymbol('Error', '')
-lspSymbol('Information', '')
-lspSymbol('Hint', '')
-lspSymbol('Info', '')
-lspSymbol('Warn', '')
-
+vim.diagnostic.config({
+  signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = '󰅙',
+        [vim.diagnostic.severity.INFO] = '󰋼',
+        [vim.diagnostic.severity.HINT] = '󰌵',
+        [vim.diagnostic.severity.WARN] = '',
+      },
+      -- linehl = {
+      --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+      -- },
+      numhl = {
+        [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+        [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+      },
+  },
+})
 
 -- go lsp
 lspconfig.gopls.setup({
