@@ -31,50 +31,6 @@ local on_attach = function(client, bufnr)
     end
 end
 
--- lspconfig.tsserver.setup({
---     init_options = {
---         preferences = {
---             disableSuggestions = true,
---         }
---     },
---     on_attach = function(client, bufnr)
---         local ts_utils = require("nvim-lsp-ts-utils")
---         ts_utils.setup({
---             enable_import_on_completion = true,
---             update_imports_on_move = true,
---             require_confirmation_on_move = false,
---             filter_out_diagnostics_by_code = { 80001 },
---         })
---         ts_utils.setup_client(client)
---         buf_map(bufnr, "n", "gi", ":TSLspImportCurrent<CR>")
---         on_attach(client, bufnr)
---     end,
---     -- for lsp-inlayhints
---     settings = {
---         typescript = {
---             inlayHints = {
---                 includeInlayParameterNameHints = 'all',
---                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
---                 includeInlayFunctionParameterTypeHints = true,
---                 includeInlayVariableTypeHints = true,
---                 includeInlayPropertyDeclarationTypeHints = true,
---                 includeInlayFunctionLikeReturnTypeHints = true,
---                 includeInlayEnumMemberValueHints = true,
---             }
---         },
---         javascript = {
---             inlayHints = {
---                 includeInlayParameterNameHints = 'all',
---                 includeInlayParameterNameHintsWhenArgumentMatchesName = false,
---                 includeInlayFunctionParameterTypeHints = true,
---                 includeInlayVariableTypeHints = true,
---                 includeInlayPropertyDeclarationTypeHints = true,
---                 includeInlayFunctionLikeReturnTypeHints = true,
---                 includeInlayEnumMemberValueHints = true,
---             }
---         }
---     }
--- })
 
 -- lspconfig.tailwindcss.setup {
 --     root_dir = lspconfig.util.root_pattern('tailwind.config.js', 'tailwind.config.ts'),
@@ -94,23 +50,23 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 lspconfig.html.setup {}
 
 vim.diagnostic.config({
-  signs = {
-      text = {
-        [vim.diagnostic.severity.ERROR] = '󰅙',
-        [vim.diagnostic.severity.INFO] = '󰋼',
-        [vim.diagnostic.severity.HINT] = '󰌵',
-        [vim.diagnostic.severity.WARN] = '',
-      },
-      -- linehl = {
-      --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-      -- },
-      numhl = {
-        [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-        [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-        [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-        [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-      },
-  },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '󰅙',
+            [vim.diagnostic.severity.INFO] = '󰋼',
+            [vim.diagnostic.severity.HINT] = '󰌵',
+            [vim.diagnostic.severity.WARN] = '',
+        },
+        -- linehl = {
+        --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        -- },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+            [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+            [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+            [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+        },
+    },
 })
 
 -- go lsp
