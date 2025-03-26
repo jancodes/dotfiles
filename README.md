@@ -163,3 +163,5 @@ If gcc can't postinstall, make sure you have installed build-essential
 #### Mac stuff
 
 `Change key repeat for moving faster in vim with hjkl`
+
+ defaults write -g ApplePressAndHoldEnabled -bool false 
