@@ -22,15 +22,15 @@ return {
         ["javascriptreact"] = { "prettierd", "eslint_d" },
         ["typescript"] = { "prettierd", "eslint_d" },
         ["typescriptreact"] = { "prettierd", "eslint_d" },
-        ["css"] = { { "prettierd" } },
-        ["scss"] = { { "prettierd" } },
-        ["less"] = { { "prettierd" } },
-        ["html"] = { { "prettierd" } },
-        ["json"] = { { "prettierd" } },
-        ["jsonc"] = { { "prettierd" } },
-        ["yaml"] = { { "prettierd" } },
-        ["markdown"] = { { "prettierd" } },
-        ["markdown.mdx"] = { { "prettierd" } },
+        ["css"] = { "prettierd" },
+        ["scss"] = { "prettierd" },
+        ["less"] = { "prettierd" },
+        ["html"] = { "prettierd" },
+        ["json"] = { "prettierd" },
+        ["jsonc"] = { "prettierd" },
+        ["yaml"] = { "prettierd" },
+        ["markdown"] = { "prettierd" },
+        ["markdown.mdx"] = { "prettierd" },
       },
 
     })
@@ -48,4 +48,3 @@ return {
     end
   end
 }
-
