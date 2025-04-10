@@ -17,9 +17,8 @@ export GPG_TTY=$TTY
 if [[ "$(uname)" = 'Linux' ]] then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export DISPLAY=$(ip route list default | awk '{print $3}'):0
-  # for bitandbytes
-  export PATH=$PATH:/opt/rocm-6.3.2/bin
-  export LD_LIBRARY_PATH=/opt/rocm-6.3.2/lib
+  # for nvidia-smi
+  export PATH=$PATH:/usr/lib/wsl/lib 
 
   export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
   export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
