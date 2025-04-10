@@ -1,27 +1,31 @@
 return {
-  'nvimtools/none-ls.nvim',
+  'nvimtools/none-ls.nvim',          -- Core plugin
+  dependencies = {
+    'nvimtools/none-ls-extras.nvim', -- Required for eslint_d
+  },
   config = function()
     local null = require('null-ls')
+
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     null.setup({
+      debug = true, -- Enable logging
       sources = {
         -- Formatters
         null.builtins.formatting.prettierd.with {
-          extra_filetypes = {
-            'handlebars',
-          },
+          extra_filetypes = { 'handlebars' },
           condition = function(utils)
             return utils.root_has_file { '.prettierrc', '.prettierignore' }
           end,
         },
-        require("none-ls.formatting.eslint_d"),
+        require("none-ls.formatting.eslint_d"), -- Now available via extras, don't use builtins
         null.builtins.formatting.stylua,
 
         -- Diagnostics
-        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.diagnostics.eslint_d"), -- Now available via extras, don't use builtins
+
 
         -- Code Actions
-        require("none-ls.code_actions.eslint"),
+        require("none-ls.code_actions.eslint_d"), -- Now available via extras, don't use builtins
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -30,13 +34,9 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-              -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
               vim.lsp.buf.format({
                 async = false,
-                filter = function(client)
-                  return client.name == "null-ls"
-                end,
+                filter = function(c) return c.name == "null-ls" end,
               })
             end,
           })
@@ -44,7 +44,4 @@ return {
       end,
     })
   end,
-  dependencies = {
-    "nvimtools/none-ls-extras.nvim",
-  },
 }
