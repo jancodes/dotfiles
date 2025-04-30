@@ -1,7 +1,5 @@
 local m = require("mapx")
 
--- TODO refactor this file
-
 -- save on enter in normal mode
 m.nmap("<CR>", "(&buftype is# '' ? ':w<CR>' : '<CR>')", "expr")
 
@@ -74,7 +72,7 @@ m.map("Q", "<Nop>")
 -- end, { nargs = 0 })
 
 m.nmap("gf", "<cmd>Lspsaga finder<CR>")
-m.nmap({ "n", "v" }, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
+m.nmap("<leader>ga", "<cmd>Lspsaga code_action<CR>")
 m.nmap("gr", "<cmd>Lspsaga rename<CR>")
 m.nmap("grp", "<cmd>Lspsaga rename ++project<CR>")
 -- <C-t> to go back to previous
@@ -148,13 +146,13 @@ end, {
   desc = "FormatEnable",
 })
 
-m.nmap({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
-m.nmap({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-m.nmap("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
-m.nmap("n", "<c-n>", "<Plug>(YankyNextEntry)")
+m.nmap("p", "<Plug>(YankyPutAfter)")
+m.nmap("P", "<Plug>(YankyPutBefore)")
+m.nmap("<c-p>", "<Plug>(YankyPreviousEntry)")
+m.nmap("<c-n>", "<Plug>(YankyNextEntry)")
 
 m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
 
-m.nmap("n", "<leader>cco", ":CopilotChatOpen<CR>")
-m.nmap("n", "<leader>ccm", ":CopilotChatClose<CR>")
-m.nmap("n", "<leader>ccp", ":CopilotChatPrompts<CR>")
+m.nmap("<Leader>cco", ":CopilotChatOpen<CR>")
+m.nmap("<Leader>ccc", ":CopilotChatClose<CR>")
+m.nmap("<Leader>ccp", ":CopilotChatPrompts<CR>")
