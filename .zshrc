@@ -19,6 +19,8 @@ if [[ "$(uname)" = 'Linux' ]] then
   export DISPLAY=$(ip route list default | awk '{print $3}'):0
   # for nvidia-smi
   export PATH=$PATH:/usr/lib/wsl/lib 
+  export PATH=/usr/local/cuda-12.8/bin:$PATH 
+  export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
 
   export LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib"
   export CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"

@@ -4,7 +4,6 @@ return {
     config = function()
         local telescope = require('telescope')
 
-        telescope.load_extension('live_grep_args')
 
         telescope.setup({
             defaults = {
@@ -17,5 +16,6 @@ return {
                 }
             }
         })
+        telescope.load_extension('live_grep_args')
     end
 }

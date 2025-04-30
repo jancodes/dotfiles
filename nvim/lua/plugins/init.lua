@@ -58,4 +58,5 @@ return {
         ft = { "markdown" },
     },
     "phelipetls/jsonpath.nvim",
+    "stevearc/dressing.nvim",
 }

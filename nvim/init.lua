@@ -65,7 +65,10 @@ require("commands")
 --   end
 -- })
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = "tsconfig.json, .eslintrc.json",
-  command = "setlocal filetype=jsonc",
+vim.opt.completeopt = { "popup", "noinsert", "noselect", "menuone", "preview" }
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "copilot-chat",
+  callback = function()
+    vim.bo.filetype = "markdown"
+  end,
 })

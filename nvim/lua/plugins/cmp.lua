@@ -28,6 +28,11 @@ return {
       },
       mapping = {
         ["<Tab>"] = cmp.mapping(function(fallback)
+          -- If in CopilotChat buffer, fallback to default (let CopilotChat handle <Tab>)
+          if vim.bo.filetype == "copilot-chat" then
+            fallback()
+            return
+          end
           if cmp.visible() then
             cmp.select_next_item()
           elseif require("copilot.suggestion").is_visible() then
