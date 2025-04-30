@@ -65,7 +65,7 @@ require("commands")
 --   end
 -- })
 
-vim.opt.completeopt = { "popup", "noinsert", "noselect", "menuone", "preview" }
+vim.opt.completeopt = "popup,noinsert,noselect"
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "copilot-chat",
   callback = function()
