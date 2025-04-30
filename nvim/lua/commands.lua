@@ -153,6 +153,6 @@ m.nmap("<c-n>", "<Plug>(YankyNextEntry)")
 
 m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
 
-m.nmap("<Leader>cco", ":CopilotChatOpen<CR>")
-m.nmap("<Leader>ccc", ":CopilotChatClose<CR>")
-m.nmap("<Leader>ccp", ":CopilotChatPrompts<CR>")
+m.nmap("<Leader>coo", ":CopilotChatOpen<CR>")
+m.nmap("<Leader>coc", ":CopilotChatClose<CR>")
+m.nmap("<Leader>cop", ":CopilotChatPrompts<CR>")
