@@ -73,33 +73,31 @@ m.map("Q", "<Nop>")
 --   vim.api.nvim_command(':lua vim.lsp.buf.format { async = true }')
 -- end, { nargs = 0 })
 
-local keymap = vim.keymap.set
-
-keymap("n", "gf", "<cmd>Lspsaga finder<CR>")
-keymap({ "n", "v" }, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
-keymap("n", "grp", "<cmd>Lspsaga rename ++project<CR>")
+m.nmap("gf", "<cmd>Lspsaga finder<CR>")
+m.nmap({ "n", "v" }, "<leader>ga", "<cmd>Lspsaga code_action<CR>")
+m.nmap("gr", "<cmd>Lspsaga rename<CR>")
+m.nmap("grp", "<cmd>Lspsaga rename ++project<CR>")
 -- <C-t> to go back to previous
-keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+m.nmap("gd", "<cmd>Lspsaga goto_definition<CR>")
 
-keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
-keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
-keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+m.nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
+m.nmap("<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+m.nmap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
-keymap("n", "[g", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-keymap("n", "]g", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+m.nmap("[g", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+m.nmap("]g", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 -- Diagnostic jump with filters such as only jumping to an error
-keymap("n", "[G", function()
+m.nmap("[G", function()
   require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end)
-keymap("n", "]G", function()
+m.nmap("]G", function()
   require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+m.nmap("K", "<cmd>Lspsaga hover_doc<CR>")
 -- Call hierarchy
-keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
-keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+m.nmap("<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+m.nmap("<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Buffer barbar.nvim
 m.nnoremap("<A-,>", "<Cmd>BufferPrevious<CR>", "silent")
@@ -150,9 +148,13 @@ end, {
   desc = "FormatEnable",
 })
 
-vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
-vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
-vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
+m.nmap({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+m.nmap({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+m.nmap("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+m.nmap("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
+
+m.nmap("n", "<leader>cco", ":CopilotChatOpen<CR>")
+m.nmap("n", "<leader>ccm", ":CopilotChatClose<CR>")
+m.nmap("n", "<leader>ccp", ":CopilotChatPrompts<CR>")
