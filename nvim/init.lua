@@ -66,12 +66,13 @@ require("commands")
 -- })
 
 vim.opt.completeopt = "popup,noinsert,noselect"
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "copilot-chat",
-  callback = function()
-    vim.bo.filetype = "markdown"
-  end,
-})
+-- for render-markdown
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "copilot-chat",
+--   callback = function()
+--     vim.bo.filetype = "markdown"
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = 'copilot-*',
