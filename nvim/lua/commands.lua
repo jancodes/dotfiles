@@ -156,3 +156,6 @@ m.nnoremap("<Leader>yh", "<Cmd>YankyRingHistory<CR>", "silent")
 m.nmap("<Leader>coo", ":CopilotChatOpen<CR>")
 m.nmap("<Leader>coc", ":CopilotChatClose<CR>")
 m.nmap("<Leader>cop", ":CopilotChatPrompts<CR>")
+m.nmap("<Leader>cog", ":CopilotChatCommit<CR>")
+
+m.vmap("<Leader>ec", "<cmd>lua require('react-extract').extract_to_new_file()<cr>")

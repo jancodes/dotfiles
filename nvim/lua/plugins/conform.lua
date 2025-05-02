@@ -39,8 +39,6 @@ return {
       local found = vim.fs.find("~/.config/nvim/utils/linter-config/prettier.config.js",
         { upward = true, path = ctx.dirname })[1]
 
-      print(found)
-      print(args)
       if found then
         vim.list_extend(args, { "--config", found })
       end
