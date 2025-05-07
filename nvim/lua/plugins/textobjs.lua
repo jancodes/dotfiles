@@ -13,7 +13,7 @@ return {
       callback = function()
         -- vim.keymap.set({ "o", "x" }, "aC", '<cmd>lua require("various-textobjs").mdFencedCodeBlock(false)<CR>',
         --   { desc = "Around Fenced Code Block" })
-        vim.keymap.set({ "o", "x" }, "yic", '<cmd>lua require("various-textobjs").mdFencedCodeBlock(true)<CR>',
+        vim.keymap.set({ "o", "x" }, "ic", '<cmd>lua require("various-textobjs").mdFencedCodeBlock(true)<CR>',
           { desc = "Inside Fenced Code Block" })
       end,
     })
