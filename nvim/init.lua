@@ -83,3 +83,13 @@ vim.api.nvim_create_autocmd('BufEnter', {
     vim.opt_local.conceallevel = 0
   end
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    -- Delay execution by 100 milliseconds
+    vim.defer_fn(function()
+      vim.cmd("CopilotChatCommit silent")
+    end, 100)
+  end
+})
