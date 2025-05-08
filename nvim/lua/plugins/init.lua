@@ -59,4 +59,6 @@ return {
     },
     "phelipetls/jsonpath.nvim",
     "stevearc/dressing.nvim",
+    "kana/vim-textobj-user",
+    "christoomey/vim-textobj-codeblock",
 }

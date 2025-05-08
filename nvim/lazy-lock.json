@@ -42,7 +42,6 @@
   "nvim-tmux-navigation": { "branch": "main", "commit": "4898c98702954439233fdaf764c39636681e2861" },
   "nvim-treesitter": { "branch": "master", "commit": "3b308861a8d7d7bfbe9be51d52e54dcfd9fe3d38" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "1b212c2eee76d787bbea6aa5e92a2b534e7b4f8f" },
-  "nvim-various-textobjs": { "branch": "main", "commit": "d8d501e7395275405606bb3b0d8ca27323dd7808" },
   "nvim-web-devicons": { "branch": "master", "commit": "50b5b06bff13a9b4eab946de7c7033649a6618a1" },
   "oil.nvim": { "branch": "master", "commit": "685cdb4ffa74473d75a1b97451f8654ceeab0f4a" },
   "onedark.nvim": { "branch": "master", "commit": "dfc0fb140e122aab770bf4802332c3028872e86c" },
@@ -67,5 +66,7 @@
   "vim-repeat": { "branch": "master", "commit": "65846025c15494983dafe5e3b46c8f88ab2e9635" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vim-textobj-codeblock": { "branch": "master", "commit": "7658826f1a13a2865fb65b64481c40968fd780c1" },
+  "vim-textobj-user": { "branch": "master", "commit": "41a675ddbeefd6a93664a4dc52f302fe3086a933" },
   "yanky.nvim": { "branch": "main", "commit": "04775cc6e10ef038c397c407bc17f00a2f52b378" }
 }
