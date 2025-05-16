@@ -59,6 +59,10 @@ return {
     },
     "phelipetls/jsonpath.nvim",
     "stevearc/dressing.nvim",
-    "kana/vim-textobj-user",
-    "christoomey/vim-textobj-codeblock",
+    {
+        "christoomey/vim-textobj-codeblock",
+        dependencies = {
+            "kana/vim-textobj-user", -- Enforce dependency
+        },
+    },
 }
