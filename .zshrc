@@ -14,7 +14,7 @@ export GPG_TTY=$TTY
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-if [[ "$(uname)" = 'Linux' ]] then
+if command -v uname >/dev/null 2>&1 && [[ "$(uname)" = 'Linux' ]]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export DISPLAY=$(ip route list default | awk '{print $3}'):0
   # for nvidia-smi
@@ -117,13 +117,3 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-
-# bun completions
-[ -s "/home/jan/.bun/_bun" ] && source "/home/jan/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# opencode
-export PATH=/home/jan/.opencode/bin:$PATH
