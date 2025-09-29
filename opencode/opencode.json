@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Theme configuration
+  "theme": "one-dark",
+  "autoupdate": true,
+  "keybinds": {
+    "messages_page_up": "",
+    "messages_page_down": "",
+    "messages_half_page_up": "pgup",
+    "messages_half_page_down": "pgdown"
+  }
+}
