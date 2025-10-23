@@ -49,9 +49,10 @@ that traveled the world with me
 
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
-10. Symlink .zshrc
+10. Symlink .zshrc and .gitconfig
 
     `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
+    `rm -rf ~/.gitconfig && ln -s ~/.config/.gitconfig ~/.gitconfig`
 
 11. Set theme and fonts
     in terminal of choice
@@ -164,4 +165,4 @@ If gcc can't postinstall, make sure you have installed build-essential
 
 `Change key repeat for moving faster in vim with hjkl`
 
- defaults write -g ApplePressAndHoldEnabled -bool false 
+defaults write -g ApplePressAndHoldEnabled -bool false
