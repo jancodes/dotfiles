@@ -1,0 +1,20 @@
+[user]
+	email = jancodes@users.noreply.github.com
+	name = Jansen Li
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = store
+[diff]
+    tool = nvim_difftool
+
+[difftool "nvim_difftool"]
+    cmd = nvim -c \"packadd nvim.difftool\" -c \"DiffTool $LOCAL $REMOTE\"
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
