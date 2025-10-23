@@ -1,20 +1,20 @@
 return {
-    'norcalli/nvim-colorizer.lua',
+    'NiklasV1/nvim-colorizer.lua',
     config = function()
         require('colorizer').setup {
             css = {
-                rgb_fn = true;
-            };
-            'typescriptreact';
-            'javascript';
-            'javascriptreact';
+                rgb_fn = true,
+            },
+            'typescriptreact',
+            'javascript',
+            'javascriptreact',
             html = {
-                mode = 'foreground';
-                names = false;
-            };
+                mode = 'foreground',
+                names = false,
+            },
             sh = {
-                mode = 'foreground';
-            };
+                mode = 'foreground',
+            },
         }
     end
 }
