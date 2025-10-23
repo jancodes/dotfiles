@@ -91,6 +91,35 @@ clean () {
   git reset --soft HEAD~$argv[1]
 }
 
+gitdiff() {
+  # must be in a git repo
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Not a git repo" >&2
+    return 1
+  fi
+
+  local target="$1"
+
+  if [ -z "$target" ]; then
+    # try origin/HEAD symbolic-ref -> .../main or .../master
+    if remote_head=$(git symbolic-ref --quiet refs/remotes/origin/HEAD 2>/dev/null); then
+      target=${remote_head##*/}
+    else
+      # fallback: check which branch exists on origin
+      if git ls-remote --exit-code --heads origin main >/dev/null 2>&1; then
+        target=main
+      elif git ls-remote --exit-code --heads origin master >/dev/null 2>&1; then
+        target=master
+      else
+        echo "Could not determine remote default branch. Pass a branch name." >&2
+        return 1
+      fi
+    fi
+  fi
+
+  git difftool -d "$target"
+}
+
 # fnm
 export PATH=$HOME/.fnm:$PATH
 eval "`fnm env`"
