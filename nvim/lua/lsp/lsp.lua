@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+local lspconfig = vim.lsp.config
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Setup lspconfig.
@@ -9,27 +9,27 @@ capabilitiesWithSnippetSupport.textDocument.completion.completionItem.snippetSup
 local servers = { 'html' }
 local serversWithSnippetSupport = { 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
+    lspconfig(lsp, {
         capabilities = capabilities,
-    }
-end
-for _, lsp in ipairs(serversWithSnippetSupport) do
-    lspconfig[lsp].setup {
-        capabilities = capabilitiesWithSnippetSupport,
-    }
-end
-
-local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
     })
 end
-local on_attach = function(client, bufnr)
-    if client.server_capabilities.signatureHelpProvider then
-        local lsp_format_modifications = require "lsp-format-modifications"
-        lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
-    end
+for _, lsp in ipairs(serversWithSnippetSupport) do
+    lspconfig(lsp, {
+        capabilities = capabilitiesWithSnippetSupport,
+    })
 end
+
+-- local buf_map = function(bufnr, mode, lhs, rhs, opts)
+--     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+--         silent = true,
+--     })
+-- end
+-- local on_attach = function(client, bufnr)
+--     if client.server_capabilities.signatureHelpProvider then
+--         local lsp_format_modifications = require "lsp-format-modifications"
+--         lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
+--     end
+-- end
 
 
 -- lspconfig.tailwindcss.setup {
@@ -47,7 +47,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- html lsp
-lspconfig.html.setup {}
+lspconfig('html', {})
 
 vim.diagnostic.config({
     signs = {
@@ -70,12 +70,12 @@ vim.diagnostic.config({
 })
 
 -- go lsp
-lspconfig.gopls.setup({
+lspconfig('gopls', {
     -- custom settings here
     -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
 })
 
-lspconfig.lua_ls.setup {
+lspconfig('lua_ls', {
     settings = {
         Lua = {
             runtime = {
@@ -95,4 +95,4 @@ lspconfig.lua_ls.setup {
             typeChecking = true, -- Optional, enables better type inference
         },
     },
-}
+})
