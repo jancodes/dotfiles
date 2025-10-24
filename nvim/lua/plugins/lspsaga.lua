@@ -1,5 +1,6 @@
 return {
-  "nvimdev/lspsaga.nvim",
+  "leeguooooo/lspsaga.nvim",
+  branch = "fix-client-method-deprecations",
   event = "BufRead",
   config = function()
     require("lspsaga").setup({

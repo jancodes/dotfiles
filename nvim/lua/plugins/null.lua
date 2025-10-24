@@ -28,7 +28,7 @@ return {
         require("none-ls.code_actions.eslint_d"), -- Now available via extras, don't use builtins
       },
       on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
+        if client:supports_method("textDocument/formatting") then
           vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
           vim.api.nvim_create_autocmd("BufWritePre", {
             group = augroup,
