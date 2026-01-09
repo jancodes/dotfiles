@@ -19,6 +19,7 @@ return {
       filetypes = {
         ["*"] = true
       },
+      copilot_node_command = vim.fn.trim(vim.fn.system('fnm exec --using=24 which node')),
       server_opts_overrides = {
         settings = {
           telemetry = {
