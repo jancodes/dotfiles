@@ -3,9 +3,9 @@
   "theme": "one-dark",
   "autoupdate": true,
   "keybinds": {
-    "messages_page_up": "",
-    "messages_page_down": "",
-    "messages_half_page_up": "pgup",
-    "messages_half_page_down": "pgdown"
+    "messages_page_up": "none",
+    "messages_page_down": "none",
+    "messages_half_page_up": "pageup",
+    "messages_half_page_down": "pagedown"
   }
 }
