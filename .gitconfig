@@ -18,3 +18,5 @@
 	br = branch
 	ci = commit
 	st = status
+[url "git@github.com:"]
+	insteadOf = https://github.com/
