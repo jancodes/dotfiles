@@ -13,9 +13,18 @@ that traveled the world with me
 
 > Currently configs does not work with Warp
 
-### Setup (Last updated 01/03/2025)
+### Setup (Last updated 04/28/2026)
 
-<em>one day this will be script once I change jobs enough</em>
+Automated setup:
+
+```bash
+chmod +x ~/.config/setup.sh
+~/.config/setup.sh
+```
+
+The script automates install/symlink steps and prints remaining manual steps at the end.
+
+Manual setup reference:
 
 1.  Install iTerm2
     > https://iterm2.com/downloads.html
