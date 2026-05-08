@@ -1,42 +1,87 @@
 # dotfiles
 
 <p>
-<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/> <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
+  <img src="https://img.shields.io/badge/Neovim-nightly-57A143?logo=neovim&logoColor=white" alt="Neovim" />
+  <img src="https://img.shields.io/badge/Tmux-3.x-1BB91F?logo=tmux&logoColor=white" alt="Tmux" />
+  <img src="https://img.shields.io/badge/Zsh-Oh%20My%20Zsh-1A2C34?logo=zsh&logoColor=white" alt="Zsh" />
+  <img src="https://img.shields.io/badge/Powerlevel10k-prompt-yellow" alt="Powerlevel10k" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
+  <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=flat&color=BC4E99" alt="Star if useful" />
 </p>
-<p>
-<em>
-that traveled the world with me
-</em>
-</p>
 
-> Tools used: Zsh, Tmux, Neovim (Javascript/Typescript), and IntelliJ IDEA .ideavimrc (VIM settings for Java)
+> A batteries-included **Zsh + Tmux + Neovim** setup tuned for fast TypeScript / JavaScript work — that has traveled the world with me.
 
-> Currently configs does not work with Warp
+![Setup screenshot](assets/screenshot.png)
 
-### Setup (Last updated 04/28/2026)
+---
 
-Automated setup:
+## Why this config?
+
+- **Modern Neovim, hand-rolled** — `lazy.nvim` managing ~35 curated plugins (Telescope, Mason LSP, nvim-cmp, Lspsaga, Conform, Gitsigns, Oil, Barbar, Lualine, Onedark, Hop / Lightspeed, Persisted sessions, Yanky, render-markdown, tiny-inline-diagnostic, and more).
+- **TypeScript / JavaScript first** — preconfigured LSPs (`typescript`, `eslint_d`, `prettierd`, `tailwindcss`, `cssls`, `json-lsp`), Jest runner, React-extract refactors.
+- **AI-ready out of the box** — GitHub Copilot + CopilotChat wired into Neovim, plus an OpenCode config included.
+- **Seamless tmux ↔ nvim navigation** — one set of keys to move between panes and splits, regardless of which side you're on.
+- **Polished shell** — Powerlevel10k prompt with `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-history-substring-search`, and `zsh-z` for fast jumping.
+- **One-command bootstrap** — `setup.sh` handles installs and symlinks; manual steps are documented for the rest.
+- **Cross-platform** — works on macOS, Linux, and WSL2 (with caveats noted in Troubleshooting).
+- **Portable** — everything lives in a single `~/.config` repo; clone it on a new machine and you're back in business.
+
+---
+
+## Tech stack
+
+| Layer         | Tool                                  | Purpose                 |
+| ------------- | ------------------------------------- | ----------------------- |
+| Shell         | Zsh + Oh My Zsh + Powerlevel10k       | Prompt & UX             |
+| Multiplexer   | Tmux + tpm                            | Sessions / panes        |
+| Editor        | Neovim nightly (via [bob])            | Main editor             |
+| Editor (Java) | IntelliJ IDEA + `.ideavimrc`          | JVM work                |
+| Terminal      | iTerm2 (mac) / any modern terminal    | Host terminal           |
+| Font          | Caskaydia Cove Nerd Font              | Glyph / icon support    |
+| Theme         | One Dark                              | Terminal + Neovim       |
+| Node mgr      | [fnm]                                 | Node version management |
+| AI            | GitHub Copilot, CopilotChat, OpenCode | N/A                     |
+
+[bob]: https://github.com/MordechaiHadad/bob
+[fnm]: https://github.com/Schniz/fnm
+
+---
+
+## Quick start
 
 ```bash
+# 1. Clone into ~/.config (back up first if it already has things you care about)
+git clone https://github.com/jancodes/dotfiles.git ~/.config
+
+# 2. Run the bootstrap script
 chmod +x ~/.config/setup.sh
 ~/.config/setup.sh
 ```
 
-The script automates install/symlink steps and prints remaining manual steps at the end.
+The script automates the install/symlink steps and prints any remaining manual steps at the end.
 
-Manual setup reference:
+> Note: these configs currently do **not** work with Warp.
+
+---
+
+## Manual setup
+
+<details>
+<summary>Click to expand the full step-by-step guide</summary>
+
+_Last updated 04/28/2026_
 
 1.  Install iTerm2
     > https://iterm2.com/downloads.html
-2.  Clone repo into as ~/.config folder. If your computer is not new, there might be a config folder already. You can move the files into config or delete your config folder if there is nothing important.
+2.  Clone this repo into `~/.config`. If your computer is not new, there might be a `.config` folder already — move anything important out of it or remove it before cloning.
     > `rm -rf ~/.config && git clone https://github.com/jancodes/dotfiles.git ~/.config`
 3.  Install Homebrew
     > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 4.  Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
     > `brew install zsh`
-5.  Install Fnm https://github.com/Schniz/fnm
+5.  Install fnm (https://github.com/Schniz/fnm)
     > `brew install fnm`
-6.  Install Node with fnm and use it.
+6.  Install Node with fnm and use it
 
     > `fnm install --lts`
 
@@ -44,7 +89,7 @@ Manual setup reference:
 
 7.  Install Oh My Zsh
     > `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-8.  Install Zsh plugins below:
+8.  Install Zsh plugins:
 
     > `git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
@@ -54,124 +99,130 @@ Manual setup reference:
 
     > `git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z`
 
-9.  Install powerline theme
-
+9.  Install Powerlevel10k theme
     > `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-
-10. Symlink .zshrc and .gitconfig
+10. Symlink `.zshrc` and `.gitconfig`
 
     `rm -rf ~/.zshrc && ln -s ~/.config/.zshrc ~/.zshrc`
+
     `rm -rf ~/.gitconfig && ln -s ~/.config/.gitconfig ~/.gitconfig`
 
-11. Set theme and fonts
-    in terminal of choice
+11. Set theme and fonts in your terminal of choice
 
-        > https://www.nerdfonts.com/font-downloads (I'm using Caskaydia Cove Nerd Font Complete Mono Regular)
+    > https://www.nerdfonts.com/font-downloads (using **Caskaydia Cove Nerd Font Complete Mono Regular**)
 
-        > https://github.com/one-dark/iterm-one-dark-theme/blob/main/One%20Dark.itermcolors (One Dark for Iterm2)
+    > https://github.com/one-dark/iterm-one-dark-theme/blob/main/One%20Dark.itermcolors (One Dark for iTerm2)
 
-        > For WSL2 font issues, restart windows explorer
+    > For WSL2 font issues, restart Windows Explorer.
 
 12. Install Tmux
     > `brew install tmux`
 13. Install tpm
     > `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-14. Symlink .tmux.conf
+14. Symlink `.tmux.conf`
     > `ln -s ~/.config/.tmux.conf ~/.tmux.conf`
-15. Install tmux plugins
+15. Install tmux plugins via `prefix + I` (Mac uses `Ctrl`, Windows/WSL uses `Alt` — e.g. `Ctrl-A` is the prefix on Mac)
 
-    > `prefix + I` Mac uses ctrl and Windows/WSL uses alt. Example: Ctrl A is the prefix combo for Mac.
+    If you see extra keys being typed while in tmux on Mac, follow this guide to install the missing terminfo entries:
 
-    If you see extra keys being typed while in tmux for mac, check below link to install the missing colors
+    > https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way
 
-    > `https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way`
+16. Install Neovim nightly with [bob]
 
-16. Install Neovim nightly with bob
+    > `bob use nightly`
 
-    > https://github.com/MordechaiHadad/bob
-    > bob use nightly
-
-17. Install Neovim plugins dep
-
+17. Install Neovim plugin dependencies
     > `brew install gcc make gnu-sed ripgrep fd fzf`
+18. Install LSPs via Mason
 
-18. Mason install lsps
+    > Run `:Mason` inside Neovim and pick the LSPs you want.
 
-    > `:Mason` in a nvim session (nvim in terminal then use the command) then pick the lsp you want to use
+    LSPs used: `lua, prettierd, json-lsp, typescript, tailwindcss, eslint_d, cssls`
 
-    LSP used in my config: `lua, prettierd, json-lsp, typescript, tailwindcss , eslint_d, cssls`
+    `lua`, `json`, `typescript`, `tailwindcss`, and `cssls` are installed by default through Mason lspconfig. `eslint_d` and `prettierd` need to be installed manually with `:Mason`.
 
-    Note: lua, json, typescript, tailwindcss, cssls is installed by default with setup with Mason lspconfig
+19. Optional extras
 
-    There is no support for eslint_d and prettier for auto install, so install manually with :Mason
+    > https://github.com/commitizen/cz-cli — beautiful commit messages
 
-19. Optional:
+    > https://github.com/yosukes-dev/one-dark-windows-terminal (WSL only)
 
-    > https://github.com/commitizen/cz-cli for writing beatiful commit messages
+    > https://command-not-found.com/xdg-open (WSL only)
 
-    > https://github.com/yosukes-dev/one-dark-windows-terminal (wsl only)
+    > https://github.com/cpbotha/xdg-open-wsl — `xdg-open` replacement for WSL
 
-    > https://command-not-found.com/xdg-open (wsl only)
+20. Optional: Install VcXsrv and xclip (WSL only) — https://sourceforge.net/projects/vcxsrv/
 
-    > https://github.com/cpbotha/xdg-open-wsl xdg-open is not in wsl, so you will need an alternative
-
-20. Optional: Install VcXsrv and xclip (WSL only) https://sourceforge.net/projects/vcxsrv/
-
-    Follow Step 2, my config already contain Step 3 setup:
+    Follow Step 2; this config already has Step 3 set up.
 
     > https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541#2-set-up-vcxsrv-windows-x-server
 
     > https://installati.one/ubuntu/20.04/xclip/
 
-    > if clipboard still don't work, check if your firewall is blocking VcXsrv.
+    > If clipboard still doesn't work, check whether your firewall is blocking VcXsrv.
 
-### Useful notes and resources
+</details>
 
-#### Tmux
+---
 
-`prefix + [ to go into vim copy mode`
+## Cheatsheet
 
-#### Live grep related
+### Tmux
 
-> source: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+| Keys         | Action               |
+| ------------ | -------------------- |
+| `prefix + [` | Enter Vim copy mode  |
+| `prefix + I` | Install tmux plugins |
 
-`"foo" --iglob` search for foo ignoring ignore files
+### Neovim — Telescope live-grep args
 
-`"foo" --tts` search for foo only in typescript files
+> Source: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
 
-`rg --type-list` get the possible types add `| rg "filter string"` to filter down the results
+- `"foo" --iglob` — search for `foo` ignoring ignore-files
+- `"foo" --tts` — search for `foo` only in TypeScript files
+- `rg --type-list` — list all available types (pipe to `rg "filter"` to narrow down)
 
-### Mappings
+| Mapping | Action                              |
+| ------- | ----------------------------------- |
+| `<C-k>` | Quote prompt, e.g. `foo` → `"foo" ` |
 
-| Mappings | Action                              |
-| -------- | ----------------------------------- |
-| `<C-k>`  | Quote prompt, e.g. `foo` → `"foo" ` |
-
-### Grep argument examples
-
-(Some examples are ripgrep specific)
+#### Grep argument examples
 
 | Prompt                   | Args                      | Description                            |
 | ------------------------ | ------------------------- | -------------------------------------- |
-| `foo bar`                | `foo bar`                 | search for „foo bar“                   |
-| `"foo bar" baz`          | `foo bar`, `baz`          | search for „foo bar“ in dir „baz“      |
-| `--no-ignore "foo bar`   | `--no-ignore`, `foo bar`  | search for „foo bar“ ignoring ignores  |
-| `"foo" ../other-project` | `foo`, `../other-project` | search for „foo“ in `../other-project` |
+| `foo bar`                | `foo bar`                 | search for „foo bar"                   |
+| `"foo bar" baz`          | `foo bar`, `baz`          | search for „foo bar" in dir „baz"      |
+| `--no-ignore "foo bar"`  | `--no-ignore`, `foo bar`  | search for „foo bar" ignoring ignores  |
+| `"foo" ../other-project` | `foo`, `../other-project` | search for „foo" in `../other-project` |
 
-<br>
+---
 
-#### WSL
+## Troubleshooting
 
-WSL Optimization
+### WSL
 
-> https://jade.fyi/blog/development-in-wsl/
+- WSL optimization guide: https://jade.fyi/blog/development-in-wsl/
+- For MarkdownPreview, use `wsl-open`.
+- If `gcc` postinstall fails, make sure `build-essential` is installed.
 
-MarkdownPreview, use wsl-open
+### macOS
 
-If gcc can't postinstall, make sure you have installed build-essential
+- Faster `hjkl` repeat in Vim:
+  ```bash
+  defaults write -g ApplePressAndHoldEnabled -bool false
+  ```
+- Extra keys appearing in tmux? Install the proper terminfo: https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95#the-right-way
 
-#### Mac stuff
+### Fonts
 
-`Change key repeat for moving faster in vim with hjkl`
+- WSL2 font issues: restart Windows Explorer after installing the Nerd Font.
 
-defaults write -g ApplePressAndHoldEnabled -bool false
+---
+
+## License
+
+[MIT](LICENSE) — free to use, modify, distribute, and sell. Just keep the copyright notice.
+
+---
+
+Made by [@jancodes](https://github.com/jancodes) · MIT Licensed
