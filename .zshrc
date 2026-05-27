@@ -16,7 +16,7 @@ export GPG_TTY=$TTY
 
 if command -v uname >/dev/null 2>&1 && [[ "$(uname)" = 'Linux' ]]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  export DISPLAY=$(ip route list default | awk '{print $3}'):0
+  # export DISPLAY=$(ip route list default | awk '{print $3}'):0
   # for nvidia-smi
   export PATH=$PATH:/usr/lib/wsl/lib 
   export PATH=/usr/local/cuda-12.8/bin:$PATH 
@@ -118,6 +118,14 @@ gitdiff() {
   fi
 
   git difftool -d "$target"
+}
+
+vpnOn () {
+  sudo openvpn --config ~/config.ovpn --daemon
+}
+
+vpnOff () {
+  sudo killall openvpn
 }
 
 # fnm
