@@ -7,7 +7,7 @@ return {
     },
     build = "make tiktoken",                          -- Only on MacOS or Linux
     opts = {
-      model = "gpt-5-mini",
+      model = "gpt-5.5",
       sticky = '#buffers',
       -- mappings = {
       --   complete = {

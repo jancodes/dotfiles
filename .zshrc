@@ -16,7 +16,9 @@ export GPG_TTY=$TTY
 
 if command -v uname >/dev/null 2>&1 && [[ "$(uname)" = 'Linux' ]]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  # use 127.0.0.0.1:0 if you are using mirrored networking for WSL2
   # export DISPLAY=$(ip route list default | awk '{print $3}'):0
+  export DISPLAY=127.0.0.1:0
   # for nvidia-smi
   export PATH=$PATH:/usr/lib/wsl/lib 
   export PATH=/usr/local/cuda-12.8/bin:$PATH 
