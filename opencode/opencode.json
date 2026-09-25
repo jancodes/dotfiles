@@ -1,15 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
-  "agent": {
+  "update": "auto",
+  "agents": {
     "build": {
-      "model": "opencode/gpt-5.6-luna",
-      "variant": "max"
+      "model": "github-copilot/gpt-5.6-luna#xhigh"
     },
     "plan": {
-      "model": "opencode/gpt-5.6-sol",
-      "variant": "high"
+      "model": "github-copilot/gpt-5.6-sol#high"
     }
   },
-  "plugin": ["@dietrichgebert/ponytail"]
+  "plugins": ["/home/jan/.claude/plugins/marketplaces/ponytail/.opencode/plugins/ponytail.mjs"]
 }

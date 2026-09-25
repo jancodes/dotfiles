@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "one-dark"
+  },
+  "keybinds": {
+    "session.page.up": "none",
+    "session.page.down": "none",
+    "session.half.page.up": "pageup",
+    "session.half.page.down": "pagedown",
+    "agent.cycle": "tab",
+    "prompt.autocomplete.complete": "none"
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "show"
+  },
+  "animations": true
+}
